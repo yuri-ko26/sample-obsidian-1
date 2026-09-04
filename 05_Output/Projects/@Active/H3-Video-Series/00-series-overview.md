@@ -45,3 +45,4 @@ MiniMax H3(ComfyUIで生成)を使った、2キャラクターのショート動
 - `02-scenes/15-cloud-ridge-hide-and-seek.md` — 雲の稜線でぽよんが隠れて覗き、たまちゃんが探して発見し大喜びで走り去るかくれんぼシーン(シーン9と同じ最初のフレームを使用)
 - `02-scenes/16-eye-contact-bump-and-roll-laugh.md` — 目が合ってぽよんがたまちゃんにぶつかり、転がって大笑いするシーン(FL2VA・カメラが笑顔にぐっと寄る)
 - `02-scenes/17-poyon-face-fills-frame.md` — シーン13の続き。頭上から降りてくるぽよんにカメラが寄っていき、透明な体と顔が画面いっぱいになるパーツ(FL2VA)
+- `02-scenes/18-overhead-big-jump-round-two.md` — シーン16の続き。起き上がった2人が見つめ合い、ぽよんが再び真上に大ジャンプして画面いっぱいになった後たまちゃんにぶつかるシーン(俯瞰・I2VA)
