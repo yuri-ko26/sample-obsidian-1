@@ -39,3 +39,4 @@ MiniMax H3(ComfyUIで生成)を使った、2キャラクターのショート動
 - `02-scenes/09-overhead-chase-no-cut.md` — 雲の稜線を横から見た固定カメラで、カットを割らずに同じ場所からフレームアウト・フレームインする追いかけっこのシーン
 - `02-scenes/10-title-card-deau.md` — グリーンバックに「であう」のクレイ文字タイトルロゴがポンポンと弾んで登場するタイトルカード(FL2VA)
 - `02-scenes/11-title-card-deau-characters.md` — 白背景からひよこ・たまご・とらの3キャラクターとタイトルロゴがポップに登場するタイトルカード(L2VA)
+- `02-scenes/12-characters-popup-no-text.md` — 白背景からひよこ・たまご・とらの3キャラクターだけがポップに登場するシンプル版(テキストなし、L2VA)
