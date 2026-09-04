@@ -26,3 +26,4 @@ MiniMax H3(ComfyUIで生成)を使った、2キャラクターのショート動
 - `02-scenes/02-rolling-play.md` — 俯瞰でぽよんとたまちゃんが並んでコロコロ転がって遊ぶシーン
 - `02-scenes/03-cloud-ridge-chase.md` — 雲の稜線でぽよんとたまちゃんが追いかけっこをするシーン
 - `02-scenes/04-rolling-catch-up.md` — 俯瞰でコロコロ転がってフレームアウト→再登場→ぽよんが追いつくシーン
+- `02-scenes/05-overhead-big-jump.md` — 俯瞰固定カメラでぽよんが真上に大ジャンプし、たまちゃんにぶつかるシーン
