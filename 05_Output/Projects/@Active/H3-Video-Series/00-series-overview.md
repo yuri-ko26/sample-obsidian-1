@@ -46,3 +46,4 @@ MiniMax H3(ComfyUIで生成)を使った、2キャラクターのショート動
 - `02-scenes/16-eye-contact-bump-and-roll-laugh.md` — 目が合ってぽよんがたまちゃんにぶつかり、転がって大笑いするシーン(FL2VA・カメラが笑顔にぐっと寄る)
 - `02-scenes/17-poyon-face-fills-frame.md` — シーン13の続き。頭上から降りてくるぽよんにカメラが寄っていき、透明な体と顔が画面いっぱいになるパーツ(FL2VA)
 - `02-scenes/18-overhead-big-jump-round-two.md` — シーン16の続き。起き上がった2人が見つめ合い、ぽよんが再び真上に大ジャンプして画面いっぱいになった後たまちゃんにぶつかるシーン(俯瞰・I2VA)
+- `02-scenes/19-poyon-offers-a-ride-jump-together.md` — シーン18と同じ最初のフレーム。ぽよんが体を差し出し、たまちゃんが飛び乗ってくっつき、2人で一緒に大ジャンプして笑うシーン(俯瞰・I2VA)
