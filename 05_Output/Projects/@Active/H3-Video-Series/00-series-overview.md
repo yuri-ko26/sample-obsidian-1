@@ -41,3 +41,4 @@ MiniMax H3(ComfyUIで生成)を使った、2キャラクターのショート動
 - `02-scenes/11-title-card-deau-characters.md` — 白背景からひよこ・たまご・とらの3キャラクターとタイトルロゴがポップに登場するタイトルカード(L2VA)
 - `02-scenes/12-characters-popup-no-text.md` — 白背景からひよこ・たまご・とらの3キャラクターだけがポップに登場するシンプル版(テキストなし、FL2VA・最初と最後どちらも実画像使用)
 - `02-scenes/13-poyon-descends-above-characters.md` — 3キャラクターの頭上からぽよんがゆっくりフレームインするパーツ(FL2VA・最初と最後どちらも実画像使用)
+- `02-scenes/14-poyon-backs-up-to-tamachan.md` — ぽよんのドアップから後ずさりし、カメラも一緒に引いてたまちゃんとの2ショットに広がるシーン(FL2VA)
