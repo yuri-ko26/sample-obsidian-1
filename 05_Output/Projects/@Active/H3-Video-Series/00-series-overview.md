@@ -59,3 +59,4 @@ MiniMax H3(ComfyUIで生成)を使った、2キャラクターのショート動
 - `02-scenes/22-tamachan-bumps-poyon-hard-both-fall-laughing.md` — シーン16・20・21の続き。たまちゃんが今回は強くぶつかり、ぽよんも横に倒れて2人で体を震わせながら大笑いするシーン(FL2VA・最初と最後どちらも実画像使用)
 - `02-scenes/23-laughing-recover-and-exit-frame.md` — シーン22の続き。大笑いから起き上がった2人が目を合わせ、次の楽しいことを探しに下手へフレームアウトしていくシーン(FL2VA・最初と最後どちらも実画像使用)
 - `02-scenes/24-overhead-horizontal-roll-across.md` — 俯瞰固定カメラ。薄黄緑色の床ですでにフレームインした2人が同じ水平方向に転がり続けてフレームアウトするシーン(I2VA・たまちゃんは手を上げたまま転がる)
+- `02-scenes/25-overhead-horizontal-roll-across-reverse.md` — シーン24の逆方向版。俯瞰固定カメラ。上手からフレームインした2人が水平に転がり続け、下手にフレームアウトするシーン(FL2VA・最初と最後どちらも実画像使用)
