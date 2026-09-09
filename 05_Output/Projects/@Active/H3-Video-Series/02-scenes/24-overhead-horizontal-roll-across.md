@@ -29,11 +29,11 @@ duration: 6s
 ```
 For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
 
-integrated_multimodal_description: [Shot 1] 3D CG, claymation-style character render, a single continuous static overhead shot holds the exact same fixed position, framing, and lens throughout the entire video, looking straight down on the pale yellow-green floor exactly as shown in <Picture 1>: the egg-shaped character rolls slightly ahead on the right and the transparent, jelly-like rubber character rolls close behind it on the left, both already tumbling steadily in the same direction along the same horizontal line, having just rolled into frame moments earlier. The camera never pans, tilts, zooms, or cuts away at any point. The egg character stays lying down flat against the floor the entire time, its whole body rotating end over end around its own horizontal axis in a smooth, continuous barrel-roll motion, like a log rolling steadily along the ground, each full rotation carrying it further forward — it never slides or glides forward without rotating, and it never rises up, stands upright, or takes any walking steps at any point in the shot. It rolls with its short stubby arms held raised up above its tumbling body the whole time, its non-bending limbs staying lifted with each turn, its flat, outline-only features staying pure line work with no depth or color as it rotates. Right behind it, the transparent character's round body rotates smoothly end over end around its own horizontal axis at the same steady pace, like a ball rolling along the ground, each full rotation carrying it further forward in a smooth, continuous barrel-roll rather than sliding flat across the floor. Its round dark eyes and flat, outline-only mouth stay fixed at one point on its glossy round surface, turning and spinning around together with the body itself as it rotates, so the face visibly rotates into view and away again with every turn rather than staying anchored in one screen position while the body spins beneath it. Its interior gumballs and confetti drift and shift inside without ever spilling out, its mouth staying pure uncolored line work throughout. The two continue rolling together in this same straight horizontal line, matching each other's pace exactly, moving steadily across the full width of the frame until both have completely exited past the right edge, with no part of either character remaining visible and only the empty pale yellow-green floor left onscreen as the shot ends.
+integrated_multimodal_description: [Shot 1] 3D CG, claymation-style character render. A single static overhead shot, fixed in place for the entire video with no panning, tilting, zooming, or cutting, looks straight down on the pale yellow-green floor exactly as shown in <Picture 1>. The egg-shaped character lies flat and rolls forward on the right by rotating steadily around its own horizontal axis like a rolling log, its short arms raised up the whole time. Beside it on the left, the transparent, jelly-like rubber character rolls forward the same way, like a ball, its face rotating together with its body with each turn, its gumballs and confetti drifting inside without spilling out. Both roll together at a matched pace straight across the frame until they fully exit past the right edge, leaving the floor empty.
 
-overall_soundscape: A soft, repeated series of muffled thuds marks the egg character tumbling along with its arms raised, mixed with a rhythmic sequence of rubbery squeaks and light rattles from the shifting gumballs as the transparent character rolls right behind it. Both characters produce light, breathy giggles throughout as they roll across the floor and out of frame.
+overall_soundscape: Soft rolling thuds from the egg character and light rubbery squeaks with gentle gumball rattles from the transparent character, plus quiet happy giggles from both, continuing until they exit frame.
 
-non_diegetic_music: An upbeat, rolling marimba melody at a steady, bouncy tempo, its rhythm mirroring the two characters' matched tumbling pace as they cross the frame and disappear.
+non_diegetic_music: None — the shot plays with no score.
 ```
 
 ## 日本語訳(参考用)
@@ -42,13 +42,13 @@ non_diegetic_music: An upbeat, rolling marimba melody at a steady, bouncy tempo,
 対象動画の0.00秒時点で、<Picture 1>(Shot 1より)が完全に参照されます。
 
 **映像・音声描写**
-[Shot 1] 3D CGのクレイアニメ調キャラクターレンダー。動画全体を通してまったく同じ固定位置・同じ画角・同じレンズのままの、一度も切り替わらない単一の固定俯瞰ショットで、<Picture 1>で示された通り、薄い黄緑色の床を真上から見下ろしており、卵形のキャラクターが少し先行して右側を、透明でゼリーのようなラバーキャラクターがそのすぐ後ろの左側を、どちらもすでに同じ水平方向へ一定のペースで転がっており、少し前に画面にフレームインしたばかりの状態である。カメラは一切パン・チルト・ズーム・カットをしない。卵形のキャラクターは終始床に寝そべったまま、まるで丸太が地面を転がるように、自分自身の水平な軸を中心として体全体がなめらかに連続した樽転がりのような動きで一回転また一回転と回り続け、一回転するごとにさらに前へ進んでいく — 回転せずに滑ったり滑走したりして前に進むことは決してなく、また、ショットのどの瞬間においても起き上がったり、立ち上がったり、歩くようなステップを踏んだりすることも一切ない。短く曲がらない手を転がっている間ずっと上に上げたまま転がり続け、一回転するたびもその手は上がったままで、奥行きも色もない平らな輪郭線だけの顔立ちはそのまま線画として保たれている。そのすぐ後ろでは、透明なキャラクターの丸い体が、まるでボールが地面を転がるように、自分自身の水平な軸を中心として同じ一定のペースでなめらかに一回転また一回転と回り続け、床の上を滑るように平行移動するのではなく、なめらかに連続した樽転がりのような動きで前へ進んでいく。その丸い黒目と、平面的で輪郭線だけの口は、光沢のある丸い表面上の一箇所に固定されたまま、体そのものと一緒に回転し、回るたびに顔が画面に現れては見えなくなるを繰り返す — 体だけが下で回転して顔は画面上の同じ位置に留まり続けるようなことにはならない。中のガムボールと紙吹雪は漂うように揺れ動くが決してこぼれることはなく、口も終始無着色の線画のままである。二人はこのまま同じ水平の直線上を、互いのペースを完全に合わせながら転がり続け、画面の幅いっぱいを進んでいき、どちらの体もまったく見えなくなるまで完全に右端の外へ出ていき、画面には誰もいない薄い黄緑色の床だけが残ったところでこのショットが終わる。
+[Shot 1] 3D CGのクレイアニメ調キャラクターレンダー。動画全体を通して一切動かない単一の固定俯瞰ショットで、パン・チルト・ズーム・カットは一切なく、<Picture 1>で示された通り薄い黄緑色の床を真上から見下ろしている。卵形のキャラクターは右側で寝そべったまま、自分の水平な軸を中心に丸太のように回転しながら前へ進み、短い手はずっと上に上げたままである。その左隣では、透明でゼリーのようなラバーキャラクターがボールのように同じ動きで転がり、顔は体と一緒に回転し、中のガムボールと紙吹雪は揺れ動くもののこぼれ出ない。二人はペースを合わせたまま画面をまっすぐ横切り、完全に右端の外へ出ていき、床だけが残る。
 
 **環境音**
-卵形のキャラクターが手を上げたまま転がるたびに、柔らかくこもった「ぽすん」という音が繰り返し響き、そのすぐ後ろで透明なキャラクターが転がるたびの、やわらかく規則的なゴムのきしみ音と、中でガムボールが軽くカタカタと揺れる音が混ざる。二人は床の上を転がって画面の外へ消えるまで、ずっと軽やかで息の弾んだ笑い声を上げ続ける。
+卵形のキャラクターの柔らかい転がる音と、透明なキャラクターの軽いゴムのきしみ音・ガムボールのカタカタという音、そして二人の穏やかな笑い声が、フレームアウトするまで続く。
 
 **BGM(観客のみに聞こえる)**
-弾むようなテンポの陽気なマリンバのメロディが、二人のぴったり合った転がるペースに合わせたリズムを刻みながら、二人が画面を横切って姿を消すまで続く。
+なし — この映像には音楽をつけない。
 
 ## ComfyUIでの設定メモ
 - 最初のフレーム画像(2人がすでに左寄りにフレームインしている俯瞰構図)を Load Image → I2VA用の画像入力に接続
