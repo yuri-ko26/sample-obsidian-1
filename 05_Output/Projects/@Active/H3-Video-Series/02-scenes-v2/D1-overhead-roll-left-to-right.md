@@ -54,7 +54,38 @@ non_diegetic_music: None.
 なし。
 
 **生成結果**
-- 動画ファイル: `03-generated-videos/D1_v1.mp4`(未生成)
+- 動画ファイル: `03-generated-videos/D1_v1.mp4`
+- 判定: NG
+- メモ: 体が「横に回転」(コマや円盤のように、床と平行な面の中でその場で回るような
+  回転)になってしまった。欲しいのは「縦に回転」(丸太が地面を転がるように、
+  進行方向に対して垂直な軸で前へ転がっていく回転)。→ v2で明確に書き分ける
+
+### v2 (2026-09-09) — v1からの変更点: 「横回転(コマ状に平面内で回る)」と
+「縦回転(丸太のように進行方向へ転がる)」の違いを明示的に対比して書き、
+縦回転を強く指定した
+
+**H3プロンプト(ComfyUI用)**
+```
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+
+integrated_multimodal_description: [Shot 1] 3D CG, claymation-style character render. A single static overhead shot, fixed in place for the entire video with no panning, tilting, zooming, or cutting, looks straight down on the pale yellow-green floor exactly as shown in <Picture 1>. Both characters keep their exact appearance and design from <Picture 1> unchanged throughout, with no distortion. The egg-shaped character, on the right of the pair, has both of its short arms raised up the whole time, and rolls forward across the floor exactly like a log or a barrel rolling along the ground: its axis of rotation runs in a single straight horizontal line across its body, perpendicular to the direction it is traveling, so with each rotation its body pitches forward end-over-end, front tipping down and around to become back, then back tipping around to become front again — front, then back, then front again, repeating steadily as it advances. This is completely different from spinning flat like a coin or a top on a tabletop: the character never spins within the plane of the floor while staying in the same visual orientation, and its front and back must clearly and visibly alternate into view with each rotation, exactly as a rolling log shows its two ends alternating as it tumbles forward. It stays perfectly level as it tumbles, never tilting diagonally or wobbling off to one side, and it never rises up or stands. Beside it on the left, the transparent, jelly-like rubber character rolls forward the exact same way — end-over-end like a log rolling along the ground, its axis of rotation perpendicular to its direction of travel, its front and back clearly alternating into view with each turn, never spinning flat in place — its interior gumballs and confetti shifting inside without ever spilling out. Both continue rolling forward together at a matched pace, moving steadily rightward across the frame, until they fully exit past the right edge, leaving the floor empty.
+
+overall_soundscape: None.
+
+non_diegetic_music: None.
+```
+
+**日本語訳**
+対象動画の0.00秒時点で、<Picture 1>(Shot 1より)が完全に参照されます。[Shot 1] 3D CGのクレイアニメ調キャラクターレンダー。動画全体を通して一切動かない単一の固定俯瞰ショットで、パン・チルト・ズーム・カットは一切なく、<Picture 1>で示された通り薄い黄緑色の床を真上から見下ろしている。2人とも<Picture 1>の見た目・デザインのまま、崩れたり変化したりすることなく最後まで保たれる。ペアの右側にいる卵形のキャラクターは、両手をずっと上に上げた状態のまま、ちょうど丸太や樽が地面を転がるように床の上を前へ転がっていく——その回転軸は、体を横切る一本のまっすぐな水平線で、進行方向に対して垂直である。そのため一回転するごとに体が前方向へ端から端まで倒れ込むように回り、正面が下に倒れ込んで背中になり、また背中が倒れ込んで正面に戻る——正面、そして背中、そしてまた正面、というのを進みながら規則正しく繰り返す。これはテーブルの上でコマやコインが平らに回転するのとはまったく異なる動きである——床と同じ平面の中で、見た目の向きを保ったまま回転することは一切なく、正面と背中は一回転するごとにはっきりと目に見える形で入れ替わらなければならない。ちょうど転がる丸太が転がりながら両端を交互に見せるのと同じである。転がっている間は常に体が水準を保ったまま転がり、決して斜めに傾いたり片側に揺れたりすることはなく、途中で起き上がったり立ち上がったりすることも一切ない。その左隣では、透明でゼリーのようなラバーキャラクターも、まったく同じように——丸太が地面を転がるように端から端まで回転し、回転軸は進行方向に対して垂直で、正面と背中が一回転するごとにはっきりと交互に見え、平面内でその場で回転することは一切ない——中のガムボールと紙吹雪は揺れ動くがこぼれることはない。二人はこのままペースを合わせて転がりながら画面を右方向へまっすぐ横切り、完全に右端の外へ出ていき、床だけが残る。
+
+**環境音**
+なし。
+
+**BGM(観客のみに聞こえる)**
+なし。
+
+**生成結果**
+- 動画ファイル: `03-generated-videos/D1_v2.mp4`(未生成)
 - 判定: 未検証
 - メモ:
 
