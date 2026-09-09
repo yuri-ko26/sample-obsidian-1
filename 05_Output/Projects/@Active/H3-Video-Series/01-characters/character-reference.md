@@ -117,10 +117,12 @@ updated: 2026-09-09
   明示する方が効果的だった
 - **制約**: 大笑いするときも、口は**大きくなりすぎない**こと。控えめな笑顔の
   カーブから一回り広がる程度にとどめ、顔の面積の大部分を占めるような誇張した
-  巨大な口にはならないようにする(2026-09-09、クライアントよりフィードバック)。
+  巨大な口にはならないようにする(2026-09-09、クライアントよりフィードバック。
+  さらに念押しの指摘もあったため、**具体的な上限の目安**を追加: 口の開き幅は
+  顔の横幅の3分の1程度までにとどめる)。
   プロンプトには "its mouth curves into a moderately wide, gentle smile shape —
-  not exaggerated or oversized, just a natural, modestly wider curve than its
-  usual resting smile" のように書くこと
+  not exaggerated or oversized, staying no more than about a third of the width
+  of its face" のように、具体的な比率を含めて書くこと
 - サイズ: 高さ約15cm(たまちゃんよりひと回り大きい。実測比較: ぽよん15cm/たまちゃん10cm)
 
 ---
