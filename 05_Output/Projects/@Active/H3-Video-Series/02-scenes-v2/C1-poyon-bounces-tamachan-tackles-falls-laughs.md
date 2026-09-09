@@ -86,9 +86,9 @@ non_diegetic_music: A playful, bouncy marimba melody that lifts into a warm, che
 弾むようなテンポの陽気なマリンバのメロディが、2人が笑い出す瞬間に温かく明るいフレーズへと盛り上がる。
 
 **生成結果**
-- 動画ファイル: `03-generated-videos/C1_v2.mp4`(未生成)
-- 判定: 未検証
-- メモ:
+- 動画ファイル: `03-generated-videos/C1_v2.mp4`
+- 判定: **OK(確定)**
+- メモ: 動き・ぽよんの口(透明のまま)・中身のこぼれなし、すべて問題なし。C-1確定版
 
 ## ComfyUIでの設定メモ
 - 最初のフレーム画像(百合子さん指定の「画質・色味の理想」2ショット画像)を Load Image → I2VA用の画像入力に接続
