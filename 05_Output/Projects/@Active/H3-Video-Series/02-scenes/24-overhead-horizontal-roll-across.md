@@ -29,7 +29,7 @@ duration: 6s
 ```
 For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
 
-integrated_multimodal_description: [Shot 1] 3D CG, claymation-style character render. A single static overhead shot, fixed in place for the entire video with no panning, tilting, zooming, or cutting, looks straight down on the pale yellow-green floor exactly as shown in <Picture 1>. Both characters keep their exact appearance and design from <Picture 1> unchanged throughout, with no distortion. The egg-shaped character lies flat on the right, both of its short arms raised up the whole time, and rolls forward by rotating steadily around its own horizontal axis like a rolling log. Beside it on the left, the transparent, jelly-like rubber character rolls forward the same way, like a ball, its face rotating together with its body with each turn. Both roll together at a matched pace straight across the frame until they fully exit past the right edge, leaving the floor empty.
+integrated_multimodal_description: [Shot 1] 3D CG, claymation-style character render. A single static overhead shot, fixed in place for the entire video with no panning, tilting, zooming, or cutting, looks straight down on the pale yellow-green floor exactly as shown in <Picture 1>. Both characters keep their exact appearance and design from <Picture 1> unchanged throughout, with no distortion. The egg-shaped character lies flat on the right, both of its short arms raised up the whole time, and physically rotates around its own horizontal axis like a rolling log — it does NOT stay face-up while sliding sideways; instead, the side of its body facing the camera keeps changing as it turns, its face pointing straight up toward the camera for only a moment before rotating away out of view and its back or side facing up instead, then rotating back around to face the camera again, this cycle of facing up / rotating away / facing up again repeating continuously with every full turn as it advances. Beside it on the left, the transparent, jelly-like rubber character rotates the same way, like a ball physically tumbling end over end, its face likewise rotating into view and out of view again with each full turn rather than remaining fixed facing the camera. Both roll together at a matched pace straight across the frame until they fully exit past the right edge, leaving the floor empty.
 
 overall_soundscape: None.
 
@@ -42,7 +42,7 @@ non_diegetic_music: None.
 対象動画の0.00秒時点で、<Picture 1>(Shot 1より)が完全に参照されます。
 
 **映像・音声描写**
-[Shot 1] 3D CGのクレイアニメ調キャラクターレンダー。動画全体を通して一切動かない単一の固定俯瞰ショットで、パン・チルト・ズーム・カットは一切なく、<Picture 1>で示された通り薄い黄緑色の床を真上から見下ろしている。2人とも<Picture 1>の見た目・デザインのまま、崩れたり変化したりすることなく最後まで保たれる。卵形のキャラクターは右側で寝そべったまま、両手をずっと上に上げた状態で、自分の水平な軸を中心に丸太のように回転しながら前へ進む。その左隣では、透明でゼリーのようなラバーキャラクターがボールのように同じ動きで転がり、顔は体と一緒に回転する。二人はペースを合わせたまま画面をまっすぐ横切り、完全に右端の外へ出ていき、床だけが残る。
+[Shot 1] 3D CGのクレイアニメ調キャラクターレンダー。動画全体を通して一切動かない単一の固定俯瞰ショットで、パン・チルト・ズーム・カットは一切なく、<Picture 1>で示された通り薄い黄緑色の床を真上から見下ろしている。2人とも<Picture 1>の見た目・デザインのまま、崩れたり変化したりすることなく最後まで保たれる。卵形のキャラクターは右側で寝そべったまま、両手をずっと上に上げた状態で、自分の水平な軸を中心に丸太のように**物理的に回転する**——**顔が常に上を向いたまま横に滑るように移動するのではなく**、回転するにつれて体のどの面がカメラ側を向くかが変わり続け、顔が真上(カメラ側)を向くのは一瞬だけで、そこから回転して顔が見えなくなり背中や横腹が上を向き、その後また回転して顔が戻ってくる、という「顔が見える→見えなくなる→また見える」のサイクルを、前進しながら一回転ごとに繰り返す。その左隣では、透明でゼリーのようなラバーキャラクターも同じように、ボールが端から端まで転がるように物理的に回転し、顔も同様に一回転ごとに見えたり見えなくなったりを繰り返し、常にカメラの方を向いたまま固定されることはない。二人はペースを合わせたまま画面をまっすぐ横切り、完全に右端の外へ出ていき、床だけが残る。
 
 **環境音**
 なし。
