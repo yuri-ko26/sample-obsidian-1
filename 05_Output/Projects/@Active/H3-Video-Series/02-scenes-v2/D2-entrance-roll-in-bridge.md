@@ -56,16 +56,47 @@ non_diegetic_music: An upbeat, rolling marimba melody at a cheerful, bouncy temp
 弾むようなテンポの陽気なマリンバのメロディが、2人がフレームインしてくるペースに合わせて流れる。
 
 **生成結果**
-- 動画ファイル: `03-generated-videos/D2-entrance_v1.mp4`(未生成)
+- 動画ファイル: `03-generated-videos/D2-entrance_v1.mp4`
+- 判定: NG
+- メモ: 「誰もいない床→2人が忽然と現れて転がり出す」ような不自然な出方になった。
+  空の床からの登場は、動画生成AIが根本的に苦手な動きだと判明。→ v2で方針転換
+  (完全に見えない状態からではなく、画面端で体の一部がすでに見切れている状態から
+  スタートする)
+
+### v2 (2026-09-09) — たまちゃん単体版。方針転換:完全に空の床からではなく、
+画面端でたまちゃんの体がすでに一部見切れている(かつ傾いた/転がっている途中に
+見える)状態をPicture 1にする。ぽよんはこのカットには含めない(別途対応)。
+I2VAに変更(明確な終了フレーム画像がまだないため)。
+
+**H3プロンプト(ComfyUI用)**
+```
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+
+integrated_multimodal_description: [Shot 1] 3D CG, claymation-style character render, a single continuous static overhead shot holds the exact same fixed position, framing, and lens throughout the entire video, looking straight down on the pale yellow-green floor exactly as shown in <Picture 1>. The egg-shaped character keeps its exact appearance and design from <Picture 1> unchanged throughout, with no distortion. At the very start, only part of its body is visible, cut off by the right edge of the frame, tilted at an angle mid-tumble exactly as shown in <Picture 1>, with most of its form still just off-screen beyond the right edge. The camera never pans, tilts, zooms, or cuts away at any point. The egg character continues rolling in from the right, its body advancing further onto the floor and becoming more and more visible within the frame with each moment, tumbling forward in a steady, even cartwheel motion, its front and back alternating into view with each full turn, its short stubby arms held raised up above its tumbling body the whole time, its non-bending limbs staying lifted with each turn. It stays perfectly level as it tumbles, never tilting off diagonally or wobbling to one side, and it never rises up or stands. By the end of the shot, the greater part of its body is now clearly visible well within the frame, still tumbling steadily leftward, with open floor continuing to stretch out further to its left.
+
+overall_soundscape: A soft, repeated thud marks each turn of the egg character's body as it tumbles further into frame.
+
+non_diegetic_music: An upbeat, rolling marimba melody at a cheerful, bouncy tempo, matching the egg character's steady tumbling pace as it rolls into frame.
+```
+
+**日本語訳**
+対象動画の0.00秒時点で、<Picture 1>(Shot 1より)が完全に参照されます。[Shot 1] 3D CGのクレイアニメ調キャラクターレンダー。動画全体を通してまったく同じ固定位置・同じ画角・同じレンズのままの、一度も切り替わらない単一の固定俯瞰ショットで、<Picture 1>で示された通り薄い黄緑色の床を真上から見下ろしている。卵形のキャラクターは<Picture 1>の見た目・デザインのまま、崩れたり変化したりすることなく保たれる。最初の時点では、<Picture 1>に示された通り、体の一部だけが画面右端で見切れており、転がっている途中のように斜めに傾いた状態で、体の大部分はまだ画面右端の外側にある。カメラは一切パン・チルト・ズーム・カットをしない。卵形のキャラクターは右側からさらに転がり続けて入ってきて、時間が経つにつれて床の上でその姿がだんだんはっきりと見えるようになっていき、まっすぐで均等な前転(でんぐり返し)のような動きで、一回転するごとに正面と背中が交互に見える。短く曲がらない手は転がっている間ずっと上に上げたままで、一回転するたびもその手は上がったままである。転がっている間は常に体が水平・水準を保ったまま転がり、決して斜めに傾いたり片側に揺れたりすることはなく、途中で起き上がったり立ち上がったりすることも一切ない。ショットの終わりには、体の大部分が画面内にはっきりと見えるようになっており、なおも左方向へ一定のペースで転がり続けていて、その左側にはまだ床が広がっている。
+
+**環境音**
+卵形のキャラクターが転がってフレームインしてくる間、一回転するたびに柔らかく繰り返す「ぽすん」という音が響く。
+
+**BGM(観客のみに聞こえる)**
+弾むようなテンポの陽気なマリンバのメロディが、卵形のキャラクターがフレームインしてくる一定のペースに合わせて流れる。
+
+**生成結果**
+- 動画ファイル: `03-generated-videos/D2-entrance_v2.mp4`(未生成)
 - 判定: 未検証
-- メモ: Picture 2は受領・確定済み。既存の承認済みカットの実際のプロンプト
-  (特に転がり方の描写)と食い違いがないか、まだ要確認
+- メモ:
 
 ## ComfyUIでの設定メモ
-- Picture 1: 無地の薄い黄緑色画像(床のみ)
-- Picture 2: 既存の承認済み「左へ転がる」カットの開始フレームと同一の実画像
-- モード: FL2VA
-- 尺: 4秒目安(短い橋渡しカットのため。既存カットとつないだときの体感速度を見て調整)
+- Picture 1: 今回いただいた、たまちゃんの体が画面右端で一部見切れている俯瞰画像
+- モード: I2VA(最後のフレーム画像は不要)
+- 尺: 3秒目安(短い橋渡しカットのため)
 - **重要**: `[Shot 2]`などの追加ショット表記は使わず、単一の`[Shot 1]`のみで最初から最後まで記述すること
-- 生成後、既存の承認済みカットの冒頭とつないでみて、動きの速度・キャラクターの位置に
-  違和感がないか確認する
+- 生成後、既存の承認済み「左へ転がる」カットの冒頭とつないでみて、動きの速度・
+  キャラクターの位置に違和感がないか確認する
