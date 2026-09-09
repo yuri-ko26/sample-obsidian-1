@@ -66,3 +66,4 @@ MiniMax H3(ComfyUIで生成)を使った、2キャラクターのショート動
 - `02-scenes/24-overhead-horizontal-roll-across.md` — 俯瞰固定カメラ。薄黄緑色の床ですでにフレームインした2人が同じ水平方向に転がり続けてフレームアウトするシーン(I2VA・たまちゃんは手を上げたまま転がる)
 - `02-scenes/25-overhead-horizontal-roll-across-reverse.md` — シーン24の逆方向版。俯瞰固定カメラ。上手からフレームインした2人が水平に転がり続け、下手にフレームアウトするシーン(FL2VA・最初と最後どちらも実画像使用)
 - `02-scenes/26-overhead-roll-in-stop-center-laugh.md` — 俯瞰固定カメラ。誰もいない床から下手より2人が水平に並んで同時に転がりながらフレームインし(たまちゃんは両手を上げたまま)、中央で止まって顔を見合わせ大笑いするシーン(FL2VA・最初は背景のみ、最後は2人が映る実画像)
+- `02-scenes/27-overhead-horizontal-roll-poyon-only.md` — シーン24からたまちゃんを除いた、ぽよん1体だけが水平に転がり続けてフレームアウトするバージョン(I2VA)
