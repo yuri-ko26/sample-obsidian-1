@@ -85,7 +85,39 @@ non_diegetic_music: None.
 なし。
 
 **生成結果**
-- 動画ファイル: `03-generated-videos/D1_v2.mp4`(未生成)
+- 動画ファイル: `03-generated-videos/D1_v2.mp4`
+- 判定: NG
+- メモ: 丸太のたとえがうまく伝わらなかった。ぽよんは相変わらず平面上でクルクル回転
+  (コマ状)、たまちゃんはむしろ回転せず、蹴伸びのように地面を蹴っては滑る動きに
+  なってしまった。→ v3で「丸太」の代わりに「コイン投げのように表と裏が交互に見える
+  フリップ」という、より直感的なたとえに変更。「滑る/止まって進む」動きも明示的に禁止
+
+### v3 (2026-09-09) — v1/v2からの変更点: 「丸太」のたとえをやめ、「コインを投げたときの
+表裏が交互に見えるフリップ」に変更。あわせて、たまちゃんが蹴っては滑る動き(回転せず
+移動する)を明示的に禁止する一文を追加
+
+**H3プロンプト(ComfyUI用)**
+```
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+
+integrated_multimodal_description: [Shot 1] 3D CG, claymation-style character render. A single static overhead shot, fixed in place for the entire video with no panning, tilting, zooming, or cutting, looks straight down on the pale yellow-green floor exactly as shown in <Picture 1>. Both characters keep their exact appearance and design from <Picture 1> unchanged throughout, with no distortion. The egg-shaped character, on the right of the pair, has both of its short arms raised up the whole time, and continuously flips forward across the floor the same way a tossed coin flips through the air, showing its front face, then its back, then its front again in a steady, repeating cycle as it advances — never staying flat and spinning in one visual orientation the way a coin spins while lying down on a table. Its whole body is constantly flipping end-over-end this entire time; it is never sliding, coasting, or gliding smoothly across the floor with its rotation paused — there is no still or gliding phase at any point, only continuous, steady flipping the whole way. It stays perfectly level as it flips forward, never tilting diagonally or wobbling off to one side, and it never rises up or stands. Beside it on the left, the transparent, jelly-like rubber character flips forward the exact same way — its front and back steadily alternating into view with each flip, like a coin tumbling end-over-end, never spinning flat in one orientation and never pausing to glide — its interior gumballs and confetti shifting inside without ever spilling out. Both continue flipping forward together at a matched pace, moving steadily rightward across the frame, until they fully exit past the right edge, leaving the floor empty.
+
+overall_soundscape: None.
+
+non_diegetic_music: None.
+```
+
+**日本語訳**
+対象動画の0.00秒時点で、<Picture 1>(Shot 1より)が完全に参照されます。[Shot 1] 3D CGのクレイアニメ調キャラクターレンダー。動画全体を通して一切動かない単一の固定俯瞰ショットで、パン・チルト・ズーム・カットは一切なく、<Picture 1>で示された通り薄い黄緑色の床を真上から見下ろしている。2人とも<Picture 1>の見た目・デザインのまま、崩れたり変化したりすることなく最後まで保たれる。ペアの右側にいる卵形のキャラクターは、両手をずっと上に上げた状態のまま、投げたコインが空中でフリップするのと同じように、床の上を前へ継続的にフリップしていく——正面を見せ、次に背中を見せ、また正面を見せるというのを、進みながら規則正しく繰り返す——コインがテーブルの上に横たわったまま平らに回転するときのように、同じ向きを保ったまま平面で回転することは一切ない。体全体がこの間ずっと端から端までフリップし続けており、回転が止まって床の上を滑るように移動したり、なめらかに滑走したりすることは一切ない——止まる/滑る局面は一切なく、最初から最後まで一定のペースでフリップし続けるのみである。フリップしている間は常に体が水準を保ったまま前へ進み、決して斜めに傾いたり片側に揺れたりすることはなく、途中で起き上がったり立ち上がったりすることも一切ない。その左隣では、透明でゼリーのようなラバーキャラクターも、まったく同じように——コインが端から端までフリップするように、一回転するごとに正面と背中が規則正しく交互に見え、同じ向きのまま平面で回転することも、途中で止まって滑ることも一切ない——中のガムボールと紙吹雪は揺れ動くがこぼれることはない。二人はこのままペースを合わせてフリップしながら画面を右方向へまっすぐ横切り、完全に右端の外へ出ていき、床だけが残る。
+
+**環境音**
+なし。
+
+**BGM(観客のみに聞こえる)**
+なし。
+
+**生成結果**
+- 動画ファイル: `03-generated-videos/D1_v3.mp4`(未生成)
 - 判定: 未検証
 - メモ:
 
