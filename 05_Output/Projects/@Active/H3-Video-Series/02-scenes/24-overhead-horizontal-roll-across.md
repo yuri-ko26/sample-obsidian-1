@@ -29,11 +29,11 @@ duration: 6s
 ```
 For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
 
-integrated_multimodal_description: [Shot 1] 3D CG, claymation-style character render. A single static overhead shot, fixed in place for the entire video with no panning, tilting, zooming, or cutting, looks straight down on the pale yellow-green floor exactly as shown in <Picture 1>. The egg-shaped character lies flat and rolls forward on the right by rotating steadily around its own horizontal axis like a rolling log, its short arms raised up the whole time. Beside it on the left, the transparent, jelly-like rubber character rolls forward the same way, like a ball, its face rotating together with its body with each turn, its gumballs and confetti drifting inside without spilling out. Both roll together at a matched pace straight across the frame until they fully exit past the right edge, leaving the floor empty.
+integrated_multimodal_description: [Shot 1] 3D CG, claymation-style character render. A single static overhead shot, fixed in place for the entire video with no panning, tilting, zooming, or cutting, looks straight down on the pale yellow-green floor exactly as shown in <Picture 1>. Both characters keep their exact appearance and design from <Picture 1> unchanged throughout, with no distortion. The egg-shaped character lies flat on the right, both of its short arms raised up the whole time, and rolls forward by rotating steadily around its own horizontal axis like a rolling log. Beside it on the left, the transparent, jelly-like rubber character rolls forward the same way, like a ball, its face rotating together with its body with each turn. Both roll together at a matched pace straight across the frame until they fully exit past the right edge, leaving the floor empty.
 
-overall_soundscape: Soft rolling thuds from the egg character and light rubbery squeaks with gentle gumball rattles from the transparent character, plus quiet happy giggles from both, continuing until they exit frame.
+overall_soundscape: None.
 
-non_diegetic_music: None — the shot plays with no score.
+non_diegetic_music: None.
 ```
 
 ## 日本語訳(参考用)
@@ -42,13 +42,13 @@ non_diegetic_music: None — the shot plays with no score.
 対象動画の0.00秒時点で、<Picture 1>(Shot 1より)が完全に参照されます。
 
 **映像・音声描写**
-[Shot 1] 3D CGのクレイアニメ調キャラクターレンダー。動画全体を通して一切動かない単一の固定俯瞰ショットで、パン・チルト・ズーム・カットは一切なく、<Picture 1>で示された通り薄い黄緑色の床を真上から見下ろしている。卵形のキャラクターは右側で寝そべったまま、自分の水平な軸を中心に丸太のように回転しながら前へ進み、短い手はずっと上に上げたままである。その左隣では、透明でゼリーのようなラバーキャラクターがボールのように同じ動きで転がり、顔は体と一緒に回転し、中のガムボールと紙吹雪は揺れ動くもののこぼれ出ない。二人はペースを合わせたまま画面をまっすぐ横切り、完全に右端の外へ出ていき、床だけが残る。
+[Shot 1] 3D CGのクレイアニメ調キャラクターレンダー。動画全体を通して一切動かない単一の固定俯瞰ショットで、パン・チルト・ズーム・カットは一切なく、<Picture 1>で示された通り薄い黄緑色の床を真上から見下ろしている。2人とも<Picture 1>の見た目・デザインのまま、崩れたり変化したりすることなく最後まで保たれる。卵形のキャラクターは右側で寝そべったまま、両手をずっと上に上げた状態で、自分の水平な軸を中心に丸太のように回転しながら前へ進む。その左隣では、透明でゼリーのようなラバーキャラクターがボールのように同じ動きで転がり、顔は体と一緒に回転する。二人はペースを合わせたまま画面をまっすぐ横切り、完全に右端の外へ出ていき、床だけが残る。
 
 **環境音**
-卵形のキャラクターの柔らかい転がる音と、透明なキャラクターの軽いゴムのきしみ音・ガムボールのカタカタという音、そして二人の穏やかな笑い声が、フレームアウトするまで続く。
+なし。
 
 **BGM(観客のみに聞こえる)**
-なし — この映像には音楽をつけない。
+なし。
 
 ## ComfyUIでの設定メモ
 - 最初のフレーム画像(2人がすでに左寄りにフレームインしている俯瞰構図)を Load Image → I2VA用の画像入力に接続
