@@ -46,6 +46,9 @@ status: draft
 | C-1(1回目) | 【✅完成】正面固定。ぽよんがその場で2回はずむ→隣のたまちゃんが勇気を出して横にジャンプし体当たり→ぽよんに弾かれて転ぶ→面白くて大笑い→ぽよんも釣られて笑う | 8s | `02-scenes/16-eye-contact-bump-and-roll-laugh.md`(設計が近い) | `02-scenes-v2/C1-poyon-bounces-tamachan-tackles-falls-laughs.md` **v2で確定、動画完成** |
 | C-2a(起き上がり) | 【確定】C-1の実際の最終フレーム→「理想画質」2ショット画像(正しい顔)へ、たまちゃんが起き上がる動きのみ。実画像でラストフレームをアンカーし顔崩れを防止 | 4s | `02-scenes/20-tamachan-gets-back-up.md` | `02-scenes-v2/C2a-tamachan-gets-back-up.md` 作成済み(v1) |
 | C-2b(2回目のぶつかり) | 【確定】「理想画質」2ショット画像から、目が合い確信めいたいたずらっぽい笑顔→ためらわず体当たり→今回はぽよんも横に倒れる→たまちゃんも転がり大喜び→ぽよんも一緒に笑う | 8s | `02-scenes/21〜22` | `02-scenes-v2/C2b-tamachan-confident-tackle-both-fall-laugh.md` 作成済み(v1) |
+| C-2c(バリエーション) | 【選択肢】ぽよんが2回弾んで「よーしいくぞ!」→お互いに向かっていってぶつかる→たまちゃんが弾き飛ばされて仰向けに倒れ、2人で大笑い | 8s | — | `02-scenes-v2/C2c-mutual-charge-tamachan-flung-back.md` 作成済み(v1) |
+| C-2d(バリエーション・✅生成済み) | 【選択肢】たまちゃんが助走をつけてぽよんにぶつかりに行く可愛いバージョン。v2で、強めの接触によりぽよんも転がって笑うオチに変更 | 7s | — | `02-scenes-v2/C2d-tamachan-running-start-bump.md` v1生成済み(可愛かった)、v2作成済み(ぽよんも転がる版) |
+| C-3(締め) | 【確定】C-2d(v2)の最終フレームから、笑いが落ち着き、次の楽しいことを予感して目を合わせ、2人並んで楽しそうにフレームアウトする | 6s | `02-scenes/23-laughing-recover-and-exit-frame.md` | `02-scenes-v2/C3-laugh-settle-exit-frame.md` 作成済み(v1) |
 
 ### D. コロコロ転がる(往復3回)
 | Cut | 内容 | 尺目安 | 対応アーカイブ |
