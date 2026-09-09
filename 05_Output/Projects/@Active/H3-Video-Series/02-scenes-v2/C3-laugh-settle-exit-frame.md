@@ -56,7 +56,38 @@ non_diegetic_music: A playful, upbeat marimba melody that picks up its pace as t
 弾むようなテンポの陽気なマリンバのメロディが、2人が一緒に歩き去るにつれてペースを上げ、画面の外へ出ていくと温かくフェードアウトする。
 
 **生成結果**
-- 動画ファイル: `03-generated-videos/C3_v1.mp4`(未生成)
+- 動画ファイル: `03-generated-videos/C3_v1.mp4`
+- 判定: NG
+- メモ: 笑いが落ち着いて真顔になる→また表情を作る、という表情の切り替えのタイミングで
+  「知らない顔」(デザイン崩れ)になってしまう。→ v2で、笑顔を落ち着かせず、
+  **笑顔のまま最後までフレームアウトする**構成に変更
+
+### v2 (2026-09-09) — v1からの変更点: 「笑いが落ち着く→真顔→期待の表情→退場」の
+表情切り替えをやめ、**最初から最後まで笑顔を保ったまま**退場する構成にした
+(表情が切り替わる瞬間にデザインが崩れる問題を避けるため)
+
+**H3プロンプト(ComfyUI用)**
+```
+How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 1) aligns with the 6.00-second mark of the target video.
+
+integrated_multimodal_description: [Shot 1] 3D CG, claymation-style character render, a single continuous static shot holds the exact same fixed position, framing, and lens throughout the entire video, showing the pale yellow-green floor and soft pastel cloud background exactly as shown in <Picture 1>, beginning with the transparent, jelly-like rubber character resting tilted on its side on the left and the egg-shaped character leaning forward on the right, both laughing exactly as shown. The camera never pans, tilts, zooms, or cuts away at any point. Both characters keep their exact appearance and design from <Picture 1> unchanged while visible, and both keep smiling and laughing throughout the entire shot — their happy, laughing expressions never settle into a neutral or calm face at any point. Still laughing, the transparent character rights itself back up to its normal round shape and the egg character rises back onto its feet, its heels never touching the ground, both of them still wearing the same delighted laughing expression the whole time. Without pausing to change their expression, they immediately toddle and bounce off together toward the right edge of the frame, still laughing and smiling the entire way, moving at a playful, upbeat pace, until both have completely exited past the right edge with no part of either character remaining visible, leaving only the empty pale yellow-green floor exactly as shown in <Picture 2>, in the exact same static framing as the opening frame, at the end of the shot.
+
+overall_soundscape: The characters' happy laughter continues steadily throughout, mixed with light, bouncy footsteps as they toddle and hop off together toward the edge of frame, their laughter fading only as they exit.
+
+non_diegetic_music: A playful, upbeat marimba melody that keeps its cheerful energy as the two characters head off together, fading out warmly as they exit the frame.
+```
+
+**日本語訳**
+参照画像と対象動画の対応 — Picture 1(Shot 1より)は対象動画の0.00秒地点に、Picture 2(Shot 1より)は対象動画の6.00秒地点に対応します。[Shot 1] 3D CGのクレイアニメ調キャラクターレンダー。動画全体を通してまったく同じ固定位置・同じ画角・同じレンズのままの、一度も切り替わらない単一の固定ショットで、<Picture 1>で示された通り薄い黄緑色の床とパステルの雲の背景を映しており、画面左で透明でゼリーのようなラバーキャラクターが横倒しのまま、画面右で卵形のキャラクターが前のめりに屈んだ姿勢のまま、<Picture 1>の通り2人とも笑っている状態から始まる。カメラは一切パン・チルト・ズーム・カットをしない。2人とも画面に映っている間は<Picture 1>の見た目・デザインのまま変化せず、**ショット全体を通してずっと笑顔・笑い続けたまま**である——嬉しそうな笑い顔が途中で真顔や落ち着いた表情に戻ることは一切ない。笑ったままの状態で、透明なキャラクターは元の丸い形に体を起こし、卵形のキャラクターも足で立ち上がる——踵は最後まで地面につかない——2人とも同じ嬉しそうな笑い顔をずっと保ったままである。表情を変えるための間を置かず、そのまま2人は一緒に、笑ったまま画面右端へ向かってよちよちと弾みながら進んでいき、最後までずっと笑顔・笑い続けたまま、楽しく軽快なペースで一緒に進み、どちらの体もまったく見えなくなるまで完全に右端の外へ出ていき、<Picture 2>で示された通り、最初のフレームとまったく同じ固定構図のまま、誰もいない薄い黄緑色の床だけが残ったところでこのショットが終わる。
+
+**環境音**
+2人の嬉しそうな笑い声がショットを通してずっと続き、2人が一緒によちよちと弾みながら画面端へ向かう軽やかな足音が混ざり、退場するにつれて笑い声だけが遠ざかりながら消えていく。
+
+**BGM(観客のみに聞こえる)**
+弾むようなテンポの陽気なマリンバのメロディが、2人が一緒に歩き去るあいだも明るいエネルギーを保ち、画面の外へ出ていくと温かくフェードアウトする。
+
+**生成結果**
+- 動画ファイル: `03-generated-videos/C3_v2.mp4`(未生成)
 - 判定: 未検証
 - メモ:
 
