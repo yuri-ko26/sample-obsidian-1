@@ -46,7 +46,11 @@ updated: 2026-09-09
 - 顔はシンプルな黒い点目+輪郭線だけの口。表情が変わっても口の輪郭線のみが変化し、
   通常時は口の内側は着色されない
 - **制約**: 口には奥行きがない(立体的なくぼみ・穴ではなく、顔の表面に描かれた平面的な線)
-- **制約**: 眉毛はつけない(顔のパーツは点目と輪郭線の口のみ)
+- **制約(クライアント指定・厳守)**: **眉毛は絶対につけない**(顔のパーツは点目と輪郭線の
+  口のみ)。キャラクターデザイン上の重要な区別点のため、笑い顔・驚き顔などどんな表情の
+  ときでも眉毛が生えることは一切ない。プロンプトには毎回明示的に
+  "the egg character never has eyebrows — its face is only round dot eyes and an
+  outline-only mouth" のように書くこと
 - **笑った時の表情**(キャラクターシートより): 目は三日月形に細くカーブし、口は開いて
   中にコーラルピンク色がのぞく(このときだけ口に色がつく例外表現。下記「驚き顔」の
   例外ルールと同じ扱い)
@@ -111,6 +115,12 @@ updated: 2026-09-09
   skin, so the gumballs behind it remain visible straight through the open mouth
   outline")を使うこと。単に「色をつけない」ではなく「体と同じ透明な素材」と
   明示する方が効果的だった
+- **制約**: 大笑いするときも、口は**大きくなりすぎない**こと。控えめな笑顔の
+  カーブから一回り広がる程度にとどめ、顔の面積の大部分を占めるような誇張した
+  巨大な口にはならないようにする(2026-09-09、クライアントよりフィードバック)。
+  プロンプトには "its mouth curves into a moderately wide, gentle smile shape —
+  not exaggerated or oversized, just a natural, modestly wider curve than its
+  usual resting smile" のように書くこと
 - サイズ: 高さ約15cm(たまちゃんよりひと回り大きい。実測比較: ぽよん15cm/たまちゃん10cm)
 
 ---
