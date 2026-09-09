@@ -57,7 +57,36 @@ non_diegetic_music: A playful, bouncy marimba melody that lifts into a warm, che
 弾むようなテンポの陽気なマリンバのメロディが、2人が笑い出す瞬間に温かく明るいフレーズへと盛り上がる。
 
 **生成結果**
-- 動画ファイル: `03-generated-videos/C1_v1.mp4`(未生成)
+- 動画ファイル: `03-generated-videos/C1_v1.mp4`
+- 判定: NG(部分的)
+- メモ: 動き自体はとても良い。ただしぽよんが笑うときに口の中に色がついてしまった
+  (キャラクター設定では口は常に輪郭線のみ・無着色のはず)。→ v2で口の描写を強化
+
+### v2 (2026-09-09) — v1からの変更点: ぽよんの口の描写を強化(色がつかないように、
+体と同じ透明素材であることを明示)
+
+**H3プロンプト(ComfyUI用)**
+```
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+
+integrated_multimodal_description: [Shot 1] 3D CG, claymation-style character render. A single static front-on shot, fixed in place for the entire video with no panning, tilting, zooming, or cutting, shows the pale yellow-green floor and soft pastel cloud background exactly as shown in <Picture 1>. Both characters keep their exact appearance, colors, and design from <Picture 1> unchanged throughout, with no distortion. On the left, the transparent, jelly-like rubber character bounces lightly in place twice, its round body compressing slightly downward and springing back up each time like a soft water balloon; no matter how much its body compresses or shakes, the colorful gumballs and confetti sealed inside it only shift and jostle against each other, never once flying out, falling loose, or escaping through its skin. Watching it bounce happily, the egg-shaped character on the right visibly gathers its courage for a brief beat, then launches itself sideways through the air toward the transparent character, throwing its whole body into a playful tackle. The instant it makes contact, the transparent character's round body dimples inward at the point of contact without ever flattening or losing its overall roundness, and even at the moment of hardest impact, its sealed skin holds completely and not a single gumball or piece of confetti escapes or spills out; its springy rebound knocks the egg character backward off its feet, and the egg character topples sideways to the floor, its short stiff legs flipping up as it lands. The moment it lands, the egg character bursts into delighted laughter at how funny the tumble felt, its eyes crinkling shut into laughing crescents and its mouth opening wide with a hint of soft coral pink visible inside. Watching this, the transparent character laughs too, its round eyes crinkling shut into laughing crescents while its mouth stretches into a wide curved shape made of nothing but a thin dark outline, exactly like the rest of its clear body: there is no fill, shading, or paint of any color inside this mouth shape, and it stays just as transparent and see-through as its glossy skin, so the colorful gumballs and confetti behind it remain clearly visible straight through the open mouth outline, never obscured by any solid color and never spilling through the open shape either. Its body is already back to perfectly round with no trace of the earlier contact point remaining, its interior contents exactly as full and unchanged as they were at the very start.
+
+overall_soundscape: Two soft, rubbery squeak-bounces from the transparent character, then a light patter as the egg character launches itself sideways, followed by a springy boing on impact and a soft thud as the egg character topples to the floor. Bright, delighted laughter from both characters follows.
+
+non_diegetic_music: A playful, bouncy marimba melody that lifts into a warm, cheerful flourish the moment both characters burst into laughter.
+```
+
+**日本語訳**
+対象動画の0.00秒時点で、<Picture 1>(Shot 1より)が完全に参照されます。[Shot 1] 3D CGのクレイアニメ調キャラクターレンダー。動画全体を通して一切動かない単一の固定正面ショットで、<Picture 1>で示された通り薄い黄緑色の床とパステルの雲の背景を映している。2人とも<Picture 1>の見た目・色・デザインのまま、崩れたり変化したりすることなく保たれる。左側の透明でゼリーのようなラバーキャラクターが、その場で軽く2回はずむ——水風船のように体がわずかに沈んでは弾んで戻る動きを2回繰り返す。体がどれだけ圧縮されたり揺れたりしても、中に密閉された色とりどりのガムボールと紙吹雪はお互いにぶつかり合って揺れ動くだけで、一度たりとも外に飛び出したり、こぼれ落ちたり、体の外側にはみ出したりすることはない。それを楽しそうに見ていた右側の卵形のキャラクターは、一瞬勇気を溜めるような間を見せたあと、横に飛び出して透明なキャラクターに向かって体全体で楽しそうに体当たりする。接触した瞬間、透明なキャラクターの丸い体は接触点でくぼむが、平らになったり丸みを失ったりすることはなく、最も強い衝撃を受けたその瞬間でさえ、密閉された表面は完全に保たれ、ガムボールも紙吹雪も一粒たりとも外に漏れ出すことはない。その弾力のある反動で卵形のキャラクターは後ろによろけて足を取られ、短く硬い脚を跳ね上げながら横向きに床へ転がる。着地した瞬間、卵形のキャラクターはその転び方があまりにおかしくて嬉しそうに笑い出し、目は三日月形にきゅっと細まり、口は大きく開いて中にほんのりコーラルピンク色がのぞく。それを見ていた透明なキャラクターも一緒に笑い出す——丸い目はぎゅっと閉じて笑いじわの三日月形になり、口は体の他の部分とまったく同じ、薄い輪郭線だけでできた大きくカーブした形に伸びる。この口の中には色も陰影も塗りも一切なく、光沢のある体の表面とまったく同じように透き通ったままで、後ろにある色とりどりのガムボールと紙吹雪が、開いた口の輪郭線を通してそのままはっきり透けて見え、どんな色にも塗りつぶされることも、その開いた形からこぼれ出ることもない。体はすでに接触の跡も残らず完全に丸い形に戻り、中身も最初とまったく変わらず満たされたままである。
+
+**環境音**
+透明なキャラクターが2回はずむやわらかいゴムの弾む音、卵形のキャラクターが横に飛び出す軽い足音、接触した瞬間の弾むような「ぼよん」という音、卵形のキャラクターが床に転がる柔らかい「どすん」という音。その後、2人の明るく嬉しそうな笑い声が続く。
+
+**BGM(観客のみに聞こえる)**
+弾むようなテンポの陽気なマリンバのメロディが、2人が笑い出す瞬間に温かく明るいフレーズへと盛り上がる。
+
+**生成結果**
+- 動画ファイル: `03-generated-videos/C1_v2.mp4`(未生成)
 - 判定: 未検証
 - メモ:
 
