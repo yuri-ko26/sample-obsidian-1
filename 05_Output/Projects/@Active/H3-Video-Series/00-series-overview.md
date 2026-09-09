@@ -50,3 +50,4 @@ MiniMax H3(ComfyUIで生成)を使った、2キャラクターのショート動
 - `02-scenes/20-tamachan-gets-back-up.md` — シーン16の続き。転んで仰向けのたまちゃんが起き上がって元の立ち姿勢に戻るシーン(FL2VA・最初と最後どちらも実画像使用)
 - `02-scenes/21-tamachan-bumps-poyon-again-excited.md` — シーン16・20の続き。楽しさを予感してニコニコしながら、たまちゃんが再びぽよんに体当たりして転がり笑うシーン(FL2VA・最初と最後どちらも実画像使用)
 - `02-scenes/22-tamachan-bumps-poyon-hard-both-fall-laughing.md` — シーン16・20・21の続き。たまちゃんが今回は強くぶつかり、ぽよんも横に倒れて2人で体を震わせながら大笑いするシーン(FL2VA・最初と最後どちらも実画像使用)
+- `02-scenes/23-laughing-recover-and-exit-frame.md` — シーン22の続き。大笑いから起き上がった2人が目を合わせ、次の楽しいことを探しに下手へフレームアウトしていくシーン(FL2VA・最初と最後どちらも実画像使用)
