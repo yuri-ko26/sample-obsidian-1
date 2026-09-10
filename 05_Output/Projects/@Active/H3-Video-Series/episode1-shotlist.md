@@ -75,8 +75,14 @@ status: draft
 | Cut | 内容 | 尺目安 | 対応アーカイブ |
 |---|---|---|---|
 | F-0(導入) | 【確定】誰もいない雲の稜線から、たまちゃん・ぽよんがフレームインしてきてF-1の開始位置に到着する | 6s | — | `02-scenes-v2/F0-entrance-frame-in.md` 作成済み(v1) |
-| F-1(1回目) | 【確定】たまちゃんがぽよんを追いかける→ぽよんフレームアウト→たまちゃんの後ろから出てくる→たまちゃん振り返って笑う | 10s | `02-scenes/03-cloud-ridge-chase.md`, `09-overhead-chase-no-cut.md` | `02-scenes-v2/F1-tamachan-chases-poyon.md` 作成済み(v1) |
-| F-2(2回目) | 【確定】役割を逆にして同じ展開。ぽよんがたまちゃんを追いかける→たまちゃんフレームアウト→ぽよんの後ろから出てくる→ぽよん振り返って笑う | 10s | `02-scenes/15-cloud-ridge-hide-and-seek.md` | `02-scenes-v2/F2-poyon-chases-tamachan.md` 作成済み(v1) |
+| F-1a(1回目・前半) | 【確定】たまちゃんがぽよんを楽しく追いかける→ぽよんフレームアウト→たまちゃんは追いかけ続ける(表情切り替えなし) | 6s | `02-scenes/03-cloud-ridge-chase.md`, `09-overhead-chase-no-cut.md` | `02-scenes-v2/F1a-tamachan-chases-poyon-fun.md` 作成済み(v1) |
+| F-1b(1回目・後半) | 【確定】ぽよんがたまちゃんの後ろから登場して驚かす→たまちゃん振り返って笑う(F-1aの最終フレームから開始) | 5〜6s | — | `02-scenes-v2/F1b-poyon-surprises-tamachan.md` 作成済み(v1) |
+| F-2a(2回目・前半) | 【確定】役割を逆にして同じ展開。たまちゃんが楽しく逃げてぽよんが追いかける→たまちゃんフレームアウト→ぽよんは追いかけ続ける | 6s | `02-scenes/15-cloud-ridge-hide-and-seek.md` | `02-scenes-v2/F2a-poyon-chases-tamachan-fun.md` 作成済み(v1) |
+| F-2b(2回目・後半) | 【確定】たまちゃんがぽよんの後ろから登場して驚かす→ぽよん振り返って笑う(F-2aの最終フレームから開始) | 5〜6s | — | `02-scenes-v2/F2b-tamachan-surprises-poyon.md` 作成済み(v1) |
+
+> **メモ(2026-09-10)**: F-1/F-2は元々1カット構成だったが、ぽよんの口に色がつく不具合の
+> 再発を受け、それぞれ「楽しくおいかけっこ(a)」「後ろから登場で驚く(b)」の前後半に分割した。
+> b側のPicture1はa側の実際の最終フレームを切り出して使用する(実画像アンカーで顔崩れ防止)。
 
 ### G. いないいないばあ(×4・4回目で大笑いして終わる)
 | Cut | 内容 | 尺目安 | 対応アーカイブ |

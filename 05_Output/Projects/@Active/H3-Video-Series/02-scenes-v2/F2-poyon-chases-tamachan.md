@@ -2,8 +2,13 @@
 project: H3-Video-Series-v2
 cut: F-2
 mode: I2VA
-status: draft
+status: superseded
 ---
+
+> **status: superseded** — F-1と同様、ぽよんの口に色がつく不具合防止のため前後半に分割しました。
+> 以後はこちらを使用してください:
+> - `F2a-poyon-chases-tamachan-fun.md`(楽しくおいかけっこ)
+> - `F2b-tamachan-surprises-poyon.md`(後ろから登場で驚く)
 
 # カットF-2: 今度はぽよんがたまちゃんを追いかける(F-1と同じ展開を反対の役割で)
 
