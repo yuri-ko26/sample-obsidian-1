@@ -74,6 +74,7 @@ status: draft
 ### F. 雲の稜線おいかけっこ(追いかけて追いつかれる・×2)
 | Cut | 内容 | 尺目安 | 対応アーカイブ |
 |---|---|---|---|
+| F-0(導入) | 【確定】誰もいない雲の稜線から、たまちゃん・ぽよんがフレームインしてきてF-1の開始位置に到着する | 6s | — | `02-scenes-v2/F0-entrance-frame-in.md` 作成済み(v1) |
 | F-1(1回目) | 【確定】たまちゃんがぽよんを追いかける→ぽよんフレームアウト→たまちゃんの後ろから出てくる→たまちゃん振り返って笑う | 10s | `02-scenes/03-cloud-ridge-chase.md`, `09-overhead-chase-no-cut.md` | `02-scenes-v2/F1-tamachan-chases-poyon.md` 作成済み(v1) |
 | F-2(2回目) | 【確定】役割を逆にして同じ展開。ぽよんがたまちゃんを追いかける→たまちゃんフレームアウト→ぽよんの後ろから出てくる→ぽよん振り返って笑う | 10s | `02-scenes/15-cloud-ridge-hide-and-seek.md` | `02-scenes-v2/F2-poyon-chases-tamachan.md` 作成済み(v1) |
 
