@@ -11,7 +11,7 @@
 #     bash setup-h3-comfyui.sh --gpu l40s --dry-run  # 実行せず内容だけ見る
 #
 #   --gpu に指定できる値:
-#     a6000 a100 l40s rtx6000ada 4090 5090 rtxpro4500 pro6000mig48 rtxpro6000 h100
+#     a40 a6000 a100 l40s rtx6000ada 4090 5090 rtxpro4500 pro6000mig48 rtxpro6000 h100
 # =============================================================================
 set -euo pipefail
 
@@ -49,12 +49,16 @@ done
 #   Hopper  (H100)               … FP8/BF16
 #   Blackwell (RTX 5090/PRO系)   … FP8 + NVFP4(この世代だけNVFP4が本当に速い)
 case "$GPU" in
-  a6000|rtxa6000)
-    GPU_LABEL="RTX A6000 48GB (Ampere)"
+  a40|a6000|rtxa6000)
+    case "$GPU" in
+      a40) GPU_LABEL="A40 48GB (Ampere)" ;;
+      *)   GPU_LABEL="RTX A6000 48GB (Ampere)" ;;
+    esac
     DIFFUSION="minimax_h3_fl2va_pruned_int8_convrot.safetensors"
     DIFFUSION_REF="minimax_h3_ref2va_pruned_int8_convrot.safetensors"
     TEXT_ENCODER="qwen3vl_32b_minimax_h3_int8_convrot.safetensors"
-    NOTE="Ampere世代はFP8に非対応。INT8を使います。48GBあるので余裕があります。" ;;
+    NOTE="Ampere世代はFP8に非対応のためINT8を使います。48GBのVRAMには余裕があります。
+                (システムRAMが64GB未満の場合、読み込み時にメモリ不足が出ることがあります)" ;;
   a100)
     GPU_LABEL="A100 SXM 80GB (Ampere)"
     DIFFUSION="minimax_h3_fl2va_pruned_bf16.safetensors"
@@ -101,7 +105,7 @@ case "$GPU" in
     TEXT_ENCODER="qwen3vl_32b_minimax_h3_int8_convrot.safetensors"
     NOTE="80GBあるので拡散モデルはBF16(量子化なし)。品質比較の基準として使えます。" ;;
   "") die "--gpu を指定してください
-   Ampere    : a6000 / a100
+   Ampere    : a40 / a6000 / a100
    Ada       : l40s / rtx6000ada / 4090
    Blackwell : 5090 / rtxpro4500 / pro6000mig48 / rtxpro6000
    Hopper    : h100" ;;
