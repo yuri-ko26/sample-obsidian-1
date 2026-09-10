@@ -95,6 +95,13 @@ updated: 2026-09-09
   (例: "exactly 4 yellow, 2 red, 1 light blue, and 3 yellow-green gumballs — ten in
   total, this exact count and color mix never changing, with no other colors or
   extra gumballs appearing")
+- **制約**(2026-09-10、クライアントよりフィードバック): ガムボールは**常に重力に従う**こと。
+  空中に浮いたまま静止して見えたり、お互いにくっついて動かないように見えたりしては
+  いけない。常に体の下側に自然に沈んで溜まり、動いたときはお互いや内壁にぶつかって
+  ころころと転がる・揺れる、という自然な物理挙動を保つ。プロンプトには
+  "the gumballs always settle naturally at the bottom of its body under gravity,
+  never floating motionless in mid-air or appearing stuck together — they roll and
+  jostle against each other and the inner wall as it moves" のように明記すること
 - **制約**(キャラクターシート明記): ガムボールの数と色はこのシートから変更しない
 - 手足はない
 - **制約**: どんな場面でも脚(足)が生えることは絶対にない。常に手足のない球体/しずく型のままである
