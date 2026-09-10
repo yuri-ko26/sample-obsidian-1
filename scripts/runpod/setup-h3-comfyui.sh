@@ -10,7 +10,7 @@
 #     bash setup-h3-comfyui.sh --gpu l40s --yes      # 確認なしで実行
 #     bash setup-h3-comfyui.sh --gpu l40s --dry-run  # 実行せず内容だけ見る
 #
-#   --gpu に指定できる値: l40s / 5090 / 4090 / h100
+#   --gpu に指定できる値: l40s / rtx6000ada / 5090 / 4090 / h100
 # =============================================================================
 set -euo pipefail
 
@@ -43,12 +43,15 @@ done
 # H3は「拡散モデル + テキストエンコーダ(Qwen3-VL 32B) + VAE 2つ」で動きます。
 # GPUの世代によって、速い量子化形式が違うので、ここで振り分けます。
 case "$GPU" in
-  l40s)
-    GPU_LABEL="L40S 48GB (Ada)"
+  l40s|rtx6000ada|6000ada)
+    case "$GPU" in
+      l40s) GPU_LABEL="L40S 48GB (Ada)" ;;
+      *)    GPU_LABEL="RTX 6000 Ada 48GB (Ada)" ;;
+    esac
     DIFFUSION="minimax_h3_fl2va_pruned_fp8_scaled.safetensors"
     DIFFUSION_REF="minimax_h3_ref2va_pruned_fp8_scaled.safetensors"
     TEXT_ENCODER="qwen3vl_32b_minimax_h3_int8_convrot.safetensors"
-    NOTE="Ada世代はFP8が速い。NVFP4は速度上の利点がないので使いません。" ;;
+    NOTE="Ada世代(48GB)はFP8が速い。NVFP4は速度上の利点がないので使いません。" ;;
   5090)
     GPU_LABEL="RTX 5090 32GB (Blackwell)"
     DIFFUSION="minimax_h3_fl2va_pruned_fp8_scaled.safetensors"
@@ -67,8 +70,8 @@ case "$GPU" in
     DIFFUSION_REF="minimax_h3_ref2va_pruned_bf16.safetensors"
     TEXT_ENCODER="qwen3vl_32b_minimax_h3_int8_convrot.safetensors"
     NOTE="80GBあるので拡散モデルはbf16(量子化なし)。品質比較の基準として使えます。" ;;
-  "") die "--gpu を指定してください (l40s / 5090 / 4090 / h100)" ;;
-  *)  die "--gpu の値が不正です: $GPU  (l40s / 5090 / 4090 / h100)" ;;
+  "") die "--gpu を指定してください (l40s / rtx6000ada / 5090 / 4090 / h100)" ;;
+  *)  die "--gpu の値が不正です: $GPU  (l40s / rtx6000ada / 5090 / 4090 / h100)" ;;
 esac
 
 VIDEO_VAE="minimax_h3_video_vae_fp16.safetensors"
