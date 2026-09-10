@@ -39,10 +39,13 @@ updated: 2026-09-09
 ## キャラクターA: たまちゃん(卵キャラクター)
 - 上半分は白い卵の殻、下半分はピンク(コーラル)色の卵の殻の断面(ギザギザの境目)
 - 短い焦げ茶〜マルーン色の腕と脚が生えている、赤ちゃんのようなよちよち歩き
-- **制約**: 歩く時、踵は地面につかない/足首に関節がなく人間のようには曲げない
-  (棒状でつま先が丸まった足のまま、常にその丸い接地面だけで立つ・歩く。
-  キャラクターシートに明記: "Do not put your heels down when walking" /
-  "Do not bend your feet with stiff feet.")
+- **制約(徹底)**: 歩く・走る・追いかける等どんな動きでも、**常につま先立ちのまま**で、
+  踵は絶対に地面につかない/足首に関節がなく人間のようには曲げない
+  (棒状でつま先が丸まった足のまま、常にその丸い接地面だけで立つ・歩く・つま先で歩く)。
+  プロンプトには「歩く」だけでなく必ず「always walking up on the very tips of its toes,
+  its heels never touching the ground, its stiff legs never bending at the ankle」まで
+  明記すること。キャラクターシートに明記: "Do not put your heels down when walking" /
+  "Do not bend your feet with stiff feet."
 - 顔はシンプルな黒い点目+輪郭線だけの口。表情が変わっても口の輪郭線のみが変化し、
   通常時は口の内側は着色されない
 - **制約**: 口には奥行きがない(立体的なくぼみ・穴ではなく、顔の表面に描かれた平面的な線)
