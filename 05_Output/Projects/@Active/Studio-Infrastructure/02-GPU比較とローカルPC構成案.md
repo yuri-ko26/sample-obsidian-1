@@ -8,6 +8,8 @@ tags: [project/studio-infra, ai/tools/minimax-h3, business/operations]
 
 # GPU比較とローカルPC構成案
 
+> 🛒 **実際の製品と価格の比較は → [[07-ローカルPC-製品比較と見積もり]]**
+
 > ⚠️ 価格は2026年9月時点の調査値です。**特にRTX 5090は品薄で価格変動が激しい**ため、
 > 発注前に必ず現在価格を確認してください。
 
