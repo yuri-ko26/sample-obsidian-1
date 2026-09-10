@@ -2,8 +2,12 @@
 project: H3-Video-Series-v2
 cut: F-1b
 mode: I2VA
-status: draft
+status: superseded
 ---
+
+> **status: superseded(2026-09-10)** — Picture1にぽよんが映っていないため、AIが
+> ぽよんの見た目を一から想像し直してしまい「別の生き物」になる問題が発生。撤回。
+> **`F1-tamachan-chases-poyon.md`のv2(1カット版)を使用してください**。
 
 # カットF-1b: ぽよんがたまちゃんの後ろから登場して驚かす→たまちゃんが振り返って笑う
 

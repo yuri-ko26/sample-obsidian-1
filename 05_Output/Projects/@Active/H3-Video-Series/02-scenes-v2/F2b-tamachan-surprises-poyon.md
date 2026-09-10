@@ -2,8 +2,11 @@
 project: H3-Video-Series-v2
 cut: F-2b
 mode: I2VA
-status: draft
+status: superseded
 ---
+
+> **status: superseded(2026-09-10)** — F-1bと同じ理由(分割時のキャラクター一貫性
+> 問題)で撤回。**`F2-poyon-chases-tamachan.md`のv2(1カット版)を使用してください**。
 
 # カットF-2b: たまちゃんがぽよんの後ろから登場して驚かす→ぽよんが振り返って笑う
 

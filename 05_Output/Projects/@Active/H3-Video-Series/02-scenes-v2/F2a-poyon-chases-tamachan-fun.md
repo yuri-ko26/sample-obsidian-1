@@ -2,8 +2,11 @@
 project: H3-Video-Series-v2
 cut: F-2a
 mode: I2VA
-status: draft
+status: superseded
 ---
+
+> **status: superseded(2026-09-10)** — F-1aと同じ理由(分割時のキャラクター一貫性
+> 問題)で撤回。**`F2-poyon-chases-tamachan.md`のv2(1カット版)を使用してください**。
 
 # カットF-2a: ぽよんがたまちゃんを楽しく追いかける→たまちゃんフレームアウト→ぽよんは追いかけ続ける
 
