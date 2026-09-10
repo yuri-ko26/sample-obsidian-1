@@ -10,7 +10,8 @@
 #     bash setup-h3-comfyui.sh --gpu l40s --yes      # 確認なしで実行
 #     bash setup-h3-comfyui.sh --gpu l40s --dry-run  # 実行せず内容だけ見る
 #
-#   --gpu に指定できる値: l40s / rtx6000ada / 5090 / 4090 / h100
+#   --gpu に指定できる値:
+#     a6000 a100 l40s rtx6000ada 4090 5090 rtxpro4500 pro6000mig48 rtxpro6000 h100
 # =============================================================================
 set -euo pipefail
 
@@ -42,7 +43,24 @@ done
 # ---------------------------------------------------------------- GPUごとの構成
 # H3は「拡散モデル + テキストエンコーダ(Qwen3-VL 32B) + VAE 2つ」で動きます。
 # GPUの世代によって、速い量子化形式が違うので、ここで振り分けます。
+# 世代ごとに「速い数値形式」が違うため、GPUで構成を振り分けます。
+#   Ampere (A6000/A100)          … FP8非対応。INT8かBF16を使う
+#   Ada     (L40S/RTX 6000 Ada)  … FP8が速い
+#   Hopper  (H100)               … FP8/BF16
+#   Blackwell (RTX 5090/PRO系)   … FP8 + NVFP4(この世代だけNVFP4が本当に速い)
 case "$GPU" in
+  a6000|rtxa6000)
+    GPU_LABEL="RTX A6000 48GB (Ampere)"
+    DIFFUSION="minimax_h3_fl2va_pruned_int8_convrot.safetensors"
+    DIFFUSION_REF="minimax_h3_ref2va_pruned_int8_convrot.safetensors"
+    TEXT_ENCODER="qwen3vl_32b_minimax_h3_int8_convrot.safetensors"
+    NOTE="Ampere世代はFP8に非対応。INT8を使います。48GBあるので余裕があります。" ;;
+  a100)
+    GPU_LABEL="A100 SXM 80GB (Ampere)"
+    DIFFUSION="minimax_h3_fl2va_pruned_bf16.safetensors"
+    DIFFUSION_REF="minimax_h3_ref2va_pruned_bf16.safetensors"
+    TEXT_ENCODER="qwen3vl_32b_minimax_h3_int8_convrot.safetensors"
+    NOTE="80GBあるので拡散モデルは量子化なし(BF16)。品質重視の構成です。" ;;
   l40s|rtx6000ada|6000ada)
     case "$GPU" in
       l40s) GPU_LABEL="L40S 48GB (Ada)" ;;
@@ -52,12 +70,24 @@ case "$GPU" in
     DIFFUSION_REF="minimax_h3_ref2va_pruned_fp8_scaled.safetensors"
     TEXT_ENCODER="qwen3vl_32b_minimax_h3_int8_convrot.safetensors"
     NOTE="Ada世代(48GB)はFP8が速い。NVFP4は速度上の利点がないので使いません。" ;;
-  5090)
-    GPU_LABEL="RTX 5090 32GB (Blackwell)"
+  5090|rtxpro4500|pro4500)
+    case "$GPU" in
+      5090) GPU_LABEL="RTX 5090 32GB (Blackwell)" ;;
+      *)    GPU_LABEL="RTX PRO 4500 32GB (Blackwell)" ;;
+    esac
     DIFFUSION="minimax_h3_fl2va_pruned_fp8_scaled.safetensors"
     DIFFUSION_REF="minimax_h3_ref2va_pruned_fp8_scaled.safetensors"
     TEXT_ENCODER="qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors"
-    NOTE="Blackwell世代のみNVFP4が本当に速い。テキストエンコーダを小さくしてVRAMを確保します。" ;;
+    NOTE="Blackwell世代のみNVFP4が本当に速い。32GBに収めるためテキストエンコーダを小さくします。" ;;
+  pro6000mig48|rtxpro6000|pro6000)
+    case "$GPU" in
+      pro6000mig48) GPU_LABEL="PRO 6000 MIG 48GB (Blackwell)" ;;
+      *)            GPU_LABEL="RTX PRO 6000 96GB (Blackwell)" ;;
+    esac
+    DIFFUSION="minimax_h3_fl2va_pruned_fp8_scaled.safetensors"
+    DIFFUSION_REF="minimax_h3_ref2va_pruned_fp8_scaled.safetensors"
+    TEXT_ENCODER="qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors"
+    NOTE="Blackwell世代。NVFP4が使えるうえVRAMにも余裕があります。" ;;
   4090)
     GPU_LABEL="RTX 4090 24GB (Ada)"
     DIFFUSION="minimax_h3_fl2va_pruned_fp8_scaled.safetensors"
@@ -65,13 +95,17 @@ case "$GPU" in
     TEXT_ENCODER="qwen3vl_32b_minimax_h3_int8_convrot.safetensors"
     NOTE="24GBではVRAMに収まりきらず、システムRAMへの退避が多く発生します。遅くなります。" ;;
   h100)
-    GPU_LABEL="H100 80GB (Hopper)"
+    GPU_LABEL="H100 SXM/PCIe 80GB (Hopper)"
     DIFFUSION="minimax_h3_fl2va_pruned_bf16.safetensors"
     DIFFUSION_REF="minimax_h3_ref2va_pruned_bf16.safetensors"
     TEXT_ENCODER="qwen3vl_32b_minimax_h3_int8_convrot.safetensors"
-    NOTE="80GBあるので拡散モデルはbf16(量子化なし)。品質比較の基準として使えます。" ;;
-  "") die "--gpu を指定してください (l40s / rtx6000ada / 5090 / 4090 / h100)" ;;
-  *)  die "--gpu の値が不正です: $GPU  (l40s / rtx6000ada / 5090 / 4090 / h100)" ;;
+    NOTE="80GBあるので拡散モデルはBF16(量子化なし)。品質比較の基準として使えます。" ;;
+  "") die "--gpu を指定してください
+   Ampere    : a6000 / a100
+   Ada       : l40s / rtx6000ada / 4090
+   Blackwell : 5090 / rtxpro4500 / pro6000mig48 / rtxpro6000
+   Hopper    : h100" ;;
+  *)  die "--gpu の値が不正です: $GPU  (--help で一覧)" ;;
 esac
 
 VIDEO_VAE="minimax_h3_video_vae_fp16.safetensors"
