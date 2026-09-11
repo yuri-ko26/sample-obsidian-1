@@ -13,46 +13,62 @@ tags: [project/studio-infra, ai/tools/runpod]
 
 ---
 
-## いまの状態（2026-09-10時点）
+## いまの状態（2026-09-11 更新）
 
 | | |
 |---|---|
-| ✅ Network Volume | `minimax_h3_comfyui_volume` / **150GB** / **AP-JP-1** / 月$10.50 |
-| ⏳ モデル | まだダウンロードしていない（約50GB） |
-| ⏳ GPU | **在庫待ち** |
-| ✅ 残高 | 約$56 |
+| ✅ Network Volume | `minimax_h3_comfyui_volume` / AP-JP-1 / 月$10.50 |
+| ⚠️ **実効容量** | **約48GB**(150GBで作ったが、複製込みで消費されるため) |
+| ✅ 取得済み | VAE 2つ(5.5GB)、Turbo LoRA(1.9GB) |
+| ⏳ 未取得 | テキストエンコーダ・拡散モデル(**計約37GB**) |
+| ⏳ GPU | 在庫待ち |
 
-**やり残しは「モデルのダウンロード」だけ**です。それが終われば、以後は2〜3分で生成に入れます。
-
----
-
-## 今日わかったこと（大事な前提）
-
-### AP-JP-1（日本）には、H100 SXM と H200 SXM しかない
-
-安い48GBのカード（A6000・A40・L40S・RTX 6000 Ada）は**日本には置いていません**。
-だから今までH100 SXMを使っていたのは、選んだからではなく**それしか無かったから**です。
-
-### 安いカードはあるが、場所が問題
-
-| GPU | 価格 | ある場所 | ライセンス |
-|---|---|---|---|
-| A40 48GB | $0.49 | CA-MTL-1 | ✅ カナダはOK。ただし**ボリュームが作れないDC** |
-| RTX A6000 48GB | $0.53 | CA-MTL-3 / EU-RO-1 | カナダはOKだが**在庫なし** |
-| RTX PRO 4500 32GB | $0.72 | EU-RO-1 / EUR-IS-1 | ⚠️ EUは**ライセンス除外地域** |
-| RTX PRO 6000 96GB | $2.09 | EU / US中心 | ⚠️ 除外地域 |
-| **H100 SXM 80GB** | **$3.49** | **AP-JP-1** | ✅ **日本。いちばん確実** |
-
-> H3のライセンス適用地域は「米国・EU・英国・韓国**を除く**」。
-> クライアント案件では、**日本・カナダ・インド・オーストラリア**を選ぶのが安心。
-
-### 在庫は数分単位で変わる
-
-A40もH100も、目の前で「出たり消えたり」しました。**タイミングの問題**なので、
-気長に構えて大丈夫です。焦って高いカードを掴む必要はありません。
+**残りは2ファイルのダウンロードだけ。約20分で完了します。**
 
 ---
 
+## 今日わかった大事なこと(ここを読めば同じ失敗をしません)
+
+### ① ボリュームの実効容量は約48GB
+
+150GBで作りましたが、**48GBで書き込みエラー**(`Disk quota exceeded`)になります。
+ネットワークストレージが**複製を持つ仕組み**で、複製込みでクォータを消費するためです。
+`df` には現れないので気づけません。**この48GBに収まる構成を選ぶ必要があります。**
+
+### ② `hf download` は使えない。**curl を使う**
+
+`hf download` は Xet という「チャンク分割して組み立て直す」方式で、
+RunPodのストレージと相性が悪く **`File reconstruction error`** で失敗します。
+**curl で直接落とせば問題なく通ります。**
+
+### ③ 使うモデルの組み合わせ(48GBに収まる唯一の構成)
+
+| 用途 | ファイル | サイズ |
+|---|---|---|
+| 拡散モデル | `diffusion_models/minimax_h3_fl2va_pruned_fp8_scaled` | **20.96GB** |
+| テキストエンコーダ | `text_encoders/qwen3vl_32b_minimax_h3_nvfp4_awq` | **15.69GB** |
+| 映像VAE | `vae/minimax_h3_video_vae_fp16` | 5.21GB ✅取得済 |
+| 音声VAE | `vae/minimax_h3_audio_vae_fp32` | 0.61GB ✅取得済 |
+| Turbo LoRA | `loras/minimax_h3_fl2v_turbo_4step_v1.0_768p_comfyui_bf16` | 1.96GB ✅取得済 |
+| | **合計** | **約45GB** |
+
+> ⚠️ **`int8_convrot` のエンコーダ(25.2GB)は入りません。** fp8拡散と合わせると54.7GBになります。
+> ⚠️ **H100はFP8をネイティブ対応**しているので、拡散モデルのfp8は速度面でむしろ有利です。
+> エンコーダのnvfp4は生成1回につき1度しか動かないため、速度への影響は小さいです。
+
+### ④ 🔥 Turbo LoRA がある
+
+`loras/minimax_h3_fl2v_turbo_4step_v1.0_768p_comfyui_bf16.safetensors`(取得済み)
+**4ステップで生成できるLoRA**です。通常は20〜50ステップ必要なので、
+**生成時間を大幅に短縮できる可能性があります。** 画質と引き換えなので、
+`C-2d` で通常版と比較してから採用を決めること。
+
+### ⑤ その他、後日試す価値があるもの
+
+- `embeddings/` に**演出プリセット10種**(bullet_time / spiral_ascent / storm_magic など)
+- `model_patches/` に **ControlNet**(キャラクターの一貫性に効く可能性)
+
+---
 ## 空きを見つけたら ─ 手順
 
 ### STEP 1 ─ Podを立てる
@@ -81,85 +97,79 @@ A40もH100も、目の前で「出たり消えたり」しました。**タイ�
 
 > 貼り付けは **Ctrl+V**（Macは **Cmd+V**）。効かない時は**右クリック → 貼り付け**。
 
-### STEP 3 ─ コマンドを順番に（1つずつ、終わってから次へ）
+### STEP 3 ─ コマンドを順番に(1つずつ、終わってから次へ)
 
-#### ① 確認 ─ ここで `150G` が見えるか
+> ⚠️ **長い文章の貼り付けは途中で切れます。** 下のコマンドは全部短くしてあります。
+> 1行ずつコピーして貼ってください。
+
+#### ① 確認
 
 ```bash
-cd /workspace && df -h /workspace && ls -la
+cd /workspace && df -h /workspace && ls -la && du -sh /workspace
 ```
 
-**`150G` が見えなければ、ここで止めてPodを作り直す。**（ボリュームが繋がっていない）
+`ap-jp-1.runpod.net` が見えればボリュームは繋がっています
+(`150G` ではなく `559T` と出ますが、それが正常です)。
 
-#### ② 準備（3分）
+#### ② ComfyUIと必要なもの(初回のみ・既にあれば飛ばす)
 
 ```bash
-cd /workspace
-git clone https://github.com/comfyanonymous/ComfyUI
+cd /workspace && git clone https://github.com/comfyanonymous/ComfyUI
+```
+
+```bash
 cd /workspace/ComfyUI && pip install -r requirements.txt
-pip install -U huggingface_hub
 ```
 
-#### ③ ダウンローダーを作る（ブロック全体を一度に貼る）
+#### ③ テキストエンコーダ(15.69GB)
 
 ```bash
-cat > /workspace/fetch-h3.py <<'PYEOF'
-import os, shutil, sys
-from huggingface_hub import list_repo_files, hf_hub_download
-REPO = "Comfy-Org/MiniMax-H3"
-MODELS = "/workspace/ComfyUI/models"
-PROFILES = {
- "h100":       ("minimax_h3_fl2va_pruned_bf16.safetensors",         "qwen3vl_32b_minimax_h3_int8_convrot.safetensors"),
- "a40":        ("minimax_h3_fl2va_pruned_int8_convrot.safetensors", "qwen3vl_32b_minimax_h3_int8_convrot.safetensors"),
- "a6000":      ("minimax_h3_fl2va_pruned_int8_convrot.safetensors", "qwen3vl_32b_minimax_h3_int8_convrot.safetensors"),
- "l40s":       ("minimax_h3_fl2va_pruned_fp8_scaled.safetensors",   "qwen3vl_32b_minimax_h3_int8_convrot.safetensors"),
- "rtxpro4500": ("minimax_h3_fl2va_pruned_fp8_scaled.safetensors",   "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors"),
-}
-VAES = ["minimax_h3_video_vae_fp16.safetensors", "minimax_h3_audio_vae_fp32.safetensors"]
-p = os.environ.get("H3_PROFILE", "h100")
-if p not in PROFILES: sys.exit(f"H3_PROFILE が不正: {p}")
-diff, te = PROFILES[p]
-wanted = [("diffusion_models", diff), ("text_encoders", te)] + [("vae", v) for v in VAES]
-print(f"構成: {p}\nリポジトリのファイル一覧を取得中...")
-files = list_repo_files(REPO)
-for sub, name in wanted:
-    d = os.path.join(MODELS, sub); os.makedirs(d, exist_ok=True)
-    dest = os.path.join(d, name)
-    if os.path.exists(dest) and os.path.getsize(dest) > 0:
-        print(f"✅ 取得済み: {sub}/{name}"); continue
-    m = [f for f in files if f.rsplit("/",1)[-1] == name]
-    if not m:
-        print("❌ 見つかりません:", name); print("候補:")
-        [print("  ", f) for f in files if f.endswith(".safetensors")]; sys.exit(1)
-    print(f"⬇️  {m[0]}")
-    shutil.copyfile(hf_hub_download(REPO, m[0]), dest)
-    print(f"✅ 配置: {sub}/{name}")
-print("\n完了:")
-for sub in ("diffusion_models","text_encoders","vae"):
-    d = os.path.join(MODELS, sub)
-    if os.path.isdir(d):
-        for f in sorted(os.listdir(d)):
-            print(f"  {sub}/{f}  ({os.path.getsize(os.path.join(d,f))/1e9:.1f} GB)")
-PYEOF
-echo "できました"
+cd /workspace/ComfyUI/models/text_encoders
+```
+```bash
+F=qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors
+```
+```bash
+U=https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/text_encoders/$F
+```
+```bash
+nohup curl -L -C - -o $F "$U" > /workspace/c1.log 2>&1 &
 ```
 
-#### ④ ダウンロード（放置OK・50GB）
+#### ④ 拡散モデル(20.96GB)
 
 ```bash
-cd /workspace && H3_PROFILE=h100 python3 fetch-h3.py
+cd /workspace/ComfyUI/models/diffusion_models
+```
+```bash
+F=minimax_h3_fl2va_pruned_fp8_scaled.safetensors
+```
+```bash
+U=https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/diffusion_models/$F
+```
+```bash
+nohup curl -L -C - -o $F "$U" > /workspace/c2.log 2>&1 &
 ```
 
-> ⏸ 途中で止まったら、**同じコマンドをもう一度**。続きから再開する。
-> 💡 A40やA6000を掴んだ日は `H3_PROFILE=a40` / `a6000` に変えるだけ。
+> 💡 `nohup` なので**ターミナルが切れても続きます**。
+> 💡 `-C -` なので**途中で止まっても同じ4行で続きから再開**します。
+> 💡 2つ同時に走らせて問題ありません(curlなら大丈夫です)。
 
-#### ⑤ 速度2倍（料金半分）
+#### ⑤ 進捗確認
+
+```bash
+ls -lh /workspace/ComfyUI/models/text_encoders /workspace/ComfyUI/models/diffusion_models; du -sh /workspace
+```
+
+**合計45GB前後**で止まれば完成です。
+
+#### ⑥ 速度2倍
 
 ```bash
 pip install sageattention
 ```
 
-#### ⑥ 起動
+#### ⑦ 起動
 
 ```bash
 cd /workspace/ComfyUI && python3 main.py --listen 0.0.0.0 --port 8188 --use-sage-attention
@@ -167,7 +177,8 @@ cd /workspace/ComfyUI && python3 main.py --listen 0.0.0.0 --port 8188 --use-sage
 
 **接続 → ポート8188** で ComfyUI。**Video テンプレート**に MiniMax H3 がある。
 
-> エラーで起動しない時は `--use-sage-attention` を消す。速度が2倍にならないだけで動く。
+> ⚠️ `Address already in use` → `--port 8189` に変更
+> ⚠️ Sage Attentionでエラー → `--use-sage-attention` を消す(動きます)
 
 ### STEP 4 ─ 終わったら
 
@@ -201,11 +212,15 @@ python3 scripts/h3log.py pod end
 
 | 症状 | 対処 |
 |---|---|
-| `150G` が出ない | ボリュームが繋がっていない。Podを作り直す |
-| ダウンロードが止まる | 同じコマンドをもう一度。続きから再開 |
-| 「❌ 見つかりません」 | 候補一覧が出るので、それを見せてもらえれば直します |
-| ターミナルの開き方が分からない | STEP 2 を見る。それでも分からなければ接続画面のスクショを |
-| 動画が無音 | `minimax_h3_audio_vae_fp32.safetensors` が無い。④を再実行 |
+| **画面が真っ暗になった** | Webターミナルが切れただけ。**処理は壊れていません**。開き直す |
+| **貼り付けが途中で切れる** | 長文は切れます。**1行ずつ**貼る。上のコマンドは全部短くしてあります |
+| **`Disk quota exceeded`** | 実効48GBの上限。上の「使うモデルの組み合わせ」を守る |
+| **curl が `Exit 23`** | 書き込みエラー＝容量上限。不要ファイルを消すか構成を見直す |
+| `File reconstruction error` | `hf download` の問題。**curlを使う** |
+| ダウンロードが止まる | 同じ4行をもう一度。`-C -` で続きから再開 |
+| `ap-jp-1.runpod.net` が出ない | ボリュームが繋がっていない。Podを作り直す |
+| 動画が無音 | `minimax_h3_audio_vae_fp32.safetensors` が無い |
+| ターミナルが開けない | Podが Running か確認 → 接続 → **Web ターミナルを開始する** → 接続 |
 
 ---
 
