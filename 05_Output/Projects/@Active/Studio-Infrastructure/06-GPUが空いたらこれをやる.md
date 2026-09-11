@@ -18,7 +18,7 @@ tags: [project/studio-infra, ai/tools/runpod]
 | | |
 |---|---|
 | ✅ Network Volume | `minimax_h3_comfyui_volume` / AP-JP-1 / 月$10.50 |
-| ⚠️ **実効容量** | **約48GB**(150GBで作ったが、複製込みで消費されるため) |
+| ⚠️ **必ず確認** | デプロイ時に **`150 GB`** と表示されているか(下記①参照) |
 | ✅ 取得済み | VAE 2つ(5.5GB)、Turbo LoRA(1.9GB) |
 | ⏳ 未取得 | テキストエンコーダ・拡散モデル(**計約37GB**) |
 | ⏳ GPU | 在庫待ち |
@@ -29,11 +29,20 @@ tags: [project/studio-infra, ai/tools/runpod]
 
 ## 今日わかった大事なこと(ここを読めば同じ失敗をしません)
 
-### ① ボリュームの実効容量は約48GB
+### ① 【最重要】デプロイ時にボリュームが勝手に新規作成されることがある
 
-150GBで作りましたが、**48GBで書き込みエラー**(`Disk quota exceeded`)になります。
-ネットワークストレージが**複製を持つ仕組み**で、複製込みでクォータを消費するためです。
-`df` には現れないので気づけません。**この48GBに収まる構成を選ぶ必要があります。**
+9/10の作業では、`minimax_h3_comfyui_volume`(150GB)を選んだつもりが、
+**Pod名と同じ `fixed_ivory_gopher_volume`(50GB)が新しく作られて接続**されていました。
+そのため48GBで `Disk quota exceeded` になり、原因究明に何時間もかかりました。
+
+**デプロイ画面のストレージ欄で、必ず `150 GB` と目で確認すること。**
+`50 GB` や見慣れない名前が出ていたら、**選び直してからデプロイ**する。
+
+Podの中からは、これで確認できます:
+
+```bash
+df -h /workspace; du -sh /workspace
+```
 
 ### ② `hf download` は使えない。**curl を使う**
 
@@ -41,20 +50,27 @@ tags: [project/studio-infra, ai/tools/runpod]
 RunPodのストレージと相性が悪く **`File reconstruction error`** で失敗します。
 **curl で直接落とせば問題なく通ります。**
 
-### ③ 使うモデルの組み合わせ(48GBに収まる唯一の構成)
+### ③ 使うモデルの組み合わせ
+
+**150GBのボリュームを正しく接続できていれば、容量の制約はありません。**
+画質を妥協する必要はないので、H100では下記の推奨構成を使うこと。
 
 | 用途 | ファイル | サイズ |
 |---|---|---|
-| 拡散モデル | `diffusion_models/minimax_h3_fl2va_pruned_fp8_scaled` | **20.96GB** |
-| テキストエンコーダ | `text_encoders/qwen3vl_32b_minimax_h3_nvfp4_awq` | **15.69GB** |
-| 映像VAE | `vae/minimax_h3_video_vae_fp16` | 5.21GB ✅取得済 |
-| 音声VAE | `vae/minimax_h3_audio_vae_fp32` | 0.61GB ✅取得済 |
-| Turbo LoRA | `loras/minimax_h3_fl2v_turbo_4step_v1.0_768p_comfyui_bf16` | 1.96GB ✅取得済 |
-| | **合計** | **約45GB** |
+| **拡散モデル** | `diffusion_models/minimax_h3_fl2va_pruned_fp8_scaled` | 20.96GB |
+| **テキストエンコーダ** | `text_encoders/qwen3vl_32b_minimax_h3_int8_convrot` | 25.2GB |
+| 映像VAE | `vae/minimax_h3_video_vae_fp16` | 5.21GB |
+| 音声VAE | `vae/minimax_h3_audio_vae_fp32` | 0.61GB |
+| Turbo LoRA | `loras/minimax_h3_fl2v_turbo_4step_v1.0_768p_comfyui_bf16` | 1.96GB |
+| | **合計** | **約54GB**(150GBなら余裕) |
 
-> ⚠️ **`int8_convrot` のエンコーダ(25.2GB)は入りません。** fp8拡散と合わせると54.7GBになります。
-> ⚠️ **H100はFP8をネイティブ対応**しているので、拡散モデルのfp8は速度面でむしろ有利です。
-> エンコーダのnvfp4は生成1回につき1度しか動かないため、速度への影響は小さいです。
+> 💡 **H100はFP8をネイティブ対応**しているので、拡散モデルの `fp8_scaled` は
+> bf16より**速く、サイズは約半分**。H100では最も効率の良い選択。
+> 画質を最優先するなら `pruned_bf16` も選べる(150GBなら入る)。
+
+**参考: 50GBしか使えない場合の縮小構成**(約45GB)
+エンコーダを `qwen3vl_32b_minimax_h3_nvfp4_awq`(15.69GB)に差し替える。
+ただしNVFP4はBlackwell世代以外では速度の利点がなく、圧縮も強い。
 
 ### ④ 🔥 Turbo LoRA がある
 
@@ -83,8 +99,9 @@ RunPodのストレージと相性が悪く **`File reconstruction error`** で�
 | GPU | 空いているもの（H100 SXM / H200 SXM） |
 | コンテナディスク | 50 GB |
 
-> ⚠️ **ストレージ欄に `150 GB` と `AP-JP-1` が出ているか必ず確認。**
-> ここが抜けると、ダウンロードしたものがPod削除で全部消えます。
+> ⚠️ **ストレージ欄に `minimax_h3_comfyui_volume` と `150 GB` が出ているか必ず確認。**
+> 9/10は、ここでPod名と同じ**50GBのボリュームが勝手に作られて**いたため、
+> 48GBで容量不足になりました。**名前とサイズを目で見て確認すること。**
 
 ### STEP 2 ─ ターミナルを開く
 
@@ -214,8 +231,8 @@ python3 scripts/h3log.py pod end
 |---|---|
 | **画面が真っ暗になった** | Webターミナルが切れただけ。**処理は壊れていません**。開き直す |
 | **貼り付けが途中で切れる** | 長文は切れます。**1行ずつ**貼る。上のコマンドは全部短くしてあります |
-| **`Disk quota exceeded`** | 実効48GBの上限。上の「使うモデルの組み合わせ」を守る |
-| **curl が `Exit 23`** | 書き込みエラー＝容量上限。不要ファイルを消すか構成を見直す |
+| **`Disk quota exceeded`** | **接続中のボリュームが小さい**。`df -h /workspace` と `du -sh /workspace` で確認し、150GBのものを接続してPodを作り直す |
+| **curl が `Exit 23`** | 書き込みエラー＝上と同じ原因 |
 | `File reconstruction error` | `hf download` の問題。**curlを使う** |
 | ダウンロードが止まる | 同じ4行をもう一度。`-C -` で続きから再開 |
 | `ap-jp-1.runpod.net` が出ない | ボリュームが繋がっていない。Podを作り直す |
