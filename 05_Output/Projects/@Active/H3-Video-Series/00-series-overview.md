@@ -129,6 +129,21 @@ MiniMax H3(ComfyUIで生成)を使った、クライアントワークのショ�
 (表情切り替え・口の無着色指定など)をプロンプトの文言で可能な限り強く・明確に
 指定する**方向で対処する(F-1 v2、F-2 v2で採用)。
 
+## プロンプトのコツ:「ズームしない」の一文だけではクローズアップに寄られる
+2026-09-14、F-1で判明。`a single static shot ... with no panning, tilting, zooming, or cutting`
+と書いていても、**驚き・笑いなど感情の山場でカメラが被写体に寄ってしまう**ことがある。
+モデルに「見せ場は寄る」というバイアスがあるため、否定文を1つ入れるだけでは足りない。
+
+**対策**: カメラ固定を4点セットで明記する。
+1. 画角・焦点距離・写る範囲が Picture 1 と1フレーム目から最後まで**同一**であること
+   (`the exact same position, framing, focal length, and field of view as <Picture 1>`)
+2. 背景・風景が**端から端まで常に全部見えている**こと(`stays completely visible from edge to edge`)
+3. **キャラクターは画面の中で小さいままでよい**と明示する
+   (`the characters remain small within this wide view, which is correct and intended`)
+4. **山場の文中でも念押し**する(`through this entire surprise and reaction, the camera does
+   not move closer at all`)。加えて、キャラクターがフレームアウトする場面では
+   `the camera stays wide and motionless and does not follow it` と追尾の否定も入れる
+
 ## シーン一覧(v2・現行)
 まだシーンなし。次のシーンから `02-scenes-v2/` に追加していく。
 

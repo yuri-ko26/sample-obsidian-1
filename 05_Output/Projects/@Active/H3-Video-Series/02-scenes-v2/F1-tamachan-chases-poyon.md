@@ -47,7 +47,43 @@ Fビート(「雲の稜線おいかけっこ」)の1回目。正面固定カメ�
 
 ## プロンプト履歴
 
-### v3 (2026-09-14) — 現在の採用版(新しい参照画像・雲背景版)
+### v4 (2026-09-14) — 現在の採用版(カメラを完全固定・全景キープ)
+
+**v3からの変更点**
+- カメラ指定を大幅に強化。「ズームしない」だけでなく、**画角・焦点距離・画面の範囲が
+  <Picture 1>と1フレーム目から最後まで完全に同一**であること、**雲の風景が端から端まで
+  常に全部見えている**こと、**どの瞬間もクローズアップやより寄った画にならない**ことを明記
+- 驚き・笑いの山場でカメラが寄りやすいため、**その瞬間にもカメラは動かず引いたまま**である
+  ことを山場の文中でも念押し
+- 「キャラクターはワイドの中で小さいままでよい」と明示し、被写体を大きく見せようとする
+  バイアスを抑制
+
+**H3プロンプト(ComfyUI用)**
+```
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+
+integrated_multimodal_description: [Shot 1] 3D CG, claymation-style character render. A single locked-off wide static shot holds the entire scene in frame for the whole video: the camera stays completely fixed in the exact same position, framing, focal length, and field of view as <Picture 1> from the very first frame to the very last, and it never zooms in, zooms out, pushes in, pulls out, pans, tilts, trucks, arcs, tracks or follows a character, reframes, crops closer, or cuts at any point. The full pastel cloud landscape shown in <Picture 1> stays completely visible from edge to edge for the entire duration, and no moment is ever framed as a close-up or as a tighter shot than <Picture 1>; the two characters remain small within this wide view the whole time, which is correct and intended. The egg-shaped character is on the left and the larger transparent, jelly-like rubber character is on the right. Both characters keep their exact appearance, scale, and design from <Picture 1> unchanged throughout, with no distortion, and both begin with bright, happy, playful expressions. The egg character never has eyebrows at any point — its face is only round black dot eyes and an outline-only mouth. The transparent character is the first one to leave: it bounces away to the right, playfully fleeing, its interior gumballs — exactly 4 yellow, 2 red, 1 light blue, and 3 yellow-green gumballs, ten in total, this exact count and color mix never changing and no other colors or extra gumballs ever appearing, together with small colorful square and diamond confetti — always settling naturally at the bottom of its body under gravity, never floating motionless in mid-air or appearing stuck together, rolling and jostling against each other and the inner wall with each bounce, shifting without ever spilling out; it bounces further and further to the right until it passes completely beyond the right edge of the frame and out of view, while the camera stays wide and motionless and does not follow it. Only then does the egg character hurry after it toward the right, always walking up on the very tips of its toes, its heels never touching the ground, its short stiff legs never bending at the ankle, moving as briskly as it possibly can, again with the camera staying locked in place and never tracking it. Partway across the frame, well before it ever reaches the right edge, the egg character slows and comes to a full stop, then begins looking around for the companion it has lost sight of — its head and body turning first to look right, then to look left, then to look right again, its round dot eyes darting from side to side, its small outline-only mouth drawn into a flat, slightly worried line, growing a little more uneasy and confused with each passing moment. It is precisely because the egg character is so absorbed in this anxious searching that it completely fails to notice what happens next: the transparent character reappears not from the right edge where it vanished, but from the opposite side of the frame — creeping quietly and slowly into view from the left edge, behind the egg character's back, approaching at a slow, sneaky pace without making a sound. Even during this slow creep, its interior gumballs stay clearly visible, gently shifting and rolling against each other and the bottom of its body with each small movement, and its mouth remains completely closed and neutral, a thin dark outline only, with absolutely no fill color of any kind inside it at any point. The egg character keeps searching in the wrong directions the entire time and never once looks behind itself, so it has no idea the transparent character is there. Once right behind the still-searching egg character, the transparent character suddenly pops forward with a big, sudden startling motion — a playful "boo!" surprise — and in this sudden pop, the gumballs inside visibly jolt and tumble together in a lively scatter before settling again, clearly visible through its glossy transparent skin the whole time. Caught completely off guard, the egg character jumps and whips around in surprise, its round dot eyes going wide and its mouth popping open for an instant into a small, rounded, startled shape with a hint of soft coral pink inside — and the very next moment, upon recognizing the transparent character right there behind it, that startled expression gives way to delighted laughter, its round dot eyes crinkling into laughing crescents, still with no eyebrows, its mouth open wide with soft coral pink visible inside. Through this entire surprise and reaction, the camera does not move closer at all — it stays exactly as wide and exactly as far away as in <Picture 1>, with the whole cloud landscape still visible edge to edge, and never pushes in on their faces. At the exact same moment, the transparent character also breaks into a happy smile, its mouth curving into a moderately wide, gentle smile shape, no more than about a third of the width of its face, made of nothing but a thin dark outline — critically, this smiling mouth remains exactly as clear and transparent as the rest of its glossy body at every single frame of the smile, with absolutely no color, tint, shading, or fill of any kind ever appearing inside it, so its interior gumballs and confetti stay clearly visible straight through the open mouth outline the whole time, never once becoming opaque or colored. The two laugh together side by side for the rest of the shot, the transparent character bouncing happily in place beside the egg character, pleased with its own successful surprise, its mouth-outline staying just as thin, uncolored, and transparent as ever even as it bounces, and the shot ends on the very same locked-off wide framing it began with.
+
+overall_soundscape: None.
+
+non_diegetic_music: None.
+```
+
+**日本語訳**
+対象動画の0.00秒時点で、<Picture 1>(Shot 1より)が完全に参照されます。[Shot 1] 3D CGのクレイアニメ調キャラクターレンダー。**動画全体を通して、シーン全景を収めたワイドの固定ショット1つだけで構成される**——カメラは<Picture 1>とまったく同じ位置・画角・焦点距離・写る範囲のまま、1フレーム目から最後の1フレームまで完全に固定され、どの瞬間もズームイン・ズームアウト・前進・後退・パン・チルト・横移動・アーク・キャラクターの追尾・フレーミングの変更・トリミング・カットを一切行わない。<Picture 1>に映っているパステルカラーの雲の風景は、**端から端まで全編を通してずっと見えたまま**であり、どの瞬間もクローズアップや<Picture 1>より寄った画になることはない。2人のキャラクターはこのワイドの画面の中で終始小さいままであり、それが正しい意図された状態である。画面左に卵形のキャラクター、右にひと回り大きい透明でゼリーのようなラバーキャラクターがいる。2人とも<Picture 1>の見た目・大きさ・デザインのまま、崩れたり変化したりすることなく全編を通して保たれ、どちらも明るく楽しそうな表情から始まる。卵形のキャラクターにはどの瞬間も眉毛はつかない——顔のパーツは丸い黒の点目と輪郭線だけの口のみである。まず先に画面から出ていくのは透明なキャラクターのほうである——楽しそうに逃げるように右方向へ弾んでいき、中のガムボールは正確に黄色4個・赤2個・水色1個・黄緑3個(合計10個、この数と色の組み合わせは決して変わらず、他の色や余分なガムボールが現れることもない)と、小さくカラフルな四角形・ひし形の紙吹雪であり、常に重力に従って体の底に自然に沈み、宙に浮いたまま静止したりお互いにくっついて見えたりすることは一切なく、弾むたびにお互いや内壁にぶつかってころころと転がり、揺れ動くがこぼれることはない。透明なキャラクターはさらに右へ右へと弾んでいき、ついに画面右端を完全に越えて見えなくなる——**その間もカメラはワイドのまま微動だにせず、追いかけない**。そこで初めて卵形のキャラクターが右へ向かって追いかけ始める——常につま先立ちのまま、踵は絶対に地面につかず、短く硬い脚は足首で曲がらず、できる限りの速さで進む——**このときもカメラは固定されたままで、決して追尾しない**。しかし画面の途中まで来たところで、右端にたどり着くよりずっと手前で卵形のキャラクターは速度を落としてぴたりと立ち止まり、見失った相手を探して辺りを見回し始める——まず右を見て、次に左を見て、また右を見て、と体と頭を動かしながら探し、丸い点目は左右に忙しく動き、輪郭線だけの小さな口は平らな、少し心配そうな線になり、時間が経つにつれて少しずつ不安げで困惑した様子が強まっていく。卵形のキャラクターがこうして不安げに探すことに夢中になっているせいで、次に起こることにまったく気づかない——透明なキャラクターは、消えた右端からではなく、フレームの反対側から再登場する。画面左端から、音を立てずにゆっくりと、こっそりとした足取りで卵形のキャラクターの背後に忍び寄っていく。このゆっくりとした忍び寄りの間も、中のガムボールははっきりと見え続け、小さな動きに合わせてやさしく揺れ動き、お互いや体の底とぶつかって転がる。またこの間、透明なキャラクターの口は完全に閉じた中立の状態のままで、薄い輪郭線のみであり、中には一切色が入らない。卵形のキャラクターはその間ずっと見当違いの方向ばかりを探していて、一度も後ろを振り返らないため、透明なキャラクターがそこにいることにまるで気づいていない。まだ探し続けている卵形のキャラクターのすぐ後ろまで来たところで、透明なキャラクターは突然、大きくパッと飛び出すようにして、いたずらっぽく「わっ!」と驚かす——この急な飛び出しの瞬間、中のガムボールは勢いよく跳ねて一斉に散らばるように動き、その後また落ち着く様子が、光沢のある透明な体を通してずっとはっきりと見える。完全に不意を突かれた卵形のキャラクターは、びっくりして飛び上がりながら勢いよく振り返る——丸い点目は大きく見開かれ、口は一瞬だけ小さく丸い驚いた形にぱっと開いて中にやわらかなコーラルピンクがほんのりのぞく。そしてその次の瞬間、すぐ後ろに透明なキャラクターがいると分かった途端、その驚き顔は嬉しそうな笑い顔に変わる。丸い点目は笑いじわの三日月形になり、眉毛はやはりつかず、口は大きく開いて中にやわらかなコーラルピンクがのぞく。**この驚きとリアクションの一連の間も、カメラはまったく近づかない**——<Picture 1>とまったく同じワイドさ・同じ距離のままで、雲の風景は依然として端から端まで見えており、2人の顔に寄っていくことは一切ない。まったく同じ瞬間、透明なキャラクターも嬉しそうな笑顔になる——口は顔の横幅の3分の1程度までしか開かない、ほどよい広さのやわらかなカーブの笑顔になり、薄い輪郭線だけでできている——極めて重要な点として、この笑顔の口は、笑顔になっているどの一瞬をとっても光沢のある体の表面とまったく同じように透き通ったままで、中には一切色・色調・陰影・塗りつぶしが決して現れず、開いた口の輪郭線を通して中のガムボールと紙吹雪がそのままはっきりと見え続け、一度たりとも不透明になったり着色されたりすることはない。2人はショットの残りの時間、並んで一緒に笑い合う。透明なキャラクターは卵形のキャラクターのすぐ横で、いたずらが成功して満足そうにその場で嬉しそうに弾み、弾んでいる間もその口の輪郭線は薄く無着色で透明なままである。そしてショットは、始まったときとまったく同じ固定のワイドフレーミングのまま終わる。
+
+**環境音**
+なし。
+
+**BGM(観客のみに聞こえる)**
+なし。
+
+**生成結果**
+- 動画ファイル: `03-generated-videos/F1_v4.mp4`(未生成)
+- 判定: 未検証
+- メモ:
+
+### v3 (2026-09-14) — 旧版(カメラ指定は簡易・新しい参照画像版)
 
 **v2からの変更点**
 1. **ぽよんが先に単独でフレームアウト**する順序を明確化(v2はたまちゃんが追いながら一緒に右へ進む流れだった)
@@ -145,3 +181,7 @@ non_diegetic_music: None.
   反対側から登場→驚かす→2人で笑う、まで含むため)
 - (v1・v2時点)Picture 1: 雲の稜線の画像(たまちゃん左・ぽよん右)
 - **重要**: `[Shot 2]`などの追加ショット表記は使わず、単一の`[Shot 1]`のみで最初から最後まで記述すること
+- **重要(v4)**: カメラは完全固定・全景キープ。「ズームしない」の一文だけでは山場で寄られる
+  ことがあるため、(1)冒頭で画角・焦点距離・写る範囲が Picture 1 と同一であること、
+  (2)風景が端から端まで常に見えていること、(3)キャラクターは小さいままでよいこと、
+  (4)驚き・笑いの瞬間にも寄らないこと、の4点を必ず入れる
