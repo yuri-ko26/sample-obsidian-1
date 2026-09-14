@@ -75,7 +75,7 @@ status: draft
 | Cut | 内容 | 尺目安 | 対応アーカイブ |
 |---|---|---|---|
 | F-0(導入) | 【確定】誰もいない雲の稜線から、たまちゃん・ぽよんがフレームインしてきてF-1の開始位置に到着する | 6s | — | `02-scenes-v2/F0-entrance-frame-in.md` 作成済み(v1) |
-| F-1(1回目) | 【確定】たまちゃんがぽよんを追いかける→フレームアウト→たまちゃんきょろきょろ不安→ぽよんが後ろから登場して驚かす→たまちゃん振り返って笑う | 10s | `02-scenes/03-cloud-ridge-chase.md`, `09-overhead-chase-no-cut.md` | `02-scenes-v2/F1-tamachan-chases-poyon.md` v2(1カット統合版)作成済み |
+| F-1(1回目) | 【確定】ぽよんが先にフレームアウト→たまちゃんが追うが途中で止まってきょろきょろ不安→ぽよんが**反対側**から再登場して背後から驚かす→2人で笑う | 10s | `02-scenes/03-cloud-ridge-chase.md`, `09-overhead-chase-no-cut.md` | `02-scenes-v2/F1-tamachan-chases-poyon.md` **v3(新しい雲背景画像版)が最新** |
 | F-2(2回目) | 【確定】役割を逆にして同じ展開 | 10s | `02-scenes/15-cloud-ridge-hide-and-seek.md` | `02-scenes-v2/F2-poyon-chases-tamachan.md` v2(1カット統合版)作成済み |
 | F-3(退場) | 【確定】2人が並んで立つ状態から、ぽよんが先に右へフレームアウト→たまちゃんも同じ方向へ追いかけてフレームアウト→誰もいない雲の風景で終わる | 5s | — | `02-scenes-v2/F3-chase-off-frame.md` 作成済み(v1) |
 
