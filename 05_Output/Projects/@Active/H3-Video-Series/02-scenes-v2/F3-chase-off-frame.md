@@ -27,7 +27,36 @@ Fビート(「雲の稜線おいかけっこ」)の締め、退場カット。�
 
 ## プロンプト履歴
 
-### v1 (2026-09-14)
+### v2 (2026-09-14) — 現在の採用版(表情崩れ対策・つま先立ち強化)
+
+**H3プロンプト(ComfyUI用)**
+```
+How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 1) aligns with the 5.00-second mark of the target video.
+
+integrated_multimodal_description: [Shot 1] 3D CG, claymation-style character render, a single continuous static shot holds the exact same fixed position, framing, and lens throughout the entire video, showing the pastel cloud ridge exactly as shown in <Picture 1>, with both the egg-shaped character and the transparent, jelly-like rubber character standing together happily, matching their exact appearance, expression, and position from <Picture 1> at the very start. The camera never pans, tilts, zooms, or cuts away at any point. The egg character never has eyebrows at any point. Critically, the egg character's happy, laughing facial expression exactly as shown in <Picture 1> — its eyes crinkled into laughing crescents, its mouth open wide with soft coral pink visible inside — never changes, distorts, or switches to any other expression at any point in the shot; it keeps this exact same expression, completely unbroken, all the way from the first frame to the moment it exits the frame. After a brief happy moment together, the transparent character bounces off playfully to the right, its interior gumballs — exactly 4 yellow, 2 red, 1 light blue, and 3 yellow-green, ten in total, this exact count and color mix never changing, plus colorful confetti — always settling naturally at the bottom of its body under gravity, never floating motionless in mid-air or appearing stuck together, rolling and jostling against each other and the inner wall with each bounce, shifting without ever spilling out. It bounces further and further to the right until it moves completely past the right edge of the frame and out of view. A brief beat later, without its expression ever changing, the egg character begins toddling after it in the very same direction, always walking up on the very tips of its toes only, its heels never once touching the ground at any point, its short stiff legs never bending at the ankle at any point — its urgency and speed come entirely from this stiff-legged tiptoe toddling motion, never from any change in its face. It moves further and further to the right, following the exact same path the transparent character took, its same happy laughing expression held perfectly steady and unbroken the entire time, until it too moves completely past the right edge of the frame and out of view. Once both characters have fully exited the frame, the shot holds steady on the now-empty pastel cloud ridge for the remainder of the shot, with no characters visible anywhere in frame, exactly matching the empty landscape shown in <Picture 2>.
+
+overall_soundscape: None.
+
+non_diegetic_music: None.
+```
+
+**日本語訳**
+参照画像と対象動画の対応 — Picture 1(Shot 1より)は対象動画の0.00秒地点に、Picture 2(Shot 1より)は対象動画の5.00秒地点に対応します。[Shot 1] 3D CGのクレイアニメ調キャラクターレンダー。動画全体を通してまったく同じ固定位置・同じ画角・同じレンズのままの、一度も切り替わらない単一の固定ショットで、<Picture 1>で示された通り雲の稜線を映しており、卵形のキャラクターと透明でゼリーのようなラバーキャラクターの両方が、最初は<Picture 1>とまったく同じ見た目・表情・位置で並んで嬉しそうに立っている。カメラは一切パン・チルト・ズーム・カットをしない。卵形のキャラクターにはどの瞬間も眉毛はつかない。**極めて重要な点として、卵形のキャラクターの<Picture 1>通りの嬉しそうな笑い表情——目は笑いじわの三日月形、口は大きく開いて中に柔らかいコーラルピンク色が見える——は、ショットのどの瞬間においても一切変化せず、崩れず、他の表情に切り替わることもない**。最初のフレームからフレームアウトする瞬間まで、まったく同じ表情を完全に保ったままである。少し嬉しそうな時間を過ごした後、透明なキャラクターが楽しそうに右方向へ弾んで離れていく——中のガムボールは常に重力に従って体の底に自然に沈み、宙に浮いたまま静止したりくっついて見えたりすることは一切なく、弾むたびにお互いや内壁にぶつかってころころと転がる——正確に黄色4個・赤2個・水色1個・黄緑3個(合計10個、この数と色の組み合わせは変わらない)のガムボールとカラフルな紙吹雪は弾むたびに揺れ動くがこぼれることはない。透明なキャラクターはさらに右へ右へと弾んでいき、ついに画面右端を完全に越えて見えなくなる。少し遅れて、**表情を一切変えることなく**、卵形のキャラクターが同じ方向へよちよちと追いかけ始める——**常につま先だけで立ち、踵はどの瞬間も一切地面につかず、短く硬い脚は足首でどの瞬間も曲がらない**——その勢いと速さは、この棒足つま先立ちのよちよち歩きの動きだけから生まれるものであり、顔の変化から生まれるものでは決してない。卵形のキャラクターは、透明なキャラクターが通ったのとまったく同じ経路をたどって、さらに右へ右へと進んでいき、同じ嬉しそうな笑い表情を最初から最後まで完璧に安定させ崩さないまま、ついに画面右端を完全に越えて見えなくなる。2人とも完全にフレームアウトした後、ショットは誰もいなくなったパステルカラーの雲の稜線のまま残りの時間を保ち、画面のどこにもキャラクターは映っておらず、<Picture 2>で示された誰もいない風景とぴったり一致する。
+
+**環境音**
+なし。
+
+**BGM(観客のみに聞こえる)**
+なし。
+
+**生成結果**
+- 動画ファイル: `03-generated-videos/F3_v2.mp4`(未生成)
+- 判定: 未検証
+- メモ: たまちゃんの顔が変な顔になる不具合の対策版。「反応する(reacts)」という
+  表情変化を誘発しかねない表現を削除し、表情は最初から最後まで一切変わらないことを
+  強調。つま先立ち・踵不接地も明示的に強化
+
+### v1 (2026-09-14) — 旧版(表情崩れが発生)
 
 **H3プロンプト(ComfyUI用)**
 ```
