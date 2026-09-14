@@ -136,6 +136,23 @@ chasing(反応してすぐ追いかけ始める)」と書いたところ、"reac
 場面では、"reacts" のような感情反応を示唆しうる単語を避け、**「表情は一切変わらない」
 ことを明示的に繰り返し書く**方が安全(F-3 v2で採用)。
 
+## プロンプトのコツ:たまちゃんの足首曲がり・カメラズームは、1回書くだけでは長いプロンプトの後半で崩れやすい
+2026-09-14、F-5で判明。「つま先立ち・踵不接地」「カメラ固定」はどちらも冒頭で1回
+書いただけでは、プロンプトが長く動きの展開が多いカットの後半(立ち止まる・驚いて
+振り返る等の瞬間)で守られないことがある。
+
+**対策**:
+1. **たまちゃんの足**: 冒頭で「足首の関節が存在しない構造」自体を明記した上で
+   (例: "The egg character's feet are simple stiff, rounded points fused directly
+   to the ends of its legs, with no ankle joint of any kind that could ever bend or
+   flex")、その後も立ち止まる・向きを変える・驚いて振り返るなど**動きの節目ごとに
+   「つま先立ち・踵不接地」を繰り返し明記する**(F-5 v4で採用)。
+2. **カメラ固定**: "no panning, tilting, zooming, or cutting" だけでなく、
+   "the camera's position, framing, and lens stay completely locked and
+   unchanging... with absolutely no zooming in or out, no push-in, and no
+   drifting at any point" のように、固定であることをより具体的・強く冒頭に
+   明記する(F-5 v4で採用)。
+
 ## シーン一覧(v2・現行)
 まだシーンなし。次のシーンから `02-scenes-v2/` に追加していく。
 
