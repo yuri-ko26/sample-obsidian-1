@@ -8,14 +8,13 @@ status: draft
 # カットD-1: 俯瞰固定カメラ、画面左からフレームイン→中央を水平にコロコロ転がって右へフレームアウト
 
 ## シーン内容
-> **注記(v7時点)**: E-1(ジャンプ)への橋渡しとして使うこのカットは、v7で
-> 「転がる」ではなく「るんるんと歩いて/弾んで中央へフレームインする」方向に
-> 変更した(下記v7参照)。純粋な「コロコロ転がる」表現(クライアント要望どおりの
-> D-1本体)は、この橋渡しカットとは別に、D-3以降などで引き続き検討する。
+> **注記(v9時点)**: E-1(ジャンプ)への橋渡しとして使うこのカットは、v7/v8で
+> 一度「歩き/弾み」バージョンを試したが、v9で**「転がる」バージョンに戻した**
+> (歩きではなく転がって中央へ向かい、そのまま停止する)。
 
 クライアント要望どおり、俯瞰の固定カメラで、2人が画面左から入ってきて、画面中央を
-水平にコロコロと転がって移動し、右側へフレームアウトする。単一の固定ショット。
-(v1〜v6は転がりバージョン。v7で歩き/弾みバージョンに変更、以下参照)
+水平にコロコロと転がって移動する。中央に到達したら停止し、仰向けに寝転んで
+ぽよんだけ起き上がりE-1へ続く。単一の固定ショット。
 
 **設計メモ**: 旧アーカイブ(シーン24〜27)で「回転の物理」表現に何度も試行錯誤した
 経緯がある。今回は最終的に一番安定していた「前転(でんぐり返し)/カートホイール、
@@ -37,7 +36,39 @@ status: draft
 
 ## プロンプト履歴
 
-### v8 (2026-09-15) — 現在の採用版(セリフとして喋ってしまう不具合を修正)
+### v9 (2026-09-15) — 現在の採用版(転がりバージョンに戻し、セリフなしを維持)
+
+「歩いてではなく転がって中央へ」というご要望を受け、回転(転がり)バージョンに戻した。
+セリフを喋ってしまう不具合の対策(v8で確立)は維持し、感情(意欲的で「よし、
+いくぞー!」という気持ち)は同じまま、言葉には出さない形にしている。
+
+**H3プロンプト(ComfyUI用)**
+```
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+
+integrated_multimodal_description: [Shot 1] 3D CG, claymation-style character render. A single static overhead shot, fixed in place for the entire video with no panning, tilting, zooming, or cutting, looks straight down on the pale yellow-green floor exactly as shown in <Picture 1>. Both characters keep their exact appearance and design from <Picture 1> unchanged throughout, with no distortion. Neither character ever speaks, talks, or makes any vocalization at any point in this entire shot — there is no dialogue, no speech, no mouthed words, and no lip movement suggesting speech at any point; both characters remain completely silent throughout, expressing everything purely through body language and expression, never through speech. Each character's body behaves as if it were mounted on a single rigid, invisible axle running straight through its center, lying flat against the floor and oriented perpendicular to the direction of travel — this axle is the only line either character's body is able to rotate around; neither character is capable of spinning around a vertical axis like a top or a coin lying flat on a table, that kind of flat, in-place spinning is structurally impossible for them and never happens at any point. The egg-shaped character, on the right of the pair, has both of its short arms raised up the whole time, and continuously rotates forward around this fixed horizontal axle, end over end, exactly like a wheel rolling along the ground: the point of its body currently facing up rotates forward and down to become the point facing the floor, while the point that was facing the floor rotates up and around to become the new top — front, then back, then front again, in a steady, continuous, unbroken rotation as it advances. It stays perfectly level as it rotates, its axle never tilting diagonally, never drifting off to point in any other direction, and it never rises up or stands during this rolling. Beside it on the left, the transparent, jelly-like rubber character rotates forward around its own fixed horizontal axle the exact same way — end over end like a wheel, its top and bottom steadily and continuously swapping places with each rotation, its axle staying perpendicular to its direction of travel the entire time, never once spinning flat in place — its interior gumballs and confetti shifting inside without ever spilling out. Both continue rotating forward together at a matched pace around their own fixed horizontal axles, moving steadily rightward across the frame. Critically, instead of exiting the frame, once both characters reach roughly the center of the frame, they gradually slow their rotation and come to a gentle, natural stop there, settling flat on their backs, face up toward the camera, both wearing calm, happy smiles, coming to rest side by side in the middle of the shot. The camera remains fixed in this same overhead position throughout, never moving. After a brief calm moment lying there together, the egg character stays exactly where it is, remaining flat on its back the whole time, relaxed and still smiling, making no move to get up. At the same time, the transparent character alone begins to perk up with sudden, eager energy, silently and without speaking a single word — its body language alone conveying eager, excited enthusiasm, as if bursting to get moving — pushing itself up from lying flat into an upright, bouncy, ready-to-go posture, its whole body brimming with playful enthusiasm, its interior gumballs — exactly 4 yellow, 2 red, 1 light blue, and 3 yellow-green, ten in total, this exact count and color mix never changing, plus colorful confetti — shifting and settling naturally at the bottom of its body under gravity as it rights itself, never spilling out. The shot ends with the egg character still lying flat on its back smiling calmly, and the transparent character upright beside it, full of eager, bouncy energy, completely silent throughout, ready for what comes next.
+
+overall_soundscape: None.
+
+non_diegetic_music: None.
+```
+
+**日本語訳**
+対象動画の0.00秒時点で、<Picture 1>(Shot 1より)が完全に参照されます。[Shot 1] 3D CGのクレイアニメ調キャラクターレンダー。動画全体を通して一切動かない単一の固定俯瞰ショットで、パン・チルト・ズーム・カットは一切なく、<Picture 1>で示された通り薄い黄緑色の床を真上から見下ろしている。2人とも<Picture 1>の見た目・デザインのまま、崩れたり変化したりすることなく最後まで保たれる。**どちらのキャラクターも、このショット全体を通して一切話したり、喋ったり、発声したりすることはない——セリフ、発話、口パク、話しているように見える口の動きは一切なく、2人とも終始完全に無言のままで、すべてを言葉ではなく体の動き・表情だけで表現する。**それぞれのキャラクターの体は、中心をまっすぐ貫く一本の硬い、目に見えない軸に取り付けられているかのように振る舞う——この軸は床と平行に寝かされ、進行方向に対して垂直に向いている——どちらのキャラクターも、体が回転できるのはこの軸のまわりだけである。コマやテーブルの上に横たわったコインのように、垂直な軸のまわりで平面的にその場で回転することは、どちらのキャラクターにとっても構造上不可能であり、どの瞬間にも一切起こらない。ペアの右側にいる卵形のキャラクターは、両手をずっと上に上げた状態のまま、この固定された水平の軸のまわりを、まるで地面を転がる車輪のように端から端まで継続的に回転していく——現在上を向いている体の部分が前方・下方へ回転して床に面する部分になり、床に面していた部分が上方・後方へ回転して新しい上面になる——正面、そして背中、そしてまた正面、というのを進みながら一定のペースで途切れることなく回転し続ける。回転している間は常に体が水準を保ったまま回転し、その軸は決して斜めに傾いたり他の方向へずれたりすることはなく、この転がりの間は起き上がったり立ち上がったりすることも一切ない。その左隣では、透明でゼリーのようなラバーキャラクターも、自分自身の固定された水平の軸のまわりを、まったく同じように——車輪のように端から端まで回転し、一回転するごとに上面と下面が着実かつ継続的に入れ替わり、軸は進行方向に対して常に垂直のままで、平面内でその場で回転することは一度もない——中のガムボールと紙吹雪は揺れ動くがこぼれることはない。二人はこのままペースを合わせて、それぞれの固定された水平の軸のまわりを回転しながら画面を右方向へ進んでいく。極めて重要な点として、画面外へ出ていく代わりに、2人とも画面のおおよそ中央に達したところで、回転を徐々にゆるめていき、そこで自然に穏やかに止まる——体を平らに仰向けにして、カメラの方(上)を向き、2人とも穏やかで嬉しそうな笑顔のまま、画面中央で並んで横たわる状態に落ち着く。カメラはこの間ずっと同じ俯瞰の位置に固定されたままで、一切動かない。しばらく穏やかに横たわった後、卵形のキャラクターはそのままの位置に留まり、仰向けに横たわったまま、リラックスして笑顔を保ち、起き上がろうとする素振りは一切見せない。同時に、透明なキャラクターだけが、**一言も声を出さず無言のまま**、突然の意欲的なエネルギーとともに起き上がり始める——**体の動きだけで、今にも動き出したいという意欲的で興奮した気持ちを伝える**——横たわった状態から、直立した、跳ねるような、いつでも動き出せそうな姿勢へと体を押し上げていく——体全体が遊び心のある熱意にあふれている。中のガムボール——正確に黄色4個・赤2個・水色1個・黄緑3個(合計10個、この数と色の組み合わせは変わらない)とカラフルな紙吹雪——は起き上がる動きに合わせて重力に従って体の底に自然に沈み、こぼれることは一切ない。ショットの終わりには、卵形のキャラクターは依然として仰向けに横たわり穏やかに笑っており、透明なキャラクターはそのすぐそばで直立し、意欲的で跳ねるようなエネルギーに満ち、**終始完全に無言のまま**、次の展開への準備が整っている。
+
+**環境音**
+なし。
+
+**BGM(観客のみに聞こえる)**
+なし。
+
+**生成結果**
+- 動画ファイル: `03-generated-videos/D1_v9.mp4`(未生成)
+- 判定: 未検証
+- メモ: 「歩いてではなく転がって中央へ」というご要望への対応版。転がりバージョンに
+  戻しつつ、セリフを喋ってしまう不具合の対策(v8)は維持
+
+### v8 (2026-09-15) — 旧版(歩き/弾みバージョン、セリフ対策は適用済み)
 
 生成結果で、ぽよんが起き上がる際に「オールライ!レッツゴー!」と実際に声を出して
 喋ってしまう不具合が発生。プロンプト内の引用符付きの台詞的な表現("alright, let's go!")
