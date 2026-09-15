@@ -8,6 +8,12 @@ status: draft
 # カットD-1: 俯瞰固定カメラ、画面左からフレームイン→中央を水平にコロコロ転がって右へフレームアウト
 
 ## シーン内容
+> **注記(v10時点)**: 新しくいただいた画像(ぽよんが回転中、たまちゃんが立った
+> ままの状態で、画面右寄りに並んでいる構図)をもとに、E-1への橋渡し部分を
+> 更新。中央に到達したら、たまちゃんは仰向けに寝転んでそのままぽよんを
+> 楽しそうに見守り続け、ぽよんは単に起き上がるだけでなく**ジャンプに備えた
+> 「よし、次はこれをして遊ぼう!」という構えの姿勢**に入るところまで拡張。
+
 > **注記(v9時点)**: E-1(ジャンプ)への橋渡しとして使うこのカットは、v7/v8で
 > 一度「歩き/弾み」バージョンを試したが、v9で**「転がる」バージョンに戻した**
 > (歩きではなく転がって中央へ向かい、そのまま停止する)。
@@ -30,13 +36,58 @@ status: draft
 - 顔(目・口)は体の片面にしかないため、回転中に顔と体の向きの整合性を保つ
 
 ## 参照画像
-- Picture 1(最初のフレーム): 薄い黄緑色の床を真上から見下ろす構図。画面左寄りに、
-  左側にぽよん(画面左端に触れる程度の位置)、その右にたまちゃんが並び、右側に
-  大きな余白が広がっている
+- Picture 1(v10で採用・最初のフレーム): 新しくいただいた画像。薄い黄緑色の床を
+  真上から見下ろす構図。画面右寄りに、ぽよんが回転している最中の姿勢、その右に
+  たまちゃんが立った状態で並んでおり、左側に大きな余白が広がっている
+- (v4〜v9で使用していた旧Picture1): 画面左寄りに、左側にぽよん・その右に
+  たまちゃんが並び、右側に大きな余白が広がっている構図(過去バージョン用)
 
 ## プロンプト履歴
 
-### v9 (2026-09-15) — 現在の採用版(転がりバージョンに戻し、セリフなしを維持)
+### v10 (2026-09-15) — 現在の採用版(新しい参照画像+ぽよんがジャンプ構えに入るまで拡張)
+
+新しくいただいた画像を新しいPicture1として採用。画像ではぽよんは回転中の姿勢、
+たまちゃんは(回転せず)立った状態で並んでいるため、**ぽよんは引き続き回転しながら
+横滑りで進み、たまちゃんは回転せずつま先立ちで歩いて進む**という組み合わせで
+中央へ向かう構成にした(たまちゃんが画像内で回転していないポーズのため)。
+※この組み合わせの解釈で問題があれば教えてください。
+
+中央に到達したら、**たまちゃんは仰向けに寝転んでそのままの姿勢を保ち、起き上がる
+ぽよんを楽しそうに見つめ続ける**。ぽよんは起き上がった後、単に直立するだけでなく、
+**体を少し沈めてバネのように構えた「今にもジャンプしそうな」姿勢**に入り、
+「さあ次はこれをして遊ぼう!」という気持ちを、言葉を発さず体の動きだけで表現する
+(E-1の大ジャンプへの橋渡し)。カメラは終始同じ俯瞰の位置に固定。
+
+**H3プロンプト(ComfyUI用)**
+```
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+
+integrated_multimodal_description: [Shot 1] 3D CG, claymation-style character render. A single static overhead shot, fixed in place for the entire video with no panning, tilting, zooming, or cutting, looks straight down on the pale yellow-green floor exactly as shown in <Picture 1>. Both characters keep their exact appearance and design from <Picture 1> unchanged throughout, with no distortion. Neither character ever speaks, talks, or makes any vocalization at any point in this entire shot — there is no dialogue, no speech, no mouthed words, and no lip movement suggesting speech at any point; both characters remain completely silent throughout, expressing everything purely through body language and expression, never through speech. The transparent, jelly-like rubber character continues spinning steadily in place like a flat disc turning on the floor while gliding sideways at the same time, moving further onto the floor with each moment, continuing exactly the motion already visible in <Picture 1>. Critically, its face — its eyes and mouth — is not a separate marking floating independently on top of its body; it is a fixed part of the body's surface, permanently attached to one spot on it, exactly like the rest of its glossy skin. As the body spins, the face spins together with it as one single rigid piece: the face turns away and becomes hidden from view as that side of the body rotates away from the camera, then comes back into view again only once that same spot has rotated all the way back around to face the camera — the face must never stay fixed in place, floating in the same on-screen position or orientation while the body spins independently underneath or around it. Its interior contents — exactly 4 yellow, 2 red, 1 light blue, and 3 yellow-green gumballs (ten in total, this exact count and color mix never changing, no other colors or extra gumballs appearing), plus colorful confetti — shift and tumble inside with each spin, always staying fully contained inside its glossy transparent body, never flying out or passing through its skin at any point. Beside it, the egg-shaped character moves in a completely different way, without any spinning or rolling at all: it toddles forward with small, bouncy steps, always walking up on the very tips of its toes only, its heels never once touching the ground, its short stiff legs never bending at the ankle at any point, its short arms swinging cheerfully with each step. Both characters continue moving toward the center of the frame this way, the transparent character spinning and gliding, the egg-shaped character toddling on tiptoe beside it, until both reach roughly the center of the frame. Once there, the egg-shaped character comes to a stop and happily flops down onto its back, settling flat on the floor, face up toward the camera, wearing a calm, happy smile, and stays exactly like this for the remainder of the shot — relaxed, still smiling, making no move to get up, its gaze turned toward the transparent character beside it, watching it with warm, happy interest the whole time. At the same moment, the transparent character stops spinning and gliding, and rights itself upright at the same spot near the center of the frame. Rather than simply standing still, it settles into a low, coiled, spring-loaded crouch, its whole body compressed slightly downward as if gathering energy, poised and ready to spring upward at any moment — its whole posture radiating eager, bursting anticipation, as if silently saying "alright, let's do this next!" purely through its body language, without speaking a single word. Its interior gumballs — exactly 4 yellow, 2 red, 1 light blue, and 3 yellow-green, ten in total, this exact count and color mix never changing — shift and settle naturally at the bottom of its body under gravity as it crouches, never spilling out. The shot ends with the egg-shaped character lying flat on its back, smiling calmly and watching happily, and the transparent character beside it in this low, coiled, ready-to-jump crouch, both completely silent throughout, poised for what comes next.
+
+overall_soundscape: None.
+
+non_diegetic_music: None.
+```
+
+**日本語訳**
+対象動画の0.00秒時点で、<Picture 1>(Shot 1より)が完全に参照されます。[Shot 1] 3D CGのクレイアニメ調キャラクターレンダー。動画全体を通して一切動かない単一の固定俯瞰ショットで、パン・チルト・ズーム・カットは一切なく、<Picture 1>で示された通り薄い黄緑色の床を真上から見下ろしている。2人とも<Picture 1>の見た目・デザインのまま、崩れたり変化したりすることなく最後まで保たれる。どちらのキャラクターも、このショット全体を通して一切話したり、喋ったり、発声したりすることはなく、2人とも終始完全に無言のままで、すべてを言葉ではなく体の動き・表情だけで表現する。透明でゼリーのようなラバーキャラクターは、<Picture 1>ですでに見えている動きをそのまま継続し、床の上で平らな円盤のように一定のペースでその場でくるくると回転しながら、同時に横方向へ滑るように移動し、時間が経つにつれて床の上をさらに進んでいく。極めて重要な点として、その顔(目と口)は体の上に独立して浮いている別の模様ではなく、体の表面に属する固定された一部分であり、光沢のある体の他の部分とまったく同じように、体の一箇所に恒久的に付着している。体が回転すると、顔も体と一体の硬いパーツとして一緒に回転する:その部分の体がカメラから離れる方向へ回転すれば顔も一緒に向こうを向いて見えなくなり、同じ箇所がぐるっと一周してカメラの方を向いたときにだけ再び顔が見える——顔が画面上の同じ位置・同じ向きのまま固定されたまま浮いていて、体だけがその下や周りで独立して回転する、ということは決して起こらない。中のガムボール——正確に黄色4個・赤2個・水色1個・黄緑3個(合計10個、この数と色の組み合わせは変わらず、他の色や余分なガムボールは一切現れない)——とカラフルな紙吹雪は、回転するたびに揺れ動き転がるが、常に光沢のある透明な体の中に完全に収まったままで、一度も外に飛び出したり体の表面を突き抜けたりすることはない。その隣では、卵形のキャラクターがまったく異なる、回転や転がりを一切伴わない動き方をする——常につま先の先端だけで立ち、踵はどの瞬間も一切地面につかず、短く硬い脚は足首でどの瞬間も曲がらず、短い両腕は一歩ごとに楽しそうに揺れる、小さく弾むような足取りでよちよちと進む。2人はこのまま画面中央へ向かって進み続け——透明なキャラクターは回転しながら滑るように、卵形のキャラクターはその隣でつま先立ちでよちよちと——おおよそ画面中央に到達する。そこに到達すると、卵形のキャラクターは立ち止まり、嬉しそうに仰向けにゴロンと寝転がり、体を床に平らに横たえて、カメラの方(上)を向き、穏やかで嬉しそうな笑顔を浮かべ、ショットの残り時間ずっとこのままの状態を保つ——リラックスして、笑顔のまま、起き上がろうとする素振りは一切見せず、その視線は隣の透明なキャラクターの方へ向けられ、終始温かく嬉しそうな興味を持ってそれを見つめている。同じ瞬間、透明なキャラクターは回転と滑りをやめ、画面中央付近の同じ場所で体を起こして直立する。ただ静止して立つのではなく、体をわずかに沈めた、バネのように力を溜めた低い構えの姿勢に入り、いつでも上へ飛び出せるよう身構える——その姿勢全体から、今にもはじけそうな意欲的な期待感があふれ、まるで「よし、次はこれをやろう!」と、一言も声に出さず、体の動きだけで静かに語りかけているかのようである。中のガムボール——正確に黄色4個・赤2個・水色1個・黄緑3個(合計10個、この数と色の組み合わせは変わらない)——は、しゃがみ込む動きに合わせて重力に従って体の底に自然に沈み、こぼれることは一切ない。ショットの終わりには、卵形のキャラクターは仰向けに横たわり、穏やかな笑顔で嬉しそうに見つめており、透明なキャラクターはそのすぐそばで、この低く構えたジャンプ前の姿勢のまま——2人とも終始完全に無言のまま、次の展開に向けて身構えている。
+
+**環境音**
+なし。
+
+**BGM(観客のみに聞こえる)**
+なし。
+
+**生成結果**
+- 動画ファイル: `03-generated-videos/D1_v10.mp4`(未生成)
+- 判定: 未検証
+- メモ: 新しい参照画像(ぽよん回転中・たまちゃん立ち姿、画面右寄り)を採用。
+  ぽよんが回転しながら中央へ進み、たまちゃんはつま先立ちで歩いて中央へ進む
+  組み合わせにした(画像内でたまちゃんが回転していないポーズのため)。中央到達後は
+  たまちゃんが仰向けのままぽよんを見守り、ぽよんは単に起き上がるだけでなく
+  「低く構えたジャンプ前の姿勢」まで踏み込んで拡張した
+
+### v9 (2026-09-15) — 旧版(転がりバージョン、ぽよんは単に起き上がるだけ)
 
 「歩いてではなく転がって中央へ」というご要望を受け、回転(転がり)バージョンに戻した。
 セリフを喋ってしまう不具合の対策(v8で確立)は維持し、感情(意欲的で「よし、
@@ -331,8 +382,11 @@ non_diegetic_music: None.
 - メモ:
 
 ## ComfyUIでの設定メモ
-- Picture 1: 今回いただいた画像(ぽよん左端寄り・たまちゃんその右、余白が右側)
+- Picture 1(v10): 新しくいただいた画像(ぽよん回転中・たまちゃん立ち姿、画面右寄り、余白が左側)
+- Picture 1(v4〜v9の旧版用): ぽよん左端寄り・たまちゃんその右、余白が右側
 - モード: I2VA(最後のフレーム画像は不要)
-- 尺: 6秒目安
+- 尺: 7秒目安(v10。ぽよんがジャンプ構えに入る分、やや長め)
 - **重要**: `[Shot 2]`などの追加ショット表記は使わず、単一の`[Shot 1]`のみで最初から最後まで記述すること
+- v10は「ぽよんが回転・たまちゃんがつま先歩き」という組み合わせで解釈した想定版。
+  実際にたまちゃんも回転させたい場合は教えてください
 - 回転が斜めになる/回転の向きがおかしいなど違和感があれば、その場でフィードバックをください
