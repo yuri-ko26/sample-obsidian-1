@@ -37,7 +37,40 @@ status: draft
 
 ## プロンプト履歴
 
-### v7 (2026-09-15) — 現在の採用版(転がりをやめ、るんるん歩いて中央へフレームイン)
+### v8 (2026-09-15) — 現在の採用版(セリフとして喋ってしまう不具合を修正)
+
+生成結果で、ぽよんが起き上がる際に「オールライ!レッツゴー!」と実際に声を出して
+喋ってしまう不具合が発生。プロンプト内の引用符付きの台詞的な表現("alright, let's go!")
+が、モデルにセリフ・音声として解釈されてしまったのが原因と考えられる。引用符付きの
+台詞表現を完全に削除し、**セリフ・発話・音声は一切なしであることを明記**した。
+
+**H3プロンプト(ComfyUI用)**
+```
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+
+integrated_multimodal_description: [Shot 1] 3D CG, claymation-style character render. A single static overhead shot, fixed in place for the entire video with no panning, tilting, zooming, or cutting, looks straight down on the pale yellow-green floor exactly as shown in <Picture 1>. Both characters keep their exact appearance and design from <Picture 1> unchanged throughout, with no distortion, and neither character spins, rolls, or tumbles at any point in this shot — all movement here is simple, natural walking and bouncing. Neither character ever speaks, talks, or makes any vocalization at any point in this entire shot — there is no dialogue, no speech, no mouthed words, and no lip movement suggesting speech at any point; both characters remain completely silent throughout, expressing everything purely through body language and expression, never through speech. Both characters move together toward the center of the frame in a cheerful, carefree, lighthearted mood, as if happily wondering what to do next — a relaxed, playful, unhurried little stroll rather than any kind of rush. The egg-shaped character toddles forward with small, bouncy steps, always walking up on the very tips of its toes only, its heels never once touching the ground, its short stiff legs never bending at the ankle at any point, its short arms swinging cheerfully with each step, its face wearing a bright, happy, carefree smile the whole time. Beside it, the transparent, jelly-like rubber character bounces along at the same cheerful, unhurried pace, its round body compressing gently downward and springing back up with each little bounce like a soft water balloon, its interior gumballs — exactly 4 yellow, 2 red, 1 light blue, and 3 yellow-green, ten in total, this exact count and color mix never changing, plus colorful confetti — shifting and settling naturally at the bottom of its body under gravity with each bounce, never spilling out. Both continue this same cheerful, lighthearted pace together, side by side, moving steadily toward the middle of the frame. Once both characters reach roughly the center of the frame, they happily come to a stop there and playfully flop down onto their backs together, settling flat on the floor, face up toward the camera, both wearing calm, happy smiles, coming to rest side by side in the middle of the shot. After a brief calm moment lying there together, the egg character stays exactly where it is, remaining flat on its back the whole time, relaxed and still smiling, making no move to get up. At the same time, the transparent character alone begins to perk up with sudden, eager energy, silently and without speaking a single word — its body language alone conveying eager excitement, as if bursting to get moving — pushing itself up from lying flat into an upright, bouncy, ready-to-go posture, its whole body brimming with playful enthusiasm, its interior gumballs shifting and settling naturally at the bottom of its body under gravity as it rights itself, never spilling out. The shot ends with the egg character still lying flat on its back smiling calmly, and the transparent character upright beside it, full of eager, bouncy energy, completely silent throughout, ready for what comes next.
+
+overall_soundscape: None.
+
+non_diegetic_music: None.
+```
+
+**日本語訳**
+対象動画の0.00秒時点で、<Picture 1>(Shot 1より)が完全に参照されます。[Shot 1] 3D CGのクレイアニメ調キャラクターレンダー。動画全体を通して一切動かない単一の固定俯瞰ショットで、パン・チルト・ズーム・カットは一切なく、<Picture 1>で示された通り薄い黄緑色の床を真上から見下ろしている。2人とも<Picture 1>の見た目・デザインのまま、崩れたり変化したりすることなく保たれ、このショットではどちらのキャラクターも回転・転がり・宙返りを一切しない——ここでの動きはすべてシンプルで自然な歩行と弾みのみである。**どちらのキャラクターも、このショット全体を通して一切話したり、喋ったり、発声したりすることはない——セリフ、発話、口パク、話しているように見える口の動きは一切なく、2人とも終始完全に無言のままで、すべてを言葉ではなく体の動き・表情だけで表現する。**2人とも、次に何をしようかと楽しそうに考えているかのような、るんるんとした気楽で明るい雰囲気で、画面中央へ向かって一緒に進んでいく——急ぐ様子は一切なく、リラックスした遊び心のある、のんびりとした散歩のような足取りである。卵形のキャラクターは小さく弾むような足取りでよちよちと進み、常につま先の先端だけで立ち、踵はどの瞬間も一切地面につかず、短く硬い脚は足首でどの瞬間も曲がらず、短い両腕は一歩ごとに楽しそうに揺れ、顔はずっと明るく気楽な笑顔を浮かべている。その隣では、透明でゼリーのようなラバーキャラクターが同じ気楽でのんびりとしたペースで弾みながら進み、水風船のように丸い体がやわらかく沈んでは弾んで戻る動きを一回ごとに繰り返し、中のガムボール——正確に黄色4個・赤2個・水色1個・黄緑3個(合計10個、この数と色の組み合わせは変わらない)とカラフルな紙吹雪——は弾むたびに重力に従って体の底に自然に沈み、こぼれることは一切ない。2人とも、この同じ明るくのんびりとしたペースのまま並んで、画面の中央へ向かって進み続ける。2人ともおおよそ画面中央に到達したところで、そこで嬉しそうに立ち止まり、一緒に楽しそうに仰向けにゴロンと寝転がり、体を床に平らに横たえて、カメラの方(上)を向き、2人とも穏やかで嬉しそうな笑顔のまま、画面中央で並んで横たわる状態に落ち着く。しばらく穏やかに横たわった後、卵形のキャラクターはそのままの位置に留まり、仰向けに横たわったまま、リラックスして笑顔を保ち、起き上がろうとする素振りは一切見せない。同時に、透明なキャラクターだけが、**一言も声を出さず無言のまま**、突然の意欲的なエネルギーとともに起き上がり始める——**体の動きだけで、今にも動き出したいという意欲的な興奮を伝える**——横たわった状態から、直立した、跳ねるような、いつでも動き出せそうな姿勢へと体を押し上げていく——体全体が遊び心のある熱意にあふれている。中のガムボールは起き上がる動きに合わせて重力に従って体の底に自然に沈み、こぼれることは一切ない。ショットの終わりには、卵形のキャラクターは依然として仰向けに横たわり穏やかに笑っており、透明なキャラクターはそのすぐそばで直立し、意欲的で跳ねるようなエネルギーに満ち、**終始完全に無言のまま**、次の展開への準備が整っている。
+
+**環境音**
+なし。
+
+**BGM(観客のみに聞こえる)**
+なし。
+
+**生成結果**
+- 動画ファイル: `03-generated-videos/D1_v8.mp4`(未生成)
+- 判定: 未検証
+- メモ: 「オールライ!レッツゴー!」と実際に喋ってしまう不具合の対策版。引用符付きの
+  台詞的な表現をすべて削除し、「セリフ・発話・音声は一切なし」を明記した
+
+### v7 (2026-09-15) — 旧版(引用符付きの台詞表現が原因で喋ってしまった)
 
 回転(ごろごろ転がる)ではなく、**2人が「さあ次は何をしようか!」というような
 るんるんと楽しい足取りで、俯瞰カメラの画面中央へ歩いて(弾んで)フレームインする**
