@@ -51,7 +51,41 @@ Eビート(「ジャンプ」)2回目のカット。俯瞰の角度を保った�
 
 ## プロンプト履歴
 
-### v3 (2026-09-15) — 現在の採用版(2枚構成に戻し、勢いよく飛びつく動きに変更)
+### v4 (2026-09-15) — 現在の採用版(さらに勢いよく飛びつくように強化)
+
+「もっと勢いよく飛びついて欲しいです」のご指示を受け、v3の飛びつき描写を
+さらに強化した。具体的には、①助走として2歩ほど勢いをつけて駆け寄ってから
+跳ぶ、②跳躍の高さ・距離を大きくする(単なるホップではなく本格的なジャンプ)、
+③着地の衝撃を強め、ぽよんがその勢いでより大きく揺れる、④たまちゃんの
+表情も目を輝かせた興奮全開の顔にする、という4点を追加・強化した。
+
+**H3プロンプト(ComfyUI用)**
+```
+How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 1) aligns with the 6.00-second mark of the target video.
+
+integrated_multimodal_description: [Shot 1] 3D CG, claymation-style character render. A single continuous shot keeps the exact same overhead, bird's-eye viewing angle throughout the entire video, looking straight down at all times and never tilting, panning, or switching to a side or angled view. The shot begins in the position and framing established by <Picture 1>, looking straight down on the pale yellow-green floor, with the transparent, jelly-like rubber character and the egg-shaped character already standing upright side by side, matching their exact appearance, expression, and position from <Picture 1>. Neither character ever speaks, talks, or makes any vocalization at any point — both stay completely silent throughout, expressing everything purely through body language. With a burst of overflowing, can't-contain-it excitement, its eyes lighting up and its whole face breaking into an enormous grin, the egg-shaped character takes two quick, bounding running steps to build up speed, then explodes off the ground with as much force as it can muster, launching itself powerfully through the air toward the transparent character in a big, dramatic, all-out flying leap — arms flung wide open, body fully stretched out mid-air — not a small hop or a gentle step, but a bold, unrestrained, full-force pounce, the kind of enthusiastic, no-holding-back glomp a small child gives when they can no longer wait and go flying into the arms of someone they love. It crashes snugly into the transparent character's side with real momentum, both arms wrapping tightly around it in a big embrace, the two of them now touching, nestled closely together, the transparent character visibly rocking and wobbling from the strong, cheerful force of the impact before settling. Once pressed together like this, both characters crouch down slightly at the same moment, gathering their energy together in perfect unison, and then launch upward together in one big joint jump, rising straight up side by side, still touching, as if leaping as a single unit. As they rise, the camera keeps its overhead angle but pushes in steadily closer toward the pair, moving closer and closer with each moment, so that by the time they reach the peak of this big jump, the two of them together fill almost the entire frame, both wearing wide, delighted, joyful smiles, seen from directly overhead the whole time, exactly matching the tight, close-up framing, poses, and expressions shown in <Picture 2> at the end of the shot. The transparent character's interior contents — exactly 4 yellow, 2 red, 1 light blue, and 3 yellow-green gumballs, ten in total, this exact count and color mix never changing, no other colors ever appearing at any point — plus colorful confetti, shift, tumble, and jostle energetically inside with the force of the flying leap, the impact, and the jump, always staying fully contained inside its glossy transparent body, never flying out or passing through its skin at any point.
+
+overall_soundscape: None.
+
+non_diegetic_music: None.
+```
+
+**日本語訳**
+参照画像と対象動画の対応 — Picture 1(Shot 1より)は対象動画の0.00秒地点に、Picture 2(Shot 1より)は対象動画の6.00秒地点に対応します。[Shot 1] 3D CGのクレイアニメ調キャラクターレンダー。単一の連続したショットで、動画全体を通してまったく同じ俯瞰・鳥瞰の角度を保ち、常に真上から見下ろしたままで、傾いたり、パンしたり、横や斜めのアングルに切り替わったりすることは一切ない。ショットは<Picture 1>で確立された位置・フレーミングから始まり、薄い黄緑色の床を真上から見下ろしており、透明でゼリーのようなラバーキャラクターと卵形のキャラクターが、<Picture 1>のとおりの見た目・表情・位置のまま、すでに並んで直立している。どちらのキャラクターも一切話したり喋ったり発声したりすることはなく、終始完全に無言のまま、すべてを体の動きだけで表現する。抑えきれないほどあふれる興奮とともに、目を輝かせ、顔いっぱいに大きな笑みを浮かべながら、卵形のキャラクターはまず勢いをつけるために弾むような2歩の助走を踏み、そして力の限り地面を蹴って爆発的に飛び出し、透明なキャラクターに向かって空中を力強く、大きく、劇的な全力の跳躍で飛んでいく——両腕を大きく広げ、体を空中で目一杯伸ばして——小さなホップやそっとした一歩ではなく、大胆で歯止めの利かない、全力の飛びつきであり、小さな子どもがもう待ちきれずに大好きな相手の腕の中へまっすぐ飛び込んでいくときのような、遠慮のない熱烈な抱きつきである。本物の勢いをもって透明なキャラクターの体の横にドンとぶつかるように着地し、両腕をしっかりとその体にまわして大きく抱きしめ、2人は触れ合い、ぴったりとくっついた状態になる——透明なキャラクターは、この強く嬉しそうな衝撃の勢いで目に見えて揺れ、ぐらつきながら、やがて落ち着く。このように密着したところで、2人は同じ瞬間にわずかにしゃがみ込み、完璧に息を合わせて力をため、そして一緒に真上へ向かって一つの大きな共同ジャンプへと飛び立ち、触れ合ったまま横に並んでまっすぐ上昇していく——まるで一つの塊として跳んでいるかのようである。2人が上昇するのに合わせて、カメラは俯瞰の角度を保ったまま、2人へ向かって一定のペースで着実に寄っていき、この大きなジャンプの頂点に達する頃には、2人合わせてほぼフレーム全体を埋めるほど大きく、どちらも満面の、喜びにあふれた笑顔を浮かべ、終始真上から見た状態のまま、<Picture 2>で示された寄った・クローズアップのフレーミング・ポーズ・表情とぴったり一致してこのショットが終わる。透明なキャラクターの中身——正確に黄色4個・赤2個・水色1個・黄緑3個(合計10個、この数と色の組み合わせは変わらず、他の色が現れることは一切ない)のガムボールとカラフルな紙吹雪——は、飛びつき・衝撃・ジャンプの勢いに合わせて元気よく揺れ動き転がりぶつかり合うが、常に光沢のある透明な体の中に完全に収まったままで、一度も外に飛び出したり体の表面を突き抜けたりすることはない。
+
+**環境音**
+なし。
+
+**BGM(観客のみに聞こえる)**
+なし。
+
+**生成結果**
+- 動画ファイル: `03-generated-videos/E2_v4.mp4`(未生成)
+- 判定: 未検証
+- メモ: 「もっと勢いよく飛びついて欲しいです」への対応版。助走・跳躍の
+  大きさ・着地の衝撃・表情の4点を強化した
+
+### v3 (2026-09-15) — 旧版(飛びつく動きに変更したが、まだ勢いが控えめだった)
 
 3枚の参照画像を使ったv2で、生成中にぽよんのガムボールの色がおかしくなる
 不具合が発生したため、Picture1(くっつく前)+Picture2(ジャンプ頂点)の
@@ -155,7 +189,7 @@ non_diegetic_music: None.
 - Picture 1: いただいた画像1(俯瞰、ぽよん左・たまちゃん右で並んで立つ、くっつく前)
 - Picture 2: いただいた画像3(ジャンプの頂点、カメラに寄った状態、2人とも満面の笑顔)
 - モード: FL2VA(v3で2枚構成に戻した。中間画像は参照画像としては使わない)
-- 尺: 6秒目安(勢いよく飛びつく1.5s/しゃがんで力をため→ジャンプ上昇→頂点4.5s)
+- 尺: 6秒目安(助走+勢いよく飛びつく2s/しゃがんで力をため→ジャンプ上昇→頂点4s)
 - **重要**: `[Shot 2]`などの追加ショット表記は使わず、単一の`[Shot 1]`のみで最初から最後まで記述すること
 - 俯瞰角度を保ったままのプッシュインズームという、D-beatとは異なるカメラワークの
   カットのため、生成後の見え方に違和感があればフィードバックをください
