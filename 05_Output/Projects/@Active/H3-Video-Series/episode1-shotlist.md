@@ -73,7 +73,7 @@ status: draft
 | Cut | 内容 | 尺目安 | 対応アーカイブ |
 |---|---|---|---|
 | E-1(1回目) | 【確定】D-1 v6の続き。たまちゃんは仰向けのまま、ぽよんはすでに起き上がった状態から2回弾んで3回目に大ジャンプ→着地 | 9s | `02-scenes/05-overhead-big-jump.md` | `02-scenes-v2/E1-both-get-up-poyon-big-jump.md` v2作成済み(D-1 v6との継続を反映) |
-| E-2(2回目) | 【確定】たまちゃんが助走をつけて全力で「えいっ!」とぽよんに飛びついてくっつき、2人一緒に大ジャンプ。カメラは俯瞰角度のまま寄っていき、頂点でフレームいっぱいになる | 6s | `02-scenes/18-overhead-big-jump-round-two.md` | `02-scenes-v2/E2-tamachan-sticks-to-poyon-jump-together.md` v4作成済み(2枚構成のFL2VA、飛びつきをさらに強化) |
+| E-2(2回目) | 【確定】たまちゃんが助走をつけて全力で「えいっ!」とぽよんに飛びついてくっつき、2人一緒に大ジャンプ→頂点でフレームいっぱいになった後、一緒に落下して着地→2人とも大笑いして終わる。カメラは俯瞰角度のまま寄っていく | 9s | `02-scenes/18-overhead-big-jump-round-two.md` | `02-scenes-v2/E2-tamachan-sticks-to-poyon-jump-together.md` v5作成済み(落下・着地・大笑いまで延長) |
 | E-3(3回目・【エピソード1のラストカット】) | 【確定】2人ともワクワクした気持ちを共有し、一緒に大きくジャンプ。カメラは俯瞰のまま寄っていき、ジャンプの頂点・満面の笑顔でフレームいっぱいになった瞬間でエピソードが終わる | 6s | `02-scenes/19-poyon-offers-a-ride-jump-together.md` | `02-scenes-v2/E3-both-excited-jump-together.md` v1作成済み(L2VA) |
 
 ### F. 雲の稜線おいかけっこ(追いかけて追いつかれる・×2)
