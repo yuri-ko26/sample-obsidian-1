@@ -8,8 +8,14 @@ status: draft
 # カットD-1: 俯瞰固定カメラ、画面左からフレームイン→中央を水平にコロコロ転がって右へフレームアウト
 
 ## シーン内容
+> **注記(v7時点)**: E-1(ジャンプ)への橋渡しとして使うこのカットは、v7で
+> 「転がる」ではなく「るんるんと歩いて/弾んで中央へフレームインする」方向に
+> 変更した(下記v7参照)。純粋な「コロコロ転がる」表現(クライアント要望どおりの
+> D-1本体)は、この橋渡しカットとは別に、D-3以降などで引き続き検討する。
+
 クライアント要望どおり、俯瞰の固定カメラで、2人が画面左から入ってきて、画面中央を
 水平にコロコロと転がって移動し、右側へフレームアウトする。単一の固定ショット。
+(v1〜v6は転がりバージョン。v7で歩き/弾みバージョンに変更、以下参照)
 
 **設計メモ**: 旧アーカイブ(シーン24〜27)で「回転の物理」表現に何度も試行錯誤した
 経緯がある。今回は最終的に一番安定していた「前転(でんぐり返し)/カートホイール、
@@ -31,7 +37,40 @@ status: draft
 
 ## プロンプト履歴
 
-### v6 (2026-09-15) — 現在の採用版(画面中央で停止→仰向け→ぽよんだけ「よしいくぞー!」と起き上がる)
+### v7 (2026-09-15) — 現在の採用版(転がりをやめ、るんるん歩いて中央へフレームイン)
+
+回転(ごろごろ転がる)ではなく、**2人が「さあ次は何をしようか!」というような
+るんるんと楽しい足取りで、俯瞰カメラの画面中央へ歩いて(弾んで)フレームインする**
+方向に変更。カメラは終始俯瞰のまま固定。中央に到着した後は、v6と同じく
+そのまま仰向けに寝転び、ぽよんだけ「よし、いくぞー!」と起き上がってE-1へ続く。
+
+**H3プロンプト(ComfyUI用)**
+```
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+
+integrated_multimodal_description: [Shot 1] 3D CG, claymation-style character render. A single static overhead shot, fixed in place for the entire video with no panning, tilting, zooming, or cutting, looks straight down on the pale yellow-green floor exactly as shown in <Picture 1>. Both characters keep their exact appearance and design from <Picture 1> unchanged throughout, with no distortion, and neither character spins, rolls, or tumbles at any point in this shot — all movement here is simple, natural walking and bouncing. Both characters move together toward the center of the frame in a cheerful, carefree, lighthearted mood, as if happily wondering "what should we do next!" — a relaxed, playful, unhurried little stroll rather than any kind of rush. The egg-shaped character toddles forward with small, bouncy steps, always walking up on the very tips of its toes only, its heels never once touching the ground, its short stiff legs never bending at the ankle at any point, its short arms swinging cheerfully with each step, its face wearing a bright, happy, carefree smile the whole time. Beside it, the transparent, jelly-like rubber character bounces along at the same cheerful, unhurried pace, its round body compressing gently downward and springing back up with each little bounce like a soft water balloon, its interior gumballs — exactly 4 yellow, 2 red, 1 light blue, and 3 yellow-green, ten in total, this exact count and color mix never changing, plus colorful confetti — shifting and settling naturally at the bottom of its body under gravity with each bounce, never spilling out. Both continue this same cheerful, lighthearted pace together, side by side, moving steadily toward the middle of the frame. Once both characters reach roughly the center of the frame, they happily come to a stop there and playfully flop down onto their backs together, settling flat on the floor, face up toward the camera, both wearing calm, happy smiles, coming to rest side by side in the middle of the shot. After a brief calm moment lying there together, the egg character stays exactly where it is, remaining flat on its back the whole time, relaxed and still smiling, making no move to get up. At the same time, the transparent character alone begins to perk up with sudden, eager energy — as if excitedly declaring "alright, let's go!" — pushing itself up from lying flat into an upright, bouncy, ready-to-go posture, its whole body brimming with playful enthusiasm, its interior gumballs shifting and settling naturally at the bottom of its body under gravity as it rights itself, never spilling out. The shot ends with the egg character still lying flat on its back smiling calmly, and the transparent character upright beside it, full of eager, bouncy energy, ready for what comes next.
+
+overall_soundscape: None.
+
+non_diegetic_music: None.
+```
+
+**日本語訳**
+対象動画の0.00秒時点で、<Picture 1>(Shot 1より)が完全に参照されます。[Shot 1] 3D CGのクレイアニメ調キャラクターレンダー。動画全体を通して一切動かない単一の固定俯瞰ショットで、パン・チルト・ズーム・カットは一切なく、<Picture 1>で示された通り薄い黄緑色の床を真上から見下ろしている。2人とも<Picture 1>の見た目・デザインのまま、崩れたり変化したりすることなく保たれ、このショットではどちらのキャラクターも回転・転がり・宙返りを一切しない——ここでの動きはすべてシンプルで自然な歩行と弾みのみである。2人とも、「さあ次は何をしようか!」と楽しそうに考えているかのような、るんるんとした気楽で明るい雰囲気で、画面中央へ向かって一緒に進んでいく——急ぐ様子は一切なく、リラックスした遊び心のある、のんびりとした散歩のような足取りである。卵形のキャラクターは小さく弾むような足取りでよちよちと進み、常につま先の先端だけで立ち、踵はどの瞬間も一切地面につかず、短く硬い脚は足首でどの瞬間も曲がらず、短い両腕は一歩ごとに楽しそうに揺れ、顔はずっと明るく気楽な笑顔を浮かべている。その隣では、透明でゼリーのようなラバーキャラクターが同じ気楽でのんびりとしたペースで弾みながら進み、水風船のように丸い体がやわらかく沈んでは弾んで戻る動きを一回ごとに繰り返し、中のガムボール——正確に黄色4個・赤2個・水色1個・黄緑3個(合計10個、この数と色の組み合わせは変わらない)とカラフルな紙吹雪——は弾むたびに重力に従って体の底に自然に沈み、こぼれることは一切ない。2人とも、この同じ明るくのんびりとしたペースのまま並んで、画面の中央へ向かって進み続ける。2人ともおおよそ画面中央に到達したところで、そこで嬉しそうに立ち止まり、一緒に楽しそうに仰向けにゴロンと寝転がり、体を床に平らに横たえて、カメラの方(上)を向き、2人とも穏やかで嬉しそうな笑顔のまま、画面中央で並んで横たわる状態に落ち着く。しばらく穏やかに横たわった後、卵形のキャラクターはそのままの位置に留まり、仰向けに横たわったまま、リラックスして笑顔を保ち、起き上がろうとする素振りは一切見せない。同時に、透明なキャラクターだけが、まるで「よし、いくぞー!」と元気よく宣言するかのように、突然の意欲的なエネルギーとともに起き上がり始める——横たわった状態から、直立した、跳ねるような、いつでも動き出せそうな姿勢へと体を押し上げていく——体全体が遊び心のある熱意にあふれている。中のガムボールは起き上がる動きに合わせて重力に従って体の底に自然に沈み、こぼれることは一切ない。ショットの終わりには、卵形のキャラクターは依然として仰向けに横たわり穏やかに笑っており、透明なキャラクターはそのすぐそばで直立し、意欲的で跳ねるようなエネルギーに満ちて、次の展開への準備が整っている。
+
+**環境音**
+なし。
+
+**BGM(観客のみに聞こえる)**
+なし。
+
+**生成結果**
+- 動画ファイル: `03-generated-videos/D1_v7.mp4`(未生成)
+- 判定: 未検証
+- メモ: 転がり(回転)をやめ、るんるんとした歩き/弾みでフレームインする方向に
+  変更。中央到着後の「仰向け→ぽよんだけ起き上がる」というE-1への継続部分はv6と同じ
+
+### v6 (2026-09-15) — 旧版(転がってフレームイン→中央で停止)
 
 Eビート(ジャンプ)への橋渡しとして、右へフレームアウトさせず**画面中央で転がりを
 止め、2人とも仰向けに寝転んだ状態**で終わるよう変更。さらに、その仰向け状態から
