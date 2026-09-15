@@ -68,7 +68,7 @@ status: draft
 ### E. ジャンプ(×3)
 | Cut | 内容 | 尺目安 | 対応アーカイブ |
 |---|---|---|---|
-| E-1(1回目) | 俯瞰固定、ぽよんが真上に大ジャンプしてたまちゃんにぶつかる | 6s | `02-scenes/05-overhead-big-jump.md` |
+| E-1(1回目) | 【確定】D-1 v6の続き。たまちゃんは仰向けのまま、ぽよんはすでに起き上がった状態から2回弾んで3回目に大ジャンプ→着地 | 9s | `02-scenes/05-overhead-big-jump.md` | `02-scenes-v2/E1-both-get-up-poyon-big-jump.md` v2作成済み(D-1 v6との継続を反映) |
 | E-2(2回目) | 起き上がった2人が見つめ合い、ぽよんが再び大ジャンプ→着地でぶつかる | 8s | `02-scenes/18-overhead-big-jump-round-two.md` |
 | E-3(3回目) | ぽよんが体を差し出し、たまちゃんが飛び乗って2人で一緒にジャンプ→着地で爆笑 | 11s | `02-scenes/19-poyon-offers-a-ride-jump-together.md` |
 
