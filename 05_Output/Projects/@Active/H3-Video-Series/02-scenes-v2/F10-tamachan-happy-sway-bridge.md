@@ -8,17 +8,18 @@ status: draft
 # カットF-10: ほぼ同じ構図の2枚を自然に繋ぐ短いカット(画像1→画像2)
 
 ## シーン内容
-ほぼ同じ構図の2枚の画像(画像1=たまちゃんが嬉しそうに笑い片腕を横に広げている、
-画像2=たまちゃんが同じ笑顔のまま両腕を広げて弾んでいる、ぽよんはどちらも同じ
-笑顔)を自然に繋ぐ短いカット。正面固定カメラ。
+ほぼ同じ構図の2枚の画像を自然に繋ぐ短いカット。**ぽよんはたまちゃんの左側から
+右側へ実際に移動する**(画像1ではたまちゃんの左、画像2ではたまちゃんの右)。
+正面固定カメラ。
 
-1. Picture1の状態(たまちゃんが嬉しそうに笑い、片腕を横に広げている)から始まる
+1. Picture1の状態(たまちゃんが嬉しそうに笑い片腕を広げている、ぽよんはたまちゃんの
+   左側で笑顔のまま浮かんでいる)から始まる
 2. たまちゃんは同じ嬉しい笑顔を保ったまま、楽しそうに体を左右に小さく揺らし、
    もう片方の腕も広げていく
-3. ぽよんは表情・大きな位置は変えないが、完全に静止した置物のようにはせず、
-   浮遊しているキャラクターらしい**ふわふわとした小さな上下の浮き沈み**(中の
-   ガムボールもそれに合わせてやさしく揺れる)を保つ。笑顔・ポーズそのものは変えない
-4. 最終的にPicture2で示された通りの、両腕を広げて弾んでいるポーズで終わる
+3. ぽよんは表情・笑顔は変えないまま、ふわふわと浮遊しながら**たまちゃんの左側から
+   右側へ実際に横移動する**(中のガムボールも移動に合わせてやさしく揺れる)
+4. 最終的にPicture2で示された通り、たまちゃんが両腕を広げて弾んでおり、ぽよんが
+   たまちゃんの右側に移動した状態で終わる
 
 **キャラクター参照**: `01-characters/character-reference.md` の制約を必ず踏まえること。
 特に:
@@ -31,13 +32,44 @@ status: draft
 
 ## 参照画像
 - Picture 1(最初のフレーム): いただいた画像1。たまちゃんが嬉しそうに笑い、片腕を
-  横に広げている。ぽよんは紫の雲の頂上付近で笑顔のまま浮かんでいる
-- Picture 2(最後のフレーム): いただいた画像2。同じ構図で、たまちゃんが同じ笑顔の
-  まま両腕を横に広げて楽しそうに弾んでいる
+  横に広げている。ぽよんは**たまちゃんの左側**で笑顔のまま浮かんでいる
+- Picture 2(最後のフレーム): いただいた画像2。たまちゃんが同じ笑顔のまま両腕を
+  横に広げて楽しそうに弾んでおり、ぽよんは**たまちゃんの右側**に移動している
 
 ## プロンプト履歴
 
-### v2 (2026-09-15) — 現在の採用版(ぽよんに自然な浮遊の微動を追加)
+### v3 (2026-09-15) — 現在の採用版(ぽよんがたまちゃんの左から右へ実際に移動)
+
+「画像1・画像2でぽよんはたまちゃんの左から右へ移動しているはず」というご指摘を
+受け、単なる上下の微動ではなく、**ぽよんが実際にたまちゃんの左側から右側へ
+横移動する**よう修正した。
+
+**H3プロンプト(ComfyUI用)**
+```
+How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 1) aligns with the 3.00-second mark of the target video.
+
+integrated_multimodal_description: [Shot 1] 3D CG, claymation-style character render, a single continuous static shot holds the exact same fixed position, framing, and lens throughout the entire video, showing the pastel clouds exactly as shown in <Picture 1>, with the egg-shaped character standing with one arm held out to the side, laughing happily, and the transparent, jelly-like rubber character hovering to the egg character's left, wearing its own happy smile, matching their exact appearance, expression, and position from <Picture 1> at the very start. The camera never pans, tilts, zooms, or cuts away at any point. Neither character ever speaks, talks, or makes any vocalization at any point — both stay completely silent throughout, expressing everything through body language and expression alone. The egg character never has eyebrows at any point, and its happy, laughing expression never changes or switches to any other expression throughout the entire shot — it keeps the exact same laugh from the first frame to the last. Over the course of this short shot, the egg character sways gently and playfully from side to side, still balanced purely on the tips of its toes, its heels never touching the ground, its short stiff legs never bending at the ankle at any point, and as it sways it happily brings its other short arm up and out as well, so that both arms end up held out to its sides, its whole body giving a small, joyful little bounce with the motion. At the same time, the transparent character keeps its same happy smile completely unchanged throughout, but it does not stay in place — it gently floats and bounces its way across the frame, drifting smoothly from the egg character's left side, passing gradually behind or in front of it, over to the egg character's right side, a soft, unhurried, floating journey across rather than an instant jump, its interior gumballs — exactly 4 yellow, 2 red, 1 light blue, and 3 yellow-green, ten in total, this exact count and color mix never changing, plus colorful confetti — shifting and rolling gently inside as it drifts, always clearly visible through its glossy transparent skin, settling naturally at the bottom of its body under gravity, its mouth remaining a thin, dark, uncolored outline the entire time, staying just as transparent as the rest of its glossy body. By the end of this short shot, the egg character has both arms held out to its sides and is bouncing happily in place, matching the exact pose shown in <Picture 2>, its laughing expression unchanged throughout, while the transparent character has completed its drift over to the egg character's right side, its same happy smile unchanged, matching the position shown in <Picture 2> exactly.
+
+overall_soundscape: None.
+
+non_diegetic_music: None.
+```
+
+**日本語訳**
+参照画像と対象動画の対応 — Picture 1(Shot 1より)は対象動画の0.00秒地点に、Picture 2(Shot 1より)は対象動画の3.00秒地点に対応します。[Shot 1] 3D CGのクレイアニメ調キャラクターレンダー。動画全体を通してまったく同じ固定位置・同じ画角・同じレンズのままの、一度も切り替わらない単一の固定ショットで、<Picture 1>で示された通りパステルカラーの雲を映しており、卵形のキャラクターは片腕を横に広げて嬉しそうに笑って立ち、透明でゼリーのようなラバーキャラクターは卵形のキャラクターの左側で自分自身の嬉しそうな笑顔のまま浮かんでいる、<Picture 1>の見た目・表情・位置のままの状態から始まる。カメラは一切パン・チルト・ズーム・カットをしない。どちらのキャラクターも一切話したり喋ったり発声したりすることはなく、終始完全に無言のまま、すべてを体の動き・表情だけで表現する。卵形のキャラクターにはどの瞬間も眉毛はつかず、その嬉しそうな笑い表情はショット全体を通して一切変化せず、他の表情に切り替わることもない——最初から最後までまったく同じ笑顔のままである。この短いショットが進む間、卵形のキャラクターは、常につま先の先端だけでバランスを取り、踵はどの瞬間も一切地面につかず、短く硬い脚は足首でどの瞬間も曲がらないまま、楽しそうにやさしく体を左右に揺らし、揺れながらもう片方の短い腕も嬉しそうに持ち上げて横に広げていき、最終的に両腕とも横に広げた状態になり、体全体がこの動きに合わせて小さく嬉しそうに弾む。同時に、透明なキャラクターは同じ嬉しそうな笑顔を終始まったく変えないが、その場に留まることはない——やさしく浮遊しながら弾むように画面を横切っていき、卵形のキャラクターの左側から、その後ろまたは前を通り過ぎるようにして、徐々に卵形のキャラクターの右側へと漂っていく——瞬間移動ではなく、柔らかく急がない、浮遊しながらの横断である——中のガムボール——正確に黄色4個・赤2個・水色1個・黄緑3個(合計10個、この数と色の組み合わせは変わらない)とカラフルな紙吹雪——は漂う間もやさしく揺れ転がり、光沢のある透明な体を通して常にはっきりと見え、重力に従って体の底に自然に沈み、口は終始薄く暗い無着色の輪郭線のままで、光沢のある体の残りの部分とまったく同じように透明なままである。この短いショットの終わりには、卵形のキャラクターは両腕を横に広げた状態で嬉しそうにその場で弾んでおり、<Picture 2>で示された通りのポーズとぴったり一致し、笑い表情はその間ずっと変わらない——その一方で、透明なキャラクターは卵形のキャラクターの右側への移動を完了しており、同じ嬉しそうな笑顔は変わらないまま、<Picture 2>で示された位置とぴったり一致する。
+
+**環境音**
+なし。
+
+**BGM(観客のみに聞こえる)**
+なし。
+
+**生成結果**
+- 動画ファイル: `03-generated-videos/F10_v3.mp4`(未生成)
+- 判定: 未検証
+- メモ: ぽよんがたまちゃんの左→右へ実際に移動するよう修正したバージョン
+
+### v2 (2026-09-15) — 旧版(ぽよんは上下の微動のみで位置は変えていなかった)
 
 「ぽよんが動かないとどう自然に繋がるのか」というご指摘を受け、ぽよんを完全に
 静止させるのではなく、笑顔・ポーズ自体は変えないまま**ふわふわとした浮遊の
