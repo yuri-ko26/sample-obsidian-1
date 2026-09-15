@@ -56,7 +56,7 @@ status: draft
 |---|---|---|---|
 | D-1(1回目・行き→E-1への橋渡し) | 【確定】転がって画面中央へ→停止→仰向け→ぽよんだけ起き上がりE-1へ続く(セリフなし) | 6s | `02-scenes/24-overhead-horizontal-roll-across.md` | `02-scenes-v2/D1-overhead-roll-left-to-right.md` v9(転がりバージョン+セリフなし、未検証) |
 | D-1-alt4(選択肢) | 【選択肢】回転には挑戦せず、弾み・ホップという安定した動きにリズムの緩急(大・小・小の弾み、手振り)を加えて楽しさを出すバージョン | 6s | — | `02-scenes-v2/D1-alt4-playful-skip-rhythm.md` 作成済み(v1) |
-| D-2(1回目・帰り) | 俯瞰、逆方向(左)へ転がって戻る | 6s | `02-scenes/25-overhead-horizontal-roll-across-reverse.md` |
+| D-2(1回目・帰り) | 【確定】俯瞰、転がってフレームアウト。単調にならないよう速度・経路にわずかな不規則性を加えたバージョン | 6s | `02-scenes/25-overhead-horizontal-roll-across-reverse.md` | `02-scenes-v2/D2-wobbly-roll-exit.md` 作成済み(v1) |
 | D-3(2回目・行き) | 同じ動きをもう一度(バリエーションで速度・楽しさを変化) | 6s | 同上を再利用・改変 |
 | D-4(2回目・帰り) | 帰りも同様 | 6s | 同上 |
 | D-5(3回目・行き) | 3回目、最も勢いよく転がる | 6s | 同上 |
