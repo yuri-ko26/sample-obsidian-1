@@ -41,7 +41,37 @@ status: draft
 
 ## プロンプト履歴
 
-### v2 (2026-09-14) — 現在の採用版(実際の生成1フレーム目を参照画像に採用)
+### v3 (2026-09-15) — 現在の採用版(たまちゃんの表情を「不安」ではなく「きょろきょろ探す程度」に)
+
+生成結果でたまちゃんの表情が不安そうになってしまったため、ぽよんに気づくまでの間
+「気楽に、興味津々できょろきょろ探している」程度の軽い表情になるよう明記した。
+
+**H3プロンプト(ComfyUI用)**
+```
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+
+integrated_multimodal_description: [Shot 1] 3D CG, claymation-style character render. A single static shot, fixed in place for the entire video with no panning, tilting, zooming, or cutting — the camera's position, framing, and lens stay completely locked and unchanging from the first frame to the last, with absolutely no zooming in or out, no push-in, and no drifting at any point — shows the pastel clouds exactly as shown in <Picture 1>, with the egg-shaped character on the blue cloud and the transparent, jelly-like rubber character on the pink cloud, both laughing happily, matching their exact appearance, expression, and position from <Picture 1> at the very start. The egg character never has eyebrows at any point. The egg character's feet are simple stiff, rounded points fused directly to the ends of its legs, with no ankle joint of any kind that could ever bend or flex — it is anatomically built to only ever balance and move on the very tips of these feet, like a figure permanently on tiptoe, and its heels can never touch any surface at all. After a brief happy moment together, the egg character is the first to dash off playfully, toddling away to the right across the clouds, always walking up on the very tips of its toes only, its heels never once touching the ground, its short stiff legs never bending at the ankle at any point. A beat later, the transparent character bounces after it in pursuit, its interior gumballs — exactly 4 yellow, 2 red, 1 light blue, and 3 yellow-green, ten in total, this exact count and color mix never changing, plus colorful confetti — always settling naturally at the bottom of its body under gravity, never floating motionless in mid-air or appearing stuck together, rolling and jostling against each other and the inner wall with each bounce, shifting without ever spilling out. Both characters move further and further to the right, following the same path, one after the other, until both of them move completely past the right edge of the frame and out of view. Once both characters have fully exited, the shot holds steady for a brief moment on the now-empty pastel clouds, exactly matching the same background and camera position as <Picture 1>, with no characters visible anywhere. The egg character is the first to reappear, popping up from a completely unexpected spot — from behind the tall purple cloud in the background, rising up over its crest as if it had been hiding there all along, nowhere near the path it originally ran along, still walking and standing purely on the tips of its toes, its heels never touching any surface. Its expression here is light, playful, and easygoing — casually glancing around this way and that as if idly looking for the transparent character, the way someone might peek around during a fun game, with a small curious, cheerful look on its face; critically, its expression stays relaxed and lighthearted the whole time, never becoming worried, anxious, or distressed in any way. A moment later, the transparent character also pops up from its own unexpected spot — low down between the pink and blue clouds, near the bottom of the frame, rising into view from behind the cloud's edge rather than appearing out of nowhere, its interior gumballs still clearly visible, gently shifting and rolling against each other and the bottom of its body with each small movement. Once both characters have settled into their new spots, they notice each other and turn to make eye contact, and together they break into delighted, happy laughter. The egg character's round dot eyes crinkle into laughing crescents, still with no eyebrows, its mouth opening wide with a hint of soft coral pink visible inside. At the exact same moment, the transparent character's round eyes crinkle shut into laughing crescents as well, its mouth curving into a moderately wide, gentle smile shape, no more than about a third of the width of its face, made of nothing but a thin dark outline — critically, this smiling mouth remains exactly as clear and transparent as the rest of its glossy body at every single frame of the smile, with absolutely no color, tint, shading, or fill of any kind ever appearing inside it, so its interior gumballs and confetti stay clearly visible straight through the open mouth outline the whole time. Both characters end the shot laughing happily together.
+
+overall_soundscape: None.
+
+non_diegetic_music: None.
+```
+
+**日本語訳**
+対象動画の0.00秒時点で、<Picture 1>(Shot 1より)が完全に参照されます。[Shot 1] 3D CGのクレイアニメ調キャラクターレンダー。動画全体を通して一切動かない単一の固定ショットで——カメラの位置・画角・レンズは最初のフレームから最後のフレームまで完全に固定されたまま変化せず、ズームイン・ズームアウト・寄り・ドリフトのいずれも一切発生しない——<Picture 1>で示された通りパステルカラーの雲を映しており、卵形のキャラクターが水色の雲に、透明でゼリーのようなラバーキャラクターがピンクの雲に、それぞれ<Picture 1>の見た目・表情・位置のまま嬉しそうに笑っている状態から始まる。卵形のキャラクターにはどの瞬間も眉毛はつかない。卵形のキャラクターの足は、脚の先端に直接固定されたシンプルで硬い丸い先端であり、曲がったり動いたりする足首の関節は一切存在しない——構造上、常につま先の先端だけでバランスを取り移動するようにできており、踵はどんな面にも決して触れることができない。少し嬉しそうな時間を過ごした後、卵形のキャラクターが先に楽しそうに駆け出し、雲々を渡りながら右方向へよちよちと逃げていく——常につま先だけで立ち、踵はどの瞬間も一切地面につかず、短く硬い脚は足首でどの瞬間も曲がらない。少し遅れて、透明なキャラクターが降りてきてそのあとを弾みながら追いかける——中のガムボールは常に重力に従って体の底に自然に沈み、宙に浮いたまま静止したりくっついて見えたりすることは一切なく、弾むたびにお互いや内壁にぶつかってころころと転がる——正確に黄色4個・赤2個・水色1個・黄緑3個(合計10個、この数と色の組み合わせは変わらない)のガムボールとカラフルな紙吹雪は弾むたびに揺れ動くがこぼれることはない。2人とも同じ経路をたどって右へ右へと進んでいき、一人ずつ、ついに画面右端を完全に越えて見えなくなる。2人とも完全にフレームアウトした後、ショットは<Picture 1>とまったく同じ背景・カメラ位置のまま、誰もいない状態でしばらく静止する——画面のどこにもキャラクターは映っていない。卵形のキャラクターが先に再登場する——まったく予想外の場所、背景にある背の高い紫色の雲の向こう側から、まるでずっとそこに隠れていたかのように、その雲の稜線を越えてひょこっと現れる。元々走っていった経路とはまったく関係のない場所である。**この時の表情は軽く、楽しげで気楽なものである——楽しいゲームの最中にちょっと辺りを覗き見るような感じで、透明なキャラクターをのんびりと探しているかのように、あちこちを気軽に見回す、小さく興味津々で朗らかな表情。極めて重要な点として、この表情は終始リラックスした軽い雰囲気のままであり、不安・心配・苦悩といった様子には一切ならない。**少し間があって、透明なキャラクターも自分なりの予想外の場所——画面下寄り、ピンクの雲と水色の雲の間の低い位置——から、何もないところから忽然と現れるのではなく雲の縁の向こうから迫り上がるようにしてひょこっと現れる。中のガムボールははっきりと見え続け、小さな動きに合わせてやさしく揺れ動き、お互いや体の底とぶつかって転がる。2人とも新しい場所に落ち着いた後、互いの存在に気づいて目を合わせ、一緒に嬉しそうな笑い声を上げる。卵形のキャラクターの丸い点目は笑いじわの三日月形になり、眉毛はやはりつかない。口は大きく開いて中にほんのりコーラルピンク色がのぞく。まったく同じ瞬間、透明なキャラクターの丸い目もぎゅっと閉じて笑いじわの三日月形になり、口は顔の横幅の3分の1程度までしか開かない、ほどよい広さのやわらかなカーブの笑顔になり、薄い輪郭線だけでできている——極めて重要な点として、この笑顔の口は、笑顔になっているどの一瞬をとっても光沢のある体の表面とまったく同じように透き通ったままで、中には一切色・色調・陰影・塗りつぶしが決して現れず、開いた口の輪郭線を通して中のガムボールと紙吹雪がそのままはっきりと見え続ける。ショットの終わりには、2人とも一緒に嬉しそうに笑い合っている。
+
+**環境音**
+なし。
+
+**BGM(観客のみに聞こえる)**
+なし。
+
+**生成結果**
+- 動画ファイル: `03-generated-videos/F6_v3.mp4`(未生成)
+- 判定: 未検証
+- メモ: たまちゃんの表情が不安そうになってしまった問題への対策版。ぽよんに
+  気づくまでの間、「軽く・楽しげ・気楽にきょろきょろ探す」程度の表情に
+  明記し、不安・心配の表情にはならないことを明示
 
 **H3プロンプト(ComfyUI用)**
 ```
