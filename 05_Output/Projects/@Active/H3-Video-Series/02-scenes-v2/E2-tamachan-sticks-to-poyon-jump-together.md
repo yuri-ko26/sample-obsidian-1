@@ -1,7 +1,7 @@
 ---
 project: H3-Video-Series-v2
 cut: E-2
-mode: FL2VA(3枚参照)
+mode: FL2VA
 status: draft
 ---
 
@@ -11,21 +11,25 @@ status: draft
 Eビート(「ジャンプ」)2回目のカット。俯瞰の角度を保ったカメラ、Picture1の状態
 (2人ともすでに起き上がって並んで立っている)から始まる。
 
-1. たまちゃんがぽよんの方へ体を寄せ、ぴたっと体をくっつける(密着する)——
-   この時点の見た目がPicture2
-2. 密着したまま、2人一緒に(タイミングを合わせて)真上に大きくジャンプする
+1. たまちゃんが**トトロにさつきとめいがくっつく時のように、勢いよく「えいっ!」と
+   ぽよんに飛びつく**(ゆっくり歩み寄るのではなく、元気に跳びついて抱きつく)
+2. くっついたまま、2人一緒に(タイミングを合わせて)真上に大きくジャンプする
 3. カメラは**俯瞰の角度を保ったまま**、2人に向かって寄っていき(ズームイン/
    プッシュイン)、ジャンプの頂点では2人がフレームいっぱいに大きく、嬉しそうな
-   満面の笑顔で映る——この時点の見た目がPicture3
+   満面の笑顔で映る——この時点の見た目がPicture2
 
-**設計メモ**: 3枚の参照画像(くっつく前の全体像/くっついた直後・ジャンプ前/
-ジャンプの頂点でカメラに寄った状態)を順番にいただいたため、v2でPicture1・
-Picture2・Picture3の3枚をタイムライン上に位置づけるFL2VA形式に変更した
-(「Picture 1 ... aligns with 0.00s; Picture 2 ... aligns with X秒; Picture 3 ...
-aligns with Y秒」という並びを拡張)。「カメラに近づいてください」「カメラは
-俯瞰カメラのままです」というご指示どおり、俯瞰の角度そのものは変えないまま
-(上から見下ろす視点のまま)、Picture1→Picture2→Picture3にかけて徐々に
-プッシュインしていく。
+**設計メモ**:
+- **v3での変更点1**: 3枚の参照画像(v2)を使ったところ、生成の途中でぽよんの
+  ガムボールの色がおかしくなる不具合が発生したため、「最初と最後の2枚だけ」に
+  戻すご指示を受け、Picture1(くっつく前)+Picture2(ジャンプ頂点・カメラが寄った
+  状態)の通常のFL2VA構成に戻した。中間のPicture(くっついた直後の画像)は
+  参照画像としては使わず、テキスト描写のみで表現する。
+- **v3での変更点2**: たまちゃんがぽよんにくっつく動作を、「歩み寄ってそっと
+  体を寄せる」から、**「トトロにさつきとめいがくっつく時のように、勢いよく
+  『えいっ!』と飛びつく」**という元気で弾けるような動きに変更。実際の
+  プロンプト文では版権キャラクター名は使わず、「元気よく、飛び跳ねるように
+  勢いをつけて相手の体に飛びつき、抱きつくように密着する」という動作として
+  英語で具体的に記述している。
 
 **キャラクター参照**: `01-characters/character-reference.md` の制約を必ず踏まえること。
 特に:
@@ -40,14 +44,51 @@ aligns with Y秒」という並びを拡張)。「カメラに近づいてくだ
 - Picture 1(0.00秒・最初のフレーム): いただいた画像1。俯瞰、薄い黄緑色の床。
   左側にぽよん、右側にたまちゃんが並んで立っている構図(2人ともすでに起き上がった
   状態、くっつく前)
-- Picture 2(くっついてジャンプする直前): いただいた画像2。たまちゃんがぽよんに
-  ぴたっと体を寄せてくっついている構図。カメラ距離はPicture1よりやや寄っている
-- Picture 3(ジャンプの頂点・カメラに近い状態): いただいた画像3。2人がくっついた
-  まま、カメラにかなり寄った状態で画面いっぱいに映り、2人とも満面の笑顔
+- Picture 2(最後のフレーム): いただいた画像3。ジャンプの頂点、カメラが俯瞰の
+  まま大きく寄った構図。2人がくっついたまま画面いっぱいに映り、満面の笑顔
+- (v2で使用・v3では不使用): くっついた直後・ジャンプ前の中間参照画像
+  (色がおかしくなる不具合のため中間Pictureとしては使わないことにした)
 
 ## プロンプト履歴
 
-### v2 (2026-09-15) — 現在の採用版(3枚の参照画像でタイムラインを明確化)
+### v3 (2026-09-15) — 現在の採用版(2枚構成に戻し、勢いよく飛びつく動きに変更)
+
+3枚の参照画像を使ったv2で、生成中にぽよんのガムボールの色がおかしくなる
+不具合が発生したため、Picture1(くっつく前)+Picture2(ジャンプ頂点)の
+2枚構成に戻した。あわせて、たまちゃんがぽよんにくっつく動作を、ゆっくり
+歩み寄る描写から、**勢いよく「えいっ!」と飛びつく、元気で弾けるような
+動き**に変更した。
+
+**H3プロンプト(ComfyUI用)**
+```
+How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 1) aligns with the 6.00-second mark of the target video.
+
+integrated_multimodal_description: [Shot 1] 3D CG, claymation-style character render. A single continuous shot keeps the exact same overhead, bird's-eye viewing angle throughout the entire video, looking straight down at all times and never tilting, panning, or switching to a side or angled view. The shot begins in the position and framing established by <Picture 1>, looking straight down on the pale yellow-green floor, with the transparent, jelly-like rubber character and the egg-shaped character already standing upright side by side, matching their exact appearance, expression, and position from <Picture 1>. Neither character ever speaks, talks, or makes any vocalization at any point — both stay completely silent throughout, expressing everything purely through body language. With sudden, bursting energy, the egg-shaped character springs off the ground with a quick, spirited little hop and launches itself sideways through the air toward the transparent character, arms open wide, in one energetic, joyful pounce — not a slow walk or a gentle step, but a lively, gleeful leap, the same kind of exuberant, delighted glomp a small child gives when eagerly throwing their arms around a beloved friend. It lands snugly pressed against the transparent character's side, both arms wrapped around it, the two of them now touching, nestled closely together, the transparent character rocking slightly from the cheerful impact of the landing. Once pressed together like this, both characters crouch down slightly at the same moment, gathering their energy together in perfect unison, and then launch upward together in one big joint jump, rising straight up side by side, still touching, as if leaping as a single unit. As they rise, the camera keeps its overhead angle but pushes in steadily closer toward the pair, moving closer and closer with each moment, so that by the time they reach the peak of this big jump, the two of them together fill almost the entire frame, both wearing wide, delighted, joyful smiles, seen from directly overhead the whole time, exactly matching the tight, close-up framing, poses, and expressions shown in <Picture 2> at the end of the shot. The transparent character's interior contents — exactly 4 yellow, 2 red, 1 light blue, and 3 yellow-green gumballs, ten in total, this exact count and color mix never changing, no other colors ever appearing at any point — plus colorful confetti, shift and tumble inside with the motion of the pounce, landing, and jump, always staying fully contained inside its glossy transparent body, never flying out or passing through its skin at any point.
+
+overall_soundscape: None.
+
+non_diegetic_music: None.
+```
+
+**日本語訳**
+参照画像と対象動画の対応 — Picture 1(Shot 1より)は対象動画の0.00秒地点に、Picture 2(Shot 1より)は対象動画の6.00秒地点に対応します。[Shot 1] 3D CGのクレイアニメ調キャラクターレンダー。単一の連続したショットで、動画全体を通してまったく同じ俯瞰・鳥瞰の角度を保ち、常に真上から見下ろしたままで、傾いたり、パンしたり、横や斜めのアングルに切り替わったりすることは一切ない。ショットは<Picture 1>で確立された位置・フレーミングから始まり、薄い黄緑色の床を真上から見下ろしており、透明でゼリーのようなラバーキャラクターと卵形のキャラクターが、<Picture 1>のとおりの見た目・表情・位置のまま、すでに並んで直立している。どちらのキャラクターも一切話したり喋ったり発声したりすることはなく、終始完全に無言のまま、すべてを体の動きだけで表現する。卵形のキャラクターは、突然のはじけるようなエネルギーとともに、素早く元気なひと跳ねで地面を蹴り、両腕を大きく広げて透明なキャラクターに向かって横向きに空中へ飛び出す、元気で嬉しそうなひと飛びで——ゆっくりとした歩みや静かな一歩ではなく、小さな子どもが大好きな友達に向かって思い切り腕を広げて抱きつくときのような、活気にあふれた、喜びいっぱいの跳躍である。透明なキャラクターの体の横にぴたっと押し付けられるように着地し、両腕をその体にまわして抱きつき、2人は触れ合い、ぴったりとくっついた状態になる——透明なキャラクターは、この嬉しそうな着地の勢いでわずかに揺れる。このように密着したところで、2人は同じ瞬間にわずかにしゃがみ込み、完璧に息を合わせて力をため、そして一緒に真上へ向かって一つの大きな共同ジャンプへと飛び立ち、触れ合ったまま横に並んでまっすぐ上昇していく——まるで一つの塊として跳んでいるかのようである。2人が上昇するのに合わせて、カメラは俯瞰の角度を保ったまま、2人へ向かって一定のペースで着実に寄っていき、この大きなジャンプの頂点に達する頃には、2人合わせてほぼフレーム全体を埋めるほど大きく、どちらも満面の、喜びにあふれた笑顔を浮かべ、終始真上から見た状態のまま、<Picture 2>で示された寄った・クローズアップのフレーミング・ポーズ・表情とぴったり一致してこのショットが終わる。透明なキャラクターの中身——正確に黄色4個・赤2個・水色1個・黄緑3個(合計10個、この数と色の組み合わせは変わらず、他の色が現れることは一切ない)のガムボールとカラフルな紙吹雪——は、飛びつき・着地・ジャンプの動きに合わせて揺れ動き転がるが、常に光沢のある透明な体の中に完全に収まったままで、一度も外に飛び出したり体の表面を突き抜けたりすることはない。
+
+**環境音**
+なし。
+
+**BGM(観客のみに聞こえる)**
+なし。
+
+**生成結果**
+- 動画ファイル: `03-generated-videos/E2_v3.mp4`(未生成)
+- 判定: 未検証
+- メモ: 3枚参照(v2)で発生したガムボール色崩れ不具合への対策として2枚構成に
+  戻した版。あわせて、たまちゃんがぽよんにくっつく動作を「ゆっくり歩み寄る」
+  から「勢いよく飛びつく(トトロにさつきとめいがくっつく時のイメージ)」に
+  変更。実際のプロンプトでは版権キャラクター名は使わず、動作そのものを
+  具体的に英語で描写した
+
+### v2 (2026-09-15) — 旧版(3枚参照、途中でガムボールの色がおかしくなった)
 
 3枚の参照画像を時系列に沿って割り当てたFL2VA形式に変更。Picture1(くっつく前)→
 Picture2(くっついた直後・ジャンプ前)→Picture3(ジャンプの頂点・カメラが寄った
@@ -112,14 +153,12 @@ non_diegetic_music: None.
 
 ## ComfyUIでの設定メモ
 - Picture 1: いただいた画像1(俯瞰、ぽよん左・たまちゃん右で並んで立つ、くっつく前)
-- Picture 2: いただいた画像2(たまちゃんがぽよんにくっついた直後、ジャンプ前)
-- Picture 3: いただいた画像3(ジャンプの頂点、カメラに寄った状態、2人とも満面の笑顔)
-- モード: FL2VA(Picture 1〜3の3枚参照、ComfyUI側で3枚とも読み込ませる設定に
-  なっているか確認してください)
-- 尺: 6秒目安(体を寄せる2.5s/しゃがんで力をため→ジャンプ上昇→頂点3.5s)
+- Picture 2: いただいた画像3(ジャンプの頂点、カメラに寄った状態、2人とも満面の笑顔)
+- モード: FL2VA(v3で2枚構成に戻した。中間画像は参照画像としては使わない)
+- 尺: 6秒目安(勢いよく飛びつく1.5s/しゃがんで力をため→ジャンプ上昇→頂点4.5s)
 - **重要**: `[Shot 2]`などの追加ショット表記は使わず、単一の`[Shot 1]`のみで最初から最後まで記述すること
 - 俯瞰角度を保ったままのプッシュインズームという、D-beatとは異なるカメラワークの
   カットのため、生成後の見え方に違和感があればフィードバックをください
-- 3枚のPictureを使う構文は本プロジェクトで初めての試み。もしComfyUI側が
-  3枚同時の参照に対応していない場合は、Picture2を省略してPicture1→Picture3の
-  2枚構成に戻すことも検討してください
+- v2(3枚参照)でぽよんのガムボールの色が途中でおかしくなる不具合が発生したため、
+  v3で2枚構成に戻した。今後、複数枚(3枚以上)のPicture参照を使う際は同様の
+  色崩れが起きないか注意すること(`00-series-overview.md`にも記録予定)
