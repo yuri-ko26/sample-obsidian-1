@@ -42,13 +42,77 @@ F-6の続き。今回は追いかけっこではなく、2人が寄り添う穏�
 - Picture 1(最初のフレーム): いただいた画像。画面左寄りの雲にたまちゃんが立ち
   大笑いしており、画面右寄り・少し高い位置でぽよんが浮かぶように笑っている構図
 - Picture 2(最後のフレーム): いただいた新しい画像。たまちゃんの顔が画面左、
-  ぽよんの顔が画面右のタイトなクローズアップ。たまちゃんの手がぽよんの体に
-  添えられており、2人とも大きく口を開けて笑っている(このカットのラストの
+  ぽよんの顔が画面右のタイトなクローズアップ。2人とも顔をぎゅっと近づけ合い、
+  大きく口を開けて笑っている(腕を添える描写はなし。このカットのラストの
   ズームアップ先の構図として使用)
 
 ## プロンプト履歴
 
-### v5 (2026-09-15) — 現在の採用版(ラストのズームアップ先をPicture2として明示・FL2VA化)
+### v7 (2026-09-15) — 現在の採用版(ラストのズームが実行されなかったため、構造として強く前置き・繰り返し強調)
+
+生成結果でラストのズームアップが実行されなかったため、「後半で必ずズームする」ことを
+文章の**冒頭で構造として予告**し、動作の説明の**途中でも改めて予告**し、**最後にも
+明記**する三段構えに変更。タイミングも「最後の1〜2秒」と具体的に指定した。
+
+**H3プロンプト(ComfyUI用)**
+```
+How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 1) aligns with the 7.00-second mark of the target video.
+
+integrated_multimodal_description: [Shot 1] 3D CG, claymation-style character render. This shot has exactly two parts: for roughly the first 5 to 6 seconds the camera stays completely fixed and unmoving, and then, critically, for the final 1 to 2 seconds of the shot, the camera performs one deliberate, unmistakable push-in zoom toward both characters' faces, ending the shot on a tight close-up — this ending zoom is a required part of the shot and must happen. The shot shows the pastel clouds exactly as shown in <Picture 1>, with the egg-shaped character standing on the cloud at left and the transparent, jelly-like rubber character hovering near the cloud at right, both laughing happily with their mouths wide open, matching their exact appearance, expression, and position from <Picture 1> at the very start. During this first fixed-camera part, the camera does not pan, tilt, zoom, or cut at all. The egg character never has eyebrows at any point, and both characters keep this same wide-open, big, happy laughing expression completely unchanged from the very first frame all the way to the very last frame of the shot — there is no expression transition, no shift to surprise or shyness, and no moment where either character's mouth closes or changes shape at any point. The egg character's feet are simple stiff, rounded points fused directly to the ends of its legs, with no ankle joint of any kind that could ever bend or flex — it is anatomically built to only ever balance and move on the very tips of these feet, and its heels can never touch any surface at all. Still laughing with its mouth wide open the whole time, the egg character begins walking toward the transparent character, always walking up on the very tips of its toes only, its heels never once touching the ground, its short stiff legs never bending at the ankle at any point. As the egg character approaches, the transparent character gently bounces down and settles onto the surface of its own cloud, coming to rest at a height where its face is close to the egg character's own height. Once right beside it, the egg character brings its face right up close against the transparent character's face and rounded body, pressing in close and rubbing back and forth against it vigorously and repeatedly, again and again — a big, energetic, affectionate face-to-face rubbing motion, the two faces staying pressed close together throughout, both still laughing with their mouths wide open the entire time. The transparent character's whole soft body visibly jostles and wobbles with each rub, its interior gumballs — exactly 4 yellow, 2 red, 1 light blue, and 3 yellow-green, ten in total, this exact count and color mix never changing, plus colorful confetti — jiggling energetically along with it, always settling naturally at the bottom of its body under gravity even as they jiggle, never floating motionless in mid-air or appearing stuck together. The transparent character's mouth remains exactly the same thin, dark, uncolored outline it always is throughout, staying just as transparent as the rest of its glossy body, with absolutely no new color, tint, or fill of any kind ever added anywhere on it, so its interior gumballs and confetti remain clearly visible straight through the open mouth outline throughout. Remember: this fixed-camera rubbing is only the first part of the shot, not the whole shot. As this face-to-face rubbing continues, the shot moves into its second and final part — with roughly 1 to 2 seconds still remaining, the camera begins its one deliberate push-in zoom, moving smoothly and steadily inward toward both characters' faces; this zoom is a required event that must actually happen before the shot ends, not merely implied. The zoom continues until the very last frame of the shot, ending on a close, tight two-shot exactly matching <Picture 2> — the egg character's face at left and the transparent character's face at right, pressed close together, filling most of the frame, both still laughing with their mouths wide open in the exact same unbroken happy expression from the very start of the shot. The final frame of the video must show this tight close-up framing from <Picture 2>, not the wide framing from <Picture 1>.
+
+overall_soundscape: None.
+
+non_diegetic_music: None.
+```
+
+**日本語訳**
+参照画像と対象動画の対応 — Picture 1(Shot 1より)は対象動画の0.00秒地点に、Picture 2(Shot 1より)は対象動画の7.00秒地点に対応します。[Shot 1] 3D CGのクレイアニメ調キャラクターレンダー。このショットは明確に2つのパートで構成される:最初のおよそ5〜6秒はカメラが完全に固定されたまま動かず、そして極めて重要な点として、ショットの**最後の1〜2秒で、カメラは2人の顔へ向かって一度だけ、はっきりとわかる意図的なズームインを実行し**、タイトなクローズアップでショットを終える——**この最後のズームは必ず実行されなければならない、このショットに必須の要素である**。ショットは<Picture 1>で示された通りパステルカラーの雲を映しており、卵形のキャラクターが左側の雲に立ち、透明でゼリーのようなラバーキャラクターが右側の雲のそばに浮かぶように、2人とも口を大きく開けて嬉しそうに笑っている、<Picture 1>の見た目・表情・位置のままの状態から始まる。この最初の固定カメラのパートの間、カメラは一切パン・チルト・ズーム・カットをしない。卵形のキャラクターにはどの瞬間も眉毛はつかず、2人ともこの同じ、口を大きく開けた嬉しそうな笑い表情を、ショットの最初のフレームから最後のフレームまでまったく変えない——表情の切り替えは一切なく、驚きや照れへの変化もなく、どちらのキャラクターの口も閉じたり形を変えたりする瞬間は一切ない。卵形のキャラクターの足は、脚の先端に直接固定されたシンプルで硬い丸い先端であり、曲がったり動いたりする足首の関節は一切存在しない——構造上、常につま先の先端だけでバランスを取り移動するようにできており、踵はどんな面にも決して触れることができない。口を大きく開けて笑ったまま、卵形のキャラクターは透明なキャラクターの方へ歩き始める——常につま先だけで立ち、踵はどの瞬間も一切地面につかず、短く硬い脚は足首でどの瞬間も曲がらない。卵形のキャラクターが近づくにつれて、透明なキャラクターはやさしく弾んで自分の雲の表面に降り立ち、卵形のキャラクター自身の顔の高さに近い高さに落ち着く。すぐそばまで来たところで、卵形のキャラクターは自分の顔を透明なキャラクターの顔・丸い体にぐっと近づけ、何度も何度も、大きく元気よく前後にすりすりと擦り寄せる——2つの顔がずっと近く押し合わされたままの、大きく元気で愛おしい顔と顔のすりすりの動きであり、この間ずっと2人とも口を大きく開けて笑ったままである。透明なキャラクターの柔らかい体全体は、擦りつかれるたびに目に見えて揺さぶられ波打ち、中のガムボール——正確に黄色4個・赤2個・水色1個・黄緑3個(合計10個、この数と色の組み合わせは変わらない)とカラフルな紙吹雪——も一緒に元気よく揺れ動くが、揺れながらも常に重力に従って体の底に自然に沈んだままで、宙に浮いたまま静止したりくっついて見えたりすることは一切ない。透明なキャラクターの口は、この間ずっと、いつもとまったく同じ薄く暗い無着色の輪郭線のままで、光沢のある体の残りの部分とまったく同じように透明なままであり、新しい色・色調・塗りつぶしはどこにも一切追加されず、開いた口の輪郭線を通して中のガムボールと紙吹雪がそのままはっきりと見え続ける。**注意: この固定カメラでのすりすりはショットの最初のパートに過ぎず、ショット全体ではない。**この顔と顔のすりすりが続く中、ショットは2つ目の、最後のパートへ移る——残り時間がおよそ1〜2秒になったところで、カメラは一度だけの意図的なズームインを開始し、2人の顔へ向かって滑らかに、着実に寄っていく——**このズームは、ほのめかされるだけでなく、ショットが終わる前に実際に発生しなければならない必須のイベントである**。ズームはショットの最後のフレームまで続き、最終的に<Picture 2>とぴったり一致するタイトなツーショットで終わる——卵形のキャラクターの顔が画面左、透明なキャラクターの顔が画面右、2つの顔が近く押し合わされたまま、画面の大部分を占め、2人ともショットの最初とまったく同じ、途切れることのない口を大きく開けた嬉しそうな笑い表情のまま笑い続けている。**動画の最終フレームは、<Picture 1>の広い構図ではなく、この<Picture 2>のタイトなクローズアップの構図を映していなければならない。**
+
+**環境音**
+なし。
+
+**BGM(観客のみに聞こえる)**
+なし。
+
+**生成結果**
+- 動画ファイル: `03-generated-videos/F7_v7.mp4`(未生成)
+- 判定: 未検証
+- メモ: v6でラストのズームが実行されなかった不具合の対策版。ズームを冒頭で予告・
+  途中で再度予告・最後に必須イベントとして明記、の三段構えで強く指示
+
+### v6 (2026-09-15) — 旧版(ラストのズームが実行されなかった)
+
+「腕がぽよんに添えられている」は実際の画像にない誤った描写だったため削除。
+「とにかく顔をぎゅっと近づけ合ってすりすりして笑って終わる」というシンプルな
+コアアクションを軸に書き直した。
+
+**H3プロンプト(ComfyUI用)**
+```
+How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 1) aligns with the 7.00-second mark of the target video.
+
+integrated_multimodal_description: [Shot 1] 3D CG, claymation-style character render. A single continuous shot shows the pastel clouds exactly as shown in <Picture 1>, with the egg-shaped character standing on the cloud at left and the transparent, jelly-like rubber character hovering near the cloud at right, both laughing happily with their mouths wide open, matching their exact appearance, expression, and position from <Picture 1> at the very start. The camera stays completely fixed and unmoving, with no panning, tilting, zooming, or cutting of any kind, for almost the entire shot — it only moves once, right at the very end, as described below. The egg character never has eyebrows at any point, and both characters keep this same wide-open, big, happy laughing expression completely unchanged from the very first frame all the way to the very last frame of the shot — there is no expression transition, no shift to surprise or shyness, and no moment where either character's mouth closes or changes shape at any point. The egg character's feet are simple stiff, rounded points fused directly to the ends of its legs, with no ankle joint of any kind that could ever bend or flex — it is anatomically built to only ever balance and move on the very tips of these feet, and its heels can never touch any surface at all. Still laughing with its mouth wide open the whole time, the egg character begins walking toward the transparent character, always walking up on the very tips of its toes only, its heels never once touching the ground, its short stiff legs never bending at the ankle at any point. As the egg character approaches, the transparent character gently bounces down and settles onto the surface of its own cloud, coming to rest at a height where its face is close to the egg character's own height. Once right beside it, the egg character brings its face right up close against the transparent character's face and rounded body, pressing in close and rubbing back and forth against it vigorously and repeatedly, again and again — a big, energetic, affectionate face-to-face rubbing motion, the two faces staying pressed close together throughout, both still laughing with their mouths wide open the entire time. The transparent character's whole soft body visibly jostles and wobbles with each rub, its interior gumballs — exactly 4 yellow, 2 red, 1 light blue, and 3 yellow-green, ten in total, this exact count and color mix never changing, plus colorful confetti — jiggling energetically along with it, always settling naturally at the bottom of its body under gravity even as they jiggle, never floating motionless in mid-air or appearing stuck together. The transparent character's mouth remains exactly the same thin, dark, uncolored outline it always is throughout, staying just as transparent as the rest of its glossy body, with absolutely no new color, tint, or fill of any kind ever added anywhere on it, so its interior gumballs and confetti remain clearly visible straight through the open mouth outline throughout. Only in these final moments of the shot does the camera finally move at all: it gently and smoothly pushes in toward both characters' faces, the only camera movement in the entire shot, ending the shot on a close, tight two-shot exactly matching <Picture 2> — the egg character's face at left and the transparent character's face at right, pressed close together, filling most of the frame, both still laughing with their mouths wide open in the exact same unbroken happy expression from the very start of the shot.
+
+overall_soundscape: None.
+
+non_diegetic_music: None.
+```
+
+**日本語訳**
+参照画像と対象動画の対応 — Picture 1(Shot 1より)は対象動画の0.00秒地点に、Picture 2(Shot 1より)は対象動画の7.00秒地点に対応します。[Shot 1] 3D CGのクレイアニメ調キャラクターレンダー。<Picture 1>で示された通りパステルカラーの雲を映す単一の連続したショットで、卵形のキャラクターが左側の雲に立ち、透明でゼリーのようなラバーキャラクターが右側の雲のそばに浮かぶように、2人とも口を大きく開けて嬉しそうに笑っている、<Picture 1>の見た目・表情・位置のままの状態から始まる。カメラはショットのほぼ全体を通して完全に固定され動かない——パン・チルト・ズーム・カットのいずれも一切行わない——動くのは、後述する通りラストの一度きりである。卵形のキャラクターにはどの瞬間も眉毛はつかず、2人ともこの同じ、口を大きく開けた嬉しそうな笑い表情を、ショットの最初のフレームから最後のフレームまでまったく変えない——表情の切り替えは一切なく、驚きや照れへの変化もなく、どちらのキャラクターの口も閉じたり形を変えたりする瞬間は一切ない。卵形のキャラクターの足は、脚の先端に直接固定されたシンプルで硬い丸い先端であり、曲がったり動いたりする足首の関節は一切存在しない——構造上、常につま先の先端だけでバランスを取り移動するようにできており、踵はどんな面にも決して触れることができない。口を大きく開けて笑ったまま、卵形のキャラクターは透明なキャラクターの方へ歩き始める——常につま先だけで立ち、踵はどの瞬間も一切地面につかず、短く硬い脚は足首でどの瞬間も曲がらない。卵形のキャラクターが近づくにつれて、透明なキャラクターはやさしく弾んで自分の雲の表面に降り立ち、卵形のキャラクター自身の顔の高さに近い高さに落ち着く。すぐそばまで来たところで、卵形のキャラクターは自分の顔を透明なキャラクターの顔・丸い体にぐっと近づけ、何度も何度も、大きく元気よく前後にすりすりと擦り寄せる——2つの顔がずっと近く押し合わされたままの、大きく元気で愛おしい顔と顔のすりすりの動きであり、この間ずっと2人とも口を大きく開けて笑ったままである。透明なキャラクターの柔らかい体全体は、擦りつかれるたびに目に見えて揺さぶられ波打ち、中のガムボール——正確に黄色4個・赤2個・水色1個・黄緑3個(合計10個、この数と色の組み合わせは変わらない)とカラフルな紙吹雪——も一緒に元気よく揺れ動くが、揺れながらも常に重力に従って体の底に自然に沈んだままで、宙に浮いたまま静止したりくっついて見えたりすることは一切ない。透明なキャラクターの口は、この間ずっと、いつもとまったく同じ薄く暗い無着色の輪郭線のままで、光沢のある体の残りの部分とまったく同じように透明なままであり、新しい色・色調・塗りつぶしはどこにも一切追加されず、開いた口の輪郭線を通して中のガムボールと紙吹雪がそのままはっきりと見え続ける。このショットの最後の瞬間になって初めて、カメラがようやく動く——2人の顔へ向かってゆっくりと滑らかに寄っていく、このショット全体で唯一のカメラの動きであり、最終的に<Picture 2>とぴったり一致するタイトなツーショットで終わる——卵形のキャラクターの顔が画面左、透明なキャラクターの顔が画面右、2つの顔が近く押し合わされたまま、画面の大部分を占め、2人ともショットの最初とまったく同じ、途切れることのない口を大きく開けた嬉しそうな笑い表情のまま笑い続けている。
+
+**環境音**
+なし。
+
+**BGM(観客のみに聞こえる)**
+なし。
+
+**生成結果**
+- 動画ファイル: `03-generated-videos/F7_v6.mp4`(未生成)
+- 判定: 未検証
+- メモ: 腕を添える描写を削除し、「顔をぎゅっと近づけ合ってすりすり」というシンプルな
+  コアアクションに統一
+
+### v5 (2026-09-15) — 旧版(存在しない「腕を添える」描写あり)
 
 ラストにズームアップした先の具体的な構図(たまちゃんの手がぽよんに添えられ、
 2人の顔が並んで大きく口を開けて笑っているクローズアップ)を実際の画像でいただいたため、
