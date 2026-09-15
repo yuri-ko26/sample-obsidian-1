@@ -60,7 +60,47 @@ Eビート(「ジャンプ」)2回目のカット。俯瞰の角度を保った�
 
 ## プロンプト履歴
 
-### v5 (2026-09-15) — 現在の採用版(ジャンプ頂点の先、落下→着地→大笑いまで延長)
+### v6 (2026-09-15) — 現在の採用版(ガムボールの数が変わる不具合への対策・各動作ごとに構成を繰り返し明記)
+
+「ジャンプする時にポヨンのカラーボールの色が減ったり増えたりする」というご報告を
+受けた対策版。これまでは中身のガムボール構成(黄色4・赤2・水色1・黄緑3、合計10個)
+をショットの終わり付近で1回だけまとめて記述していたが、このカットは助走→飛びつき
+→衝撃→しゃがみ→ジャンプ上昇→頂点→落下→着地→大笑い、と動作の区切りが多い
+長いプロンプトのため、**F-10・D-3で確立した「動作の節目ごとにガムボールの
+正確な数・色の組み合わせと完全収容を繰り返し明記する」パターン**を適用し、
+飛びつきの瞬間・ジャンプ上昇中・頂点・落下中・着地の瞬間の計5箇所でガムボール
+構成を個別に明記するよう変更した。
+
+**H3プロンプト(ComfyUI用)**
+```
+How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 1) aligns with the 6.00-second mark of the target video.
+
+integrated_multimodal_description: [Shot 1] 3D CG, claymation-style character render. A single continuous shot keeps the exact same overhead, bird's-eye viewing angle throughout the entire video, looking straight down at all times and never tilting, panning, or switching to a side or angled view. The shot begins in the position and framing established by <Picture 1>, looking straight down on the pale yellow-green floor, with the transparent, jelly-like rubber character and the egg-shaped character already standing upright side by side, matching their exact appearance, expression, and position from <Picture 1>. At this starting point, the transparent character's interior contents consist of precisely 4 yellow, 2 red, 1 light blue, and 3 yellow-green gumballs — ten in total — plus colorful confetti, and this exact count and color mix must remain completely unchanged for the entire rest of the shot, no matter what happens to the character's body. Neither character ever speaks, talks, or makes any vocalization at any point — both stay completely silent throughout, expressing everything purely through body language. With a burst of overflowing, can't-contain-it excitement, its eyes lighting up and its whole face breaking into an enormous grin, the egg-shaped character takes two quick, bounding running steps to build up speed, then explodes off the ground with as much force as it can muster, launching itself powerfully through the air toward the transparent character in a big, dramatic, all-out flying leap — arms flung wide open, body fully stretched out mid-air — not a small hop or a gentle step, but a bold, unrestrained, full-force pounce, the kind of enthusiastic, no-holding-back glomp a small child gives when they can no longer wait and go flying into the arms of someone they love. It crashes snugly into the transparent character's side with real momentum, both arms wrapping tightly around it in a big embrace, the two of them now touching, nestled closely together, the transparent character visibly rocking and wobbling from the strong, cheerful force of the impact before settling. Even as it rocks from this impact, its interior gumballs — still the exact same 4 yellow, 2 red, 1 light blue, and 3 yellow-green, ten in total, never any other count or color — merely jostle and shift naturally inside, always staying fully contained inside its glossy transparent body and never flying out or passing through its skin at any point. Once pressed together like this, both characters crouch down slightly at the same moment, gathering their energy together in perfect unison, and then launch upward together in one big joint jump, rising straight up side by side, still touching, as if leaping as a single unit. As they rise, the camera keeps its overhead angle but pushes in steadily closer toward the pair, moving closer and closer with each moment. Throughout this upward rise, the transparent character's gumballs continue tumbling gently inside with the motion, but the count and colors never change even slightly from the same 4 yellow, 2 red, 1 light blue, and 3 yellow-green, always fully contained inside the glossy transparent body. By the time they reach the peak of this big jump, the two of them together fill almost the entire frame, both wearing wide, delighted, joyful smiles, seen from directly overhead the whole time, exactly matching the tight, close-up framing, poses, and expressions shown in <Picture 2> at this point of the shot — and at this peak moment, the transparent character's interior still holds exactly this same fixed set of 4 yellow, 2 red, 1 light blue, and 3 yellow-green gumballs, ten in total, clearly visible through its glossy skin, with no gumball ever appearing or disappearing. From this peak, still pressed tightly together and still filling almost the entire frame in this same close overhead framing, they begin descending back down under gravity, falling together as one unit, their combined weight picking up speed on the way down; during this fall, the transparent character's gumballs shift downward together under the motion, but their exact count and color mix — 4 yellow, 2 red, 1 light blue, 3 yellow-green, ten total — remains completely unchanged throughout the entire descent. They land back on the floor together with a springy, cushioned impact, their bodies compressing slightly and bouncing very slightly on landing before settling, still held closely together; at the instant of landing, the gumballs settle and jostle from the impact but their count and colors stay exactly the same as at the very start, never gaining or losing a single gumball and never shifting to any other color. The instant they land, both characters burst out laughing together, their mouths opening wide in big, unrestrained, joyful laughter, their whole bodies shaking gently with each laugh, still pressed close together in the same tight, overhead, filled-frame close-up the entire time, the transparent character's gumballs still visibly the same fixed 4 yellow, 2 red, 1 light blue, and 3 yellow-green throughout the laughter, always fully contained inside its glossy transparent body, never flying out or passing through its skin at any point. The shot ends with both characters still held close together in this tight, filled-frame overhead close-up, laughing together with complete, joyful abandon.
+
+overall_soundscape: None.
+
+non_diegetic_music: None.
+```
+
+**日本語訳**
+参照画像と対象動画の対応 — Picture 1(Shot 1より)は対象動画の0.00秒地点に、Picture 2(Shot 1より)は対象動画の6.00秒地点に対応します。[Shot 1] 3D CGのクレイアニメ調キャラクターレンダー。単一の連続したショットで、動画全体を通してまったく同じ俯瞰・鳥瞰の角度を保ち、常に真上から見下ろしたままで、傾いたり、パンしたり、横や斜めのアングルに切り替わったりすることは一切ない。ショットは<Picture 1>で確立された位置・フレーミングから始まり、薄い黄緑色の床を真上から見下ろしており、透明でゼリーのようなラバーキャラクターと卵形のキャラクターが、<Picture 1>のとおりの見た目・表情・位置のまま、すでに並んで直立している。この開始時点で、透明なキャラクターの中身は正確に黄色4個・赤2個・水色1個・黄緑3個(合計10個)のガムボールとカラフルな紙吹雪から成り、この正確な数と色の組み合わせは、体に何が起ころうとも、ショットの残り時間すべてを通してまったく変わらないままでなければならない。どちらのキャラクターも一切話したり喋ったり発声したりすることはなく、終始完全に無言のまま、すべてを体の動きだけで表現する。抑えきれないほどあふれる興奮とともに、目を輝かせ、顔いっぱいに大きな笑みを浮かべながら、卵形のキャラクターはまず勢いをつけるために弾むような2歩の助走を踏み、そして力の限り地面を蹴って爆発的に飛び出し、透明なキャラクターに向かって空中を力強く、大きく、劇的な全力の跳躍で飛んでいく——両腕を大きく広げ、体を空中で目一杯伸ばして——小さなホップやそっとした一歩ではなく、大胆で歯止めの利かない、全力の飛びつきであり、小さな子どもがもう待ちきれずに大好きな相手の腕の中へまっすぐ飛び込んでいくときのような、遠慮のない熱烈な抱きつきである。本物の勢いをもって透明なキャラクターの体の横にドンとぶつかるように着地し、両腕をしっかりとその体にまわして大きく抱きしめ、2人は触れ合い、ぴったりとくっついた状態になる——透明なキャラクターは、この強く嬉しそうな衝撃の勢いで目に見えて揺れ、ぐらつきながら、やがて落ち着く。この衝撃で揺れている間も、中のガムボール——依然としてまったく同じ黄色4個・赤2個・水色1個・黄緑3個、合計10個で、他の数や色になることは一切ない——は自然に揺れ動き位置を変えるだけで、常に光沢のある透明な体の中に完全に収まったままで、一度も外に飛び出したり体の表面を突き抜けたりすることはない。このように密着したところで、2人は同じ瞬間にわずかにしゃがみ込み、完璧に息を合わせて力をため、そして一緒に真上へ向かって一つの大きな共同ジャンプへと飛び立ち、触れ合ったまま横に並んでまっすぐ上昇していく——まるで一つの塊として跳んでいるかのようである。2人が上昇するのに合わせて、カメラは俯瞰の角度を保ったまま、2人へ向かって一定のペースで着実に寄っていく。この上昇の間ずっと、透明なキャラクターのガムボールはその動きに合わせて中で穏やかに転がり続けるが、数と色はまったく同じ黄色4個・赤2個・水色1個・黄緑3個から少しも変わらず、常に光沢のある透明な体の中に完全に収まっている。この大きなジャンプの頂点に達する頃には、2人合わせてほぼフレーム全体を埋めるほど大きく、どちらも満面の、喜びにあふれた笑顔を浮かべ、終始真上から見た状態のまま、この時点で<Picture 2>で示された寄った・クローズアップのフレーミング・ポーズ・表情とぴったり一致する——そしてこの頂点の瞬間も、透明なキャラクターの中身は依然としてまったく同じ固定された黄色4個・赤2個・水色1個・黄緑3個、合計10個のガムボールの組み合わせを保っており、光沢のある体を通してはっきりと見え、ガムボールが現れたり消えたりすることは一切ない。この頂点から、2人はぴったりと密着したまま、フレームのほぼ全体を占めるこの同じ寄った俯瞰フレーミングのまま、重力に従って一緒に一つの塊として落下し始め、合わさった重さで下降しながら速度を増していく——この落下の間、透明なキャラクターのガムボールはその動きに合わせて一緒に下方向へ移動するが、正確な数と色の組み合わせ——黄色4・赤2・水色1・黄緑3、合計10個——は下降の間ずっとまったく変わらないままである。2人は一緒に、弾力のあるクッションのような衝撃で床に着地し、体をわずかに圧縮させて着地時にごくわずかに弾みながら、ぴったりとくっついたまま落ち着く——着地の瞬間、ガムボールは衝撃で落ち着き揺れ動くが、その数と色は最初とまったく同じままで、一つのガムボールも増減したり、他の色に変わったりすることは一切ない。着地した瞬間、2人は一緒に大きな声で笑い出し、口を大きく開けて、遠慮のない喜びいっぱいの大笑いを見せ、笑うたびに体全体がやさしく揺れる——その間ずっと、同じ寄った・俯瞰の・フレームいっぱいのクローズアップのまま、ぴったりとくっついている——透明なキャラクターのガムボールは、この大笑いの間も依然としてまったく同じ固定された黄色4個・赤2個・水色1個・黄緑3個のままで、常に光沢のある透明な体の中に完全に収まっており、一度も外に飛び出したり体の表面を突き抜けたりすることはない。ショットは、2人がこの寄った・フレームいっぱいの俯瞰クローズアップのまま、ぴったりとくっついて、心から嬉しそうに大笑いしているところで終わる。
+
+**環境音**
+なし。
+
+**BGM(観客のみに聞こえる)**
+なし。
+
+**生成結果**
+- 動画ファイル: `03-generated-videos/E2_v6.mp4`(未生成)
+- 判定: 未検証
+- メモ: 「ジャンプする時にガムボールの数が減ったり増えたりする」不具合への
+  対策版。F-10・D-3で確立した「動作の節目ごとに正確な数・色の組み合わせを
+  繰り返し明記する」パターンを適用し、飛びつきの衝撃・ジャンプ上昇中・
+  頂点・落下中・着地の瞬間・大笑い中の計6箇所でガムボール構成を個別に
+  明記した
+
+### v5 (2026-09-15) — 旧版(ガムボール構成の明記が1箇所のみで、色や数が変わる不具合が発生)
 
 「画面いっぱい二人の顔でぎゅうぎゅうになるまで高く飛んだ後、地面に落ちて
 大笑いするところまで入れてください」のご指示を受け、v4でジャンプの頂点
@@ -242,7 +282,10 @@ non_diegetic_music: None.
   カットのため、生成後の見え方に違和感があればフィードバックをください
 - v2(3枚参照)でぽよんのガムボールの色が途中でおかしくなる不具合が発生したため、
   v3で2枚構成に戻した。今後、複数枚(3枚以上)のPicture参照を使う際は同様の
-  色崩れが起きないか注意すること(`00-series-overview.md`にも記録予定)
+  色崩れが起きないか注意すること(`00-series-overview.md`にも記録済み)
+- v5では「ジャンプする時にガムボールの数が減ったり増えたりする」不具合が発生。
+  v6で動作の節目ごとに正確な数・色の組み合わせを繰り返し明記する対策を追加
+  (`00-series-overview.md`にも記録済み)
 - v5でPicture2を「最後のフレーム」ではなく「中間アンカー(6.00秒)」として
   使う構成に変更した。落下・着地・大笑いの部分には対応する参照画像がないため、
   生成結果でこの部分の見た目が不安定にならないか特に注意して確認してください
