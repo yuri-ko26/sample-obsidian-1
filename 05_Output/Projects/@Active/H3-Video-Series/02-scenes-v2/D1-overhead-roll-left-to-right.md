@@ -31,7 +31,43 @@ status: draft
 
 ## プロンプト履歴
 
-### v5 (2026-09-15) — 現在の採用版(回転を採用しつつ、楽しいリズム+顔の追従を強化)
+### v6 (2026-09-15) — 現在の採用版(画面中央で停止→仰向け→ぽよんだけ「よしいくぞー!」と起き上がる)
+
+Eビート(ジャンプ)への橋渡しとして、右へフレームアウトさせず**画面中央で転がりを
+止め、2人とも仰向けに寝転んだ状態**で終わるよう変更。さらに、その仰向け状態から
+**たまちゃんはゴロンとしたまま**、**ぽよんだけが「よし、いくぞー!」という
+勢いのある様子で起き上がる**ところまでを追加。カメラは終始俯瞰のまま固定。
+
+**H3プロンプト(ComfyUI用)**
+```
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+
+integrated_multimodal_description: [Shot 1] 3D CG, claymation-style character render. A single static overhead shot, fixed in place for the entire video with no panning, tilting, zooming, or cutting, looks straight down on the pale yellow-green floor exactly as shown in <Picture 1>. Both characters keep their exact appearance and design from <Picture 1> unchanged throughout, with no distortion. Each character's body behaves as if it were mounted on a single rigid, invisible axle running straight through its center, lying flat against the floor and oriented perpendicular to the direction of travel — this axle is the only line either character's body is able to rotate around; neither character is capable of spinning around a vertical axis like a top or a coin lying flat on a table, that kind of flat, in-place spinning is structurally impossible for them and never happens at any point. The egg-shaped character, on the right of the pair, has both of its short arms raised up the whole time, and continuously rotates forward around this fixed horizontal axle, end over end, exactly like a wheel rolling along the ground: the point of its body currently facing up rotates forward and down to become the point facing the floor, while the point that was facing the floor rotates up and around to become the new top — front, then back, then front again, in a steady, continuous, unbroken rotation as it advances. It stays perfectly level as it rotates, its axle never tilting diagonally, never drifting off to point in any other direction, and it never rises up or stands during this rolling. Beside it on the left, the transparent, jelly-like rubber character rotates forward around its own fixed horizontal axle the exact same way — end over end like a wheel, its top and bottom steadily and continuously swapping places with each rotation, its axle staying perpendicular to its direction of travel the entire time, never once spinning flat in place — its interior gumballs and confetti shifting inside without ever spilling out. Both continue rotating forward together at a matched pace around their own fixed horizontal axles, moving steadily rightward across the frame. Critically, instead of exiting the frame, once both characters reach roughly the center of the frame, they gradually slow their rotation and come to a gentle, natural stop there, settling flat on their backs, face up toward the camera, both wearing calm, happy smiles, coming to rest side by side in the middle of the shot. The camera remains fixed in this same overhead position throughout, never moving. After a brief calm moment lying there together, the egg character stays exactly where it is, remaining flat on its back the whole time, relaxed and still smiling, making no move to get up. At the same time, the transparent character alone begins to perk up with sudden, eager energy — as if excitedly declaring "alright, let's go!" — pushing itself up from lying flat into an upright, bouncy, ready-to-go posture, its whole body brimming with playful enthusiasm, its interior gumballs — exactly 4 yellow, 2 red, 1 light blue, and 3 yellow-green, ten in total, this exact count and color mix never changing, plus colorful confetti — shifting and settling naturally at the bottom of its body under gravity as it rights itself, never spilling out. The shot ends with the egg character still lying flat on its back smiling calmly, and the transparent character upright beside it, full of eager, bouncy energy, ready for what comes next.
+
+overall_soundscape: None.
+
+non_diegetic_music: None.
+```
+
+**日本語訳**
+対象動画の0.00秒時点で、<Picture 1>(Shot 1より)が完全に参照されます。[Shot 1] 3D CGのクレイアニメ調キャラクターレンダー。動画全体を通して一切動かない単一の固定俯瞰ショットで、パン・チルト・ズーム・カットは一切なく、<Picture 1>で示された通り薄い黄緑色の床を真上から見下ろしている。2人とも<Picture 1>の見た目・デザインのまま、崩れたり変化したりすることなく最後まで保たれる。それぞれのキャラクターの体は、中心をまっすぐ貫く一本の硬い、目に見えない軸に取り付けられているかのように振る舞う——この軸は床と平行に寝かされ、進行方向に対して垂直に向いている——どちらのキャラクターも、体が回転できるのはこの軸のまわりだけである。コマやテーブルの上に横たわったコインのように、垂直な軸のまわりで平面的にその場で回転することは、どちらのキャラクターにとっても構造上不可能であり、どの瞬間にも一切起こらない。ペアの右側にいる卵形のキャラクターは、両手をずっと上に上げた状態のまま、この固定された水平の軸のまわりを、まるで地面を転がる車輪のように端から端まで継続的に回転していく——現在上を向いている体の部分が前方・下方へ回転して床に面する部分になり、床に面していた部分が上方・後方へ回転して新しい上面になる——正面、そして背中、そしてまた正面、というのを進みながら一定のペースで途切れることなく回転し続ける。回転している間は常に体が水準を保ったまま回転し、その軸は決して斜めに傾いたり他の方向へずれたりすることはなく、この転がりの間は起き上がったり立ち上がったりすることも一切ない。その左隣では、透明でゼリーのようなラバーキャラクターも、自分自身の固定された水平の軸のまわりを、まったく同じように——車輪のように端から端まで回転し、一回転するごとに上面と下面が着実かつ継続的に入れ替わり、軸は進行方向に対して常に垂直のままで、平面内でその場で回転することは一度もない——中のガムボールと紙吹雪は揺れ動くがこぼれることはない。二人はこのままペースを合わせて、それぞれの固定された水平の軸のまわりを回転しながら画面を右方向へ進んでいく。**極めて重要な点として、画面外へ出ていく代わりに、2人とも画面のおおよそ中央に達したところで、回転を徐々にゆるめていき、そこで自然に穏やかに止まる——体を平らに仰向けにして、カメラの方(上)を向き、2人とも穏やかで嬉しそうな笑顔のまま、画面中央で並んで横たわる状態に落ち着く。カメラはこの間ずっと同じ俯瞰の位置に固定されたままで、一切動かない。**しばらく穏やかに横たわった後、卵形のキャラクターはそのままの位置に留まり、仰向けに横たわったまま、リラックスして笑顔を保ち、起き上がろうとする素振りは一切見せない。同時に、透明なキャラクターだけが、まるで「よし、いくぞー!」と元気よく宣言するかのように、突然の意欲的なエネルギーとともに起き上がり始める——横たわった状態から、直立した、跳ねるような、いつでも動き出せそうな姿勢へと体を押し上げていく——体全体が遊び心のある熱意にあふれている。中のガムボール——正確に黄色4個・赤2個・水色1個・黄緑3個(合計10個、この数と色の組み合わせは変わらない)とカラフルな紙吹雪——は起き上がる動きに合わせて重力に従って体の底に自然に沈み、こぼれることは一切ない。ショットの終わりには、卵形のキャラクターは依然として仰向けに横たわり穏やかに笑っており、透明なキャラクターはそのすぐそばで直立し、意欲的で跳ねるようなエネルギーに満ちて、次の展開への準備が整っている。
+
+**環境音**
+なし。
+
+**BGM(観客のみに聞こえる)**
+なし。
+
+**生成結果**
+- 動画ファイル: `03-generated-videos/D1_v6.mp4`(未生成)
+- 判定: 未検証
+- メモ: Eビートへの橋渡し版。フレームアウトの代わりに画面中央で停止→仰向け→
+  たまちゃんはそのまま・ぽよんだけ「よしいくぞー!」と起き上がる、という
+  E-1への継続を意識した終わり方に変更。E-1側の「2人とも起き上がる」という
+  出だしは、この新しいD-1の終わり方(たまちゃんは仰向けのまま・ぽよんは
+  すでに起き上がった状態)に合わせて後で調整が必要になる可能性あり
+
+### v5 (2026-09-15) — 旧版(フレームアウトして終わる、Eビートへの継続なし)
 
 「回転でいいです!」とのご要望を受け、v4の「固定された回転軸」の仕組みはそのまま
 維持しつつ、①D-1-alt v2で確立した「顔は体表面の固定パーツとして体の回転と
