@@ -54,6 +54,7 @@ status: draft
 ### D. コロコロ転がる(往復3回)
 | Cut | 内容 | 尺目安 | 対応アーカイブ |
 |---|---|---|---|
+| D-1-entrance(導入) | 【確定】誰もいない床から2人が転がってフレームインし、D-1の開始位置に到着する | 4s | — | `02-scenes-v2/D1-entrance-roll-in-from-left.md` 作成済み(v1) |
 | D-1(1回目・行き→E-1への橋渡し) | 【確定】転がって画面中央へ→停止→仰向け→ぽよんだけ起き上がりE-1へ続く(セリフなし) | 6s | `02-scenes/24-overhead-horizontal-roll-across.md` | `02-scenes-v2/D1-overhead-roll-left-to-right.md` v9(転がりバージョン+セリフなし、未検証) |
 | D-1-alt4(選択肢) | 【選択肢】回転には挑戦せず、弾み・ホップという安定した動きにリズムの緩急(大・小・小の弾み、手振り)を加えて楽しさを出すバージョン | 6s | — | `02-scenes-v2/D1-alt4-playful-skip-rhythm.md` 作成済み(v1) |
 | D-2(1回目・帰り) | 【確定】俯瞰、転がってフレームアウト。単調にならないよう速度・経路にわずかな不規則性を加えたバージョン | 6s | `02-scenes/25-overhead-horizontal-roll-across-reverse.md` | `02-scenes-v2/D2-wobbly-roll-exit.md` 作成済み(v1) |
