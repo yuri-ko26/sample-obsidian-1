@@ -60,7 +60,48 @@ Eビート(「ジャンプ」)2回目のカット。俯瞰の角度を保った�
 
 ## プロンプト履歴
 
-### v7 (2026-09-15) — 現在の採用版(たまちゃんが喋る・手が伸びる不具合への対策、お腹をくっつける接触に変更)
+### v8 (2026-09-15) — 現在の採用版(ジャンプが低かったため、落下・着地・大笑いを削除しジャンプの頂点で終わるように戻す)
+
+「ジャンプが低いので降りてくるところまで入れず、目一杯ジャンプしてカメラ
+いっぱい二人の顔で埋め尽くされるくらい高く飛んだところで終わってください」
+のご指示を受けた対応版。v5〜v7で追加していた「落下→着地→大笑い」の
+部分を削除し、**ジャンプの頂点(Picture2)で終わる構成(v4相当)に戻した**。
+そのうえで、実際のジャンプの高さが足りなかったという結果を踏まえ、
+「これまでで一番高いジャンプ」「体をまっすぐ縦に大きく伸ばす」「フレームが
+2人の顔でほぼ埋め尽くされるまでカメラが寄り切る」ことを強く明記し、
+ジャンプの高さとカメラの寄りの両方を強調した。お腹をくっつける接触・
+腕が伸びない制約・無言の指定(v7で確立)はそのまま維持。
+
+**H3プロンプト(ComfyUI用)**
+```
+How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 1) aligns with the 6.00-second mark of the target video.
+
+integrated_multimodal_description: [Shot 1] 3D CG, claymation-style character render. A single continuous shot keeps the exact same overhead, bird's-eye viewing angle throughout the entire video, looking straight down at all times and never tilting, panning, or switching to a side or angled view. The shot begins in the position and framing established by <Picture 1>, looking straight down on the pale yellow-green floor, with the transparent, jelly-like rubber character and the egg-shaped character already standing upright side by side, matching their exact appearance, expression, and position from <Picture 1>. At this starting point, the transparent character's interior contents consist of precisely 4 yellow, 2 red, 1 light blue, and 3 yellow-green gumballs — ten in total — plus colorful confetti, and this exact count and color mix must remain completely unchanged for the entire rest of the shot, no matter what happens to the character's body. Neither character's mouth ever opens to speak, and neither character talks, says any words, or makes any vocalization at any point in this shot — even in this most excited, energetic moment, both stay completely silent throughout, expressing everything purely through body language and facial expression alone, never through speech. With a burst of overflowing, can't-contain-it excitement, its eyes lighting up and its whole face breaking into an enormous grin, the egg-shaped character takes two quick, bounding running steps to build up speed, then explodes off the ground with as much force as it can muster, launching itself powerfully through the air toward the transparent character in a big, dramatic, all-out flying leap — not a small hop or a gentle step, but a bold, unrestrained, full-force pounce, the kind of enthusiastic, no-holding-back leap a small child gives when they can no longer wait and go flying toward someone they love. Throughout this entire leap, its short, stiff arms keep exactly the same short, fixed length they always have, staying close in against its sides — they never stretch, lengthen, or extend outward at any point, no matter how big or forceful the leap is. It crashes snugly into the transparent character with real momentum, landing with its round belly pressed flat and directly against the transparent character's side — belly to belly, the two front surfaces flattening together on contact — the two of them now touching, nestled closely together this way, its short arms still at their normal fixed length, simply resting near its sides rather than reaching out or wrapping around anything. The transparent character visibly rocking and wobbling from the strong, cheerful force of the impact before settling. Even as it rocks from this impact, its interior gumballs — still the exact same 4 yellow, 2 red, 1 light blue, and 3 yellow-green, ten in total, never any other count or color — merely jostle and shift naturally inside, always staying fully contained inside its glossy transparent body and never flying out or passing through its skin at any point. Once pressed together belly to belly like this, both characters crouch down deeply at the same moment, gathering as much energy as possible together in perfect unison, visibly coiling and loading up their whole bodies for the biggest jump they have ever done together, and then launch upward together with maximum force in one huge, powerful joint jump — by far the highest and most forceful jump of the two of them together so far — rising straight up side by side at speed, their bellies still pressed together, their bodies stretching noticeably taller and longer as they rocket upward, as if leaping as a single unit. As they rise, the camera keeps its overhead angle but pushes in aggressively closer toward the pair, closing the distance quickly and continuously with each moment to keep pace with how fast and how high they are rising. Throughout this powerful upward rise, the transparent character's gumballs continue tumbling gently inside with the motion, but the count and colors never change even slightly from the same 4 yellow, 2 red, 1 light blue, and 3 yellow-green, always fully contained inside the glossy transparent body, and the egg-shaped character's short arms remain their normal fixed length the entire time, never stretching. They keep rising and the camera keeps closing in together, all the way up to the very peak of this maximum-effort jump — the highest point either of them has ever reached — where the two of them together completely fill almost the entire frame, their two large, joyful, wide-open smiling faces packed edge to edge across the screen with barely any background visible around them, seen from directly overhead the whole time, exactly matching the tight, face-filling, close-up framing, poses, and expressions shown in <Picture 2> at the end of the shot. At this peak moment, the transparent character's interior still holds exactly this same fixed set of 4 yellow, 2 red, 1 light blue, and 3 yellow-green gumballs, ten in total, clearly visible through its glossy skin, with no gumball ever appearing or disappearing. The shot ends right at this highest point of the jump, holding on the two beaming, joyful faces filling the frame, before any descent begins.
+
+overall_soundscape: None.
+
+non_diegetic_music: None.
+```
+
+**日本語訳**
+参照画像と対象動画の対応 — Picture 1(Shot 1より)は対象動画の0.00秒地点に、Picture 2(Shot 1より)は対象動画の6.00秒地点に対応します。[Shot 1] 3D CGのクレイアニメ調キャラクターレンダー。単一の連続したショットで、動画全体を通してまったく同じ俯瞰・鳥瞰の角度を保ち、常に真上から見下ろしたままで、傾いたり、パンしたり、横や斜めのアングルに切り替わったりすることは一切ない。ショットは<Picture 1>で確立された位置・フレーミングから始まり、薄い黄緑色の床を真上から見下ろしており、透明でゼリーのようなラバーキャラクターと卵形のキャラクターが、<Picture 1>のとおりの見た目・表情・位置のまま、すでに並んで直立している。この開始時点で、透明なキャラクターの中身は正確に黄色4個・赤2個・水色1個・黄緑3個(合計10個)のガムボールとカラフルな紙吹雪から成り、この正確な数と色の組み合わせは、体に何が起ころうとも、ショットの残り時間すべてを通してまったく変わらないままでなければならない。どちらのキャラクターの口も一切開いて話すことはなく、どちらのキャラクターも喋ったり、言葉を発したり、発声したりすることは一切ない——この最も興奮した、エネルギッシュな瞬間であっても、2人とも終始完全に無言のままで、すべてを体の動きと表情だけで表現し、言葉では一切表現しない。抑えきれないほどあふれる興奮とともに、目を輝かせ、顔いっぱいに大きな笑みを浮かべながら、卵形のキャラクターはまず勢いをつけるために弾むような2歩の助走を踏み、そして力の限り地面を蹴って爆発的に飛び出し、透明なキャラクターに向かって空中を力強く、大きく、劇的な全力の跳躍で飛んでいく——小さなホップやそっとした一歩ではなく、小さな子どもがもう待ちきれずに大好きな相手に向かって飛んでいくときのような、大胆で歯止めの利かない跳躍である。この跳躍の間ずっと、その短く硬い腕はいつもとまったく同じ短い、固定された長さを保ち、体の脇に沿ったままである——跳躍がどれだけ大きく力強くても、腕が伸びたり、長くなったり、外側へ伸ばされたりすることは一切ない。本物の勢いをもって透明なキャラクターにぶつかるように着地し、丸いお腹を透明なキャラクターの体の側面に平らに、まっすぐ押し当てるようにして着地する——お腹とお腹が触れ合い、2つの前面が接触した瞬間に平らに合わさる——2人は触れ合い、このようにぴったりと寄り添った状態になり、その短い腕は依然として通常の固定された長さのままで、何かに向かって伸ばしたり巻きつけたりするのではなく、単に体の脇の近くに置かれているだけである。透明なキャラクターは、この強く嬉しそうな衝撃の勢いで目に見えて揺れ、ぐらつきながら、やがて落ち着く。この衝撃で揺れている間も、中のガムボール——依然としてまったく同じ黄色4個・赤2個・水色1個・黄緑3個、合計10個で、他の数や色になることは一切ない——は自然に揺れ動き位置を変えるだけで、常に光沢のある透明な体の中に完全に収まったままで、一度も外に飛び出したり体の表面を突き抜けたりすることはない。このようにお腹同士を合わせて密着したところで、2人は同じ瞬間に**深くしゃがみ込み、これまでで一番大きなジャンプをするために、体全体を目一杯バネのようにため込みながら**、力を合わせ、そして**これまでで最も高く、最も力強い、2人にとって過去最大のジャンプ**として、渾身の力で一緒に真上へ向かって大きく飛び立ち、お腹を合わせたまま勢いよく横に並んでまっすぐ上昇していく——上昇するにつれて**体が目に見えて縦に大きく伸びていく**——まるで一つの塊として跳んでいるかのようである。2人が上昇するのに合わせて、カメラは俯瞰の角度を保ったまま、**2人の上昇の速さと高さに追いつくように、絶え間なく素早く寄っていく**。この力強い上昇の間ずっと、透明なキャラクターのガムボールはその動きに合わせて中で穏やかに転がり続けるが、数と色はまったく同じ黄色4個・赤2個・水色1個・黄緑3個から少しも変わらず、常に光沢のある透明な体の中に完全に収まっており、卵形のキャラクターの短い腕もこの間ずっと通常の固定された長さのままで、一切伸びることはない。2人はそのまま上昇を続け、カメラも一緒に寄り続け、**この渾身のジャンプの本当の頂点——2人にとってこれまでで一番高く到達した瞬間**——に達したところで、2人合わせてフレームのほぼ全体を完全に埋め尽くし、**2つの大きな、喜びにあふれた満面の笑顔が、背景がほとんど見えなくなるほど画面いっぱいに敷き詰められる**——終始真上から見た状態のまま、<Picture 2>で示された寄った・顔で埋め尽くされたクローズアップのフレーミング・ポーズ・表情とぴったり一致してこのショットが終わる。この頂点の瞬間も、透明なキャラクターの中身は依然としてまったく同じ固定された黄色4個・赤2個・水色1個・黄緑3個、合計10個のガムボールの組み合わせを保っており、光沢のある体を通してはっきりと見え、ガムボールが現れたり消えたりすることは一切ない。ショットは、**この落下が始まる前の、ジャンプの一番高い瞬間**で、2人の輝くような嬉しそうな顔が画面いっぱいに映ったまま終わる。
+
+**環境音**
+なし。
+
+**BGM(観客のみに聞こえる)**
+なし。
+
+**生成結果**
+- 動画ファイル: `03-generated-videos/E2_v8.mp4`(未生成)
+- 判定: 未検証
+- メモ: 「ジャンプが低い」というフィードバックへの対応版。落下・着地・
+  大笑いの部分を削除し、ジャンプの頂点(Picture2)で終わる構成に戻した
+  うえで、「これまでで一番高いジャンプ」「体が縦に伸びる」「カメラが
+  2人の上昇速度に追いつくように素早く寄る」「顔が画面いっぱいに埋め
+  尽くされる」ことを強く明記し、ジャンプの高さとカメラの寄りを強調した
+
+### v7 (2026-09-15) — 旧版(たまちゃんが喋る・手が伸びる不具合への対策、お腹をくっつける接触に変更)
 
 実際の生成結果で、①たまちゃんが喋ってしまう、②飛びついて抱きつく際に
 たまちゃんの手(腕)が不自然に伸びてしまう、という2つの不具合が判明。
@@ -320,10 +361,9 @@ non_diegetic_music: None.
 ## ComfyUIでの設定メモ
 - Picture 1: いただいた画像1(俯瞰、ぽよん左・たまちゃん右で並んで立つ、くっつく前)
 - Picture 2: いただいた画像3(ジャンプの頂点、カメラに寄った状態、2人とも満面の笑顔)
-  ※v5からは最後のフレームではなく6.00秒時点の中間アンカーとして使用
+  ※v8で再び「最後のフレーム」として使用(v5〜v7の中間アンカー扱いから差し戻し)
 - モード: FL2VA(2枚構成。中間の「くっついた直後」画像は参照画像としては使わない)
-- 尺: 9秒目安(助走+飛びつく2s/しゃがんで力をため→ジャンプ上昇→頂点4s/
-  落下→着地→大笑い3s)
+- 尺: 6秒目安(v8で落下・着地・大笑いを削除したため9秒→6秒に短縮)
 - **重要**: `[Shot 2]`などの追加ショット表記は使わず、単一の`[Shot 1]`のみで最初から最後まで記述すること
 - 俯瞰角度を保ったままのプッシュインズームという、D-beatとは異なるカメラワークの
   カットのため、生成後の見え方に違和感があればフィードバックをください
@@ -337,6 +377,7 @@ non_diegetic_music: None.
   「両腕を広げて抱きつく」という描写だった可能性が高いため、v7で「お腹を
   ピタッとくっつける」接触に変更し、腕については「常に短い固定長のまま
   伸びない」という解剖学的制約を追加した(`00-series-overview.md`にも記録済み)
-- v5でPicture2を「最後のフレーム」ではなく「中間アンカー(6.00秒)」として
-  使う構成に変更した。落下・着地・大笑いの部分には対応する参照画像がないため、
-  生成結果でこの部分の見た目が不安定にならないか特に注意して確認してください
+- v7では「ジャンプが低い」という結果になったため、v8で落下・着地・大笑いを
+  削除しジャンプの頂点(Picture2)で終わる構成に戻し、ジャンプの高さと
+  カメラの寄りを強く明記した。それでも低い場合はさらに強調表現を追加する
+  ことを検討してください
