@@ -73,7 +73,7 @@ status: draft
 | Cut | 内容 | 尺目安 | 対応アーカイブ |
 |---|---|---|---|
 | E-1(1回目) | 【確定】D-1 v6の続き。たまちゃんは仰向けのまま、ぽよんはすでに起き上がった状態から2回弾んで3回目に大ジャンプ→着地 | 9s | `02-scenes/05-overhead-big-jump.md` | `02-scenes-v2/E1-both-get-up-poyon-big-jump.md` v2作成済み(D-1 v6との継続を反映) |
-| E-2(2回目) | 起き上がった2人が見つめ合い、ぽよんが再び大ジャンプ→着地でぶつかる | 8s | `02-scenes/18-overhead-big-jump-round-two.md` |
+| E-2(2回目) | 【確定】たまちゃんがぽよんにぴたっとくっつき、2人一緒に大ジャンプ。カメラは俯瞰角度のまま寄っていき、頂点でフレームいっぱいになる | 6s | `02-scenes/18-overhead-big-jump-round-two.md` | `02-scenes-v2/E2-tamachan-sticks-to-poyon-jump-together.md` v2作成済み(3枚参照のFL2VA) |
 | E-3(3回目) | ぽよんが体を差し出し、たまちゃんが飛び乗って2人で一緒にジャンプ→着地で爆笑 | 11s | `02-scenes/19-poyon-offers-a-ride-jump-together.md` |
 
 ### F. 雲の稜線おいかけっこ(追いかけて追いつかれる・×2)
