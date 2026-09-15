@@ -31,7 +31,43 @@ status: draft
 
 ## プロンプト履歴
 
-### v4 (2026-09-15) — 現在の採用版(「軸」を物理的な構造として明記)
+### v5 (2026-09-15) — 現在の採用版(回転を採用しつつ、楽しいリズム+顔の追従を強化)
+
+「回転でいいです!」とのご要望を受け、v4の「固定された回転軸」の仕組みはそのまま
+維持しつつ、①D-1-alt v2で確立した「顔は体表面の固定パーツとして体の回転と
+一体で動く(見えなくなる/また見える)」という記述を両キャラクターに追加、
+②回転のリズムに緩急をつけて楽しさを出す(速く回っては少しゆっくりになる、
+を繰り返す)、③たまちゃんの上げた手が回転のたびに楽しそうにパタパタ揺れる、
+という3点を加えた。
+
+**H3プロンプト(ComfyUI用)**
+```
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+
+integrated_multimodal_description: [Shot 1] 3D CG, claymation-style character render. A single static overhead shot, fixed in place for the entire video with no panning, tilting, zooming, or cutting, looks straight down on the pale yellow-green floor exactly as shown in <Picture 1>. Both characters keep their exact appearance and design from <Picture 1> unchanged throughout, with no distortion. Each character's body behaves as if it were mounted on a single rigid, invisible axle running straight through its center, lying flat against the floor and oriented perpendicular to the direction of travel — this axle is the only line either character's body is able to rotate around; neither character is capable of spinning around a vertical axis like a top or a coin lying flat on a table, that kind of flat, in-place spinning is structurally impossible for them and never happens at any point. Critically, each character's face — its eyes and mouth — is not a separate marking floating independently on top of its body; it is a fixed part of the body's surface, permanently attached to one spot on it. As each body rotates around its axle, its face rotates together with it as one single rigid piece: the face turns away and becomes hidden from view as that side rotates away from the camera, then comes back into view again only once that same spot has rotated all the way back around to face upward — the face must never stay fixed in place, floating in the same on-screen position or orientation while the body spins independently underneath or around it. The egg-shaped character, on the right of the pair, has both of its short arms raised up the whole time, and continuously rotates forward around this fixed horizontal axle, end over end, exactly like a wheel rolling along the ground: the point of its body currently facing up rotates forward and down to become the point facing the floor, while the point that was facing the floor rotates up and around to become the new top — front, then back, then front again, repeating as it advances. To make this fun and playful rather than mechanical, its rotation speed rises and falls in a bouncy, joyful rhythm — a couple of quicker, energetic rotations, then one slightly slower, more satisfying rotation, repeating this lively pattern the whole way — and with each rotation its two raised arms flop and flap cheerfully, swinging a little with the motion like it's having fun rolling along, without ever bending at any joint that would break its design. It stays perfectly level as it rotates, its axle never tilting diagonally, never drifting off to point in any other direction, and it never rises up or stands. Beside it on the left, the transparent, jelly-like rubber character rotates forward around its own fixed horizontal axle the exact same way — end over end like a wheel, its top and bottom steadily swapping places with each rotation, its axle staying perpendicular to its direction of travel the entire time, never once spinning flat in place — and it follows the same playful quick-quick-slow rhythm as the egg character, rolling with matched bouncy energy. Its interior gumballs — exactly 4 yellow, 2 red, 1 light blue, and 3 yellow-green, ten in total, this exact count and color mix never changing, plus colorful confetti — tumble and jostle energetically with each rotation, clearly visible through its glossy transparent skin, without ever spilling out. Both continue rotating forward together at this same matched, playful pace around their own fixed horizontal axles, moving steadily rightward across the frame, until they fully exit past the right edge, leaving the floor empty.
+
+overall_soundscape: None.
+
+non_diegetic_music: None.
+```
+
+**日本語訳**
+対象動画の0.00秒時点で、<Picture 1>(Shot 1より)が完全に参照されます。[Shot 1] 3D CGのクレイアニメ調キャラクターレンダー。動画全体を通して一切動かない単一の固定俯瞰ショットで、パン・チルト・ズーム・カットは一切なく、<Picture 1>で示された通り薄い黄緑色の床を真上から見下ろしている。2人とも<Picture 1>の見た目・デザインのまま、崩れたり変化したりすることなく最後まで保たれる。それぞれのキャラクターの体は、中心をまっすぐ貫く一本の硬い、目に見えない軸に取り付けられているかのように振る舞う——この軸は床と平行に寝かされ、進行方向に対して垂直に向いている——どちらのキャラクターも、体が回転できるのはこの軸のまわりだけである。コマやテーブルの上に横たわったコインのように、垂直な軸のまわりで平面的にその場で回転することは、どちらのキャラクターにとっても構造上不可能であり、どの瞬間にも一切起こらない。**極めて重要な点として、それぞれのキャラクターの顔(目と口)は体の上に独立して浮いている別の模様ではなく、体の表面に属する固定された一部分であり、体の一箇所に恒久的に付着している。それぞれの体が軸のまわりを回転すると、顔も体と一体の硬いパーツとして一緒に回転する:その部分がカメラから離れる方向へ回転すれば顔も一緒に向こうを向いて見えなくなり、同じ箇所がぐるっと一周して再び上を向いたときにだけ顔が見える——顔が画面上の同じ位置・同じ向きのまま固定されたまま浮いていて、体だけがその下や周りで独立して回転する、ということは決して起こらない。**ペアの右側にいる卵形のキャラクターは、両手をずっと上に上げた状態のまま、この固定された水平の軸のまわりを、まるで地面を転がる車輪のように端から端まで継続的に回転していく——現在上を向いている体の部分が前方・下方へ回転して床に面する部分になり、床に面していた部分が上方・後方へ回転して新しい上面になる——正面、そして背中、そしてまた正面、というのを進みながら繰り返す。**これを機械的にではなく楽しく遊び心のあるものにするため、回転の速さは楽しく弾むようなリズムで上下する**——2回ほど素早く元気な回転を行い、その後1回だけ少しゆっくりと、満足感のある回転をする、というこの生き生きとしたパターンを最後まで繰り返す——そして一回転するごとに、上げた両手が楽しそうにパタパタと揺れ、転がるのが楽しくてたまらないというように少し振られる(ただし、デザインを崩すような関節での曲がりは一切ない)。回転している間は常に体が水準を保ったまま回転し、その軸は決して斜めに傾いたり、他の方向へずれたりすることはなく、途中で起き上がったり立ち上がったりすることも一切ない。その左隣では、透明でゼリーのようなラバーキャラクターも、自分自身の固定された水平の軸のまわりを、まったく同じように——車輪のように端から端まで回転し、一回転するごとに上面と下面が着実に入れ替わり、軸は進行方向に対して常に垂直のままで、平面内でその場で回転することは一度もない——そして卵形のキャラクターと同じ「速い・速い・ゆっくり」の楽しいリズムに合わせて、弾むような元気さで転がっていく。中のガムボール——正確に黄色4個・赤2個・水色1個・黄緑3個(合計10個、この数と色の組み合わせは変わらない)とカラフルな紙吹雪——は一回転するごとに元気よく転がりぶつかり合い、光沢のある透明な体を通してはっきりと見え、こぼれることは一切ない。二人はこのまま同じリズムを合わせながら、それぞれの固定された水平の軸のまわりを楽しく回転しつつ画面を右方向へまっすぐ横切り、完全に右端の外へ出ていき、床だけが残る。
+
+**環境音**
+なし。
+
+**BGM(観客のみに聞こえる)**
+なし。
+
+**生成結果**
+- 動画ファイル: `03-generated-videos/D1_v5.mp4`(未生成)
+- 判定: 未検証
+- メモ: 「回転でいいです!」とのご要望への対応版。v4の固定軸の仕組みを維持しつつ、
+  顔の追従(D-1-alt v2の教訓)を両キャラクターに適用し、回転リズムに緩急・
+  たまちゃんの手のパタパタ揺れを加えて楽しさを出した
+
+### v4 (2026-09-15) — 旧版(「軸」を物理的な構造として明記、リズムの緩急なし)
 
 v1〜v3の「でんぐり返し」「丸太」「コインフリップ」といった比喩がいずれも
 不十分だったため、比喩ではなく**回転軸そのものを体に固定された物理構造として
