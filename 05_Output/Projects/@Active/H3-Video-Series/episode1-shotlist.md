@@ -54,7 +54,7 @@ status: draft
 ### D. コロコロ転がる(往復3回)
 | Cut | 内容 | 尺目安 | 対応アーカイブ |
 |---|---|---|---|
-| D-1(1回目・行き) | 俯瞰、床の上を2人並んで右へ転がる | 6s | `02-scenes/24-overhead-horizontal-roll-across.md` |
+| D-1(1回目・行き) | 【再挑戦中】俯瞰、床の上を2人並んで右へ転がる | 6s | `02-scenes/24-overhead-horizontal-roll-across.md` | `02-scenes-v2/D1-overhead-roll-left-to-right.md` v4(回転軸を物理構造として明記、未検証) |
 | D-2(1回目・帰り) | 俯瞰、逆方向(左)へ転がって戻る | 6s | `02-scenes/25-overhead-horizontal-roll-across-reverse.md` |
 | D-3(2回目・行き) | 同じ動きをもう一度(バリエーションで速度・楽しさを変化) | 6s | 同上を再利用・改変 |
 | D-4(2回目・帰り) | 帰りも同様 | 6s | 同上 |

@@ -31,7 +31,41 @@ status: draft
 
 ## プロンプト履歴
 
-### v1 (2026-09-09)
+### v4 (2026-09-15) — 現在の採用版(「軸」を物理的な構造として明記)
+
+v1〜v3の「でんぐり返し」「丸太」「コインフリップ」といった比喩がいずれも
+不十分だったため、比喩ではなく**回転軸そのものを体に固定された物理構造として
+明記**するアプローチに変更(F-5〜F-7で効果があった「足首の関節が存在しない」
+という解剖学的制約の書き方と同じ考え方)。「縦回転以外は構造上できない」と
+明示的に否定する一文も追加。
+
+**H3プロンプト(ComfyUI用)**
+```
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+
+integrated_multimodal_description: [Shot 1] 3D CG, claymation-style character render. A single static overhead shot, fixed in place for the entire video with no panning, tilting, zooming, or cutting, looks straight down on the pale yellow-green floor exactly as shown in <Picture 1>. Both characters keep their exact appearance and design from <Picture 1> unchanged throughout, with no distortion. Each character's body behaves as if it were mounted on a single rigid, invisible axle running straight through its center, lying flat against the floor and oriented perpendicular to the direction of travel — this axle is the only line either character's body is able to rotate around; neither character is capable of spinning around a vertical axis like a top or a coin lying flat on a table, that kind of flat, in-place spinning is structurally impossible for them and never happens at any point. The egg-shaped character, on the right of the pair, has both of its short arms raised up the whole time, and continuously rotates forward around this fixed horizontal axle, end over end, exactly like a wheel rolling along the ground: the point of its body currently facing up rotates forward and down to become the point facing the floor, while the point that was facing the floor rotates up and around to become the new top — front, then back, then front again, in a steady, continuous, unbroken rotation as it advances, never slowing to a glide, never pausing with its rotation stopped. It stays perfectly level as it rotates, its axle never tilting diagonally, never drifting off to point in any other direction, and it never rises up or stands. Beside it on the left, the transparent, jelly-like rubber character rotates forward around its own fixed horizontal axle the exact same way — end over end like a wheel, its top and bottom steadily and continuously swapping places with each rotation, its axle staying perpendicular to its direction of travel the entire time, never once spinning flat in place — its interior gumballs and confetti shifting inside without ever spilling out. Both continue rotating forward together at a matched pace around their own fixed horizontal axles, moving steadily rightward across the frame, until they fully exit past the right edge, leaving the floor empty.
+
+overall_soundscape: None.
+
+non_diegetic_music: None.
+```
+
+**日本語訳**
+対象動画の0.00秒時点で、<Picture 1>(Shot 1より)が完全に参照されます。[Shot 1] 3D CGのクレイアニメ調キャラクターレンダー。動画全体を通して一切動かない単一の固定俯瞰ショットで、パン・チルト・ズーム・カットは一切なく、<Picture 1>で示された通り薄い黄緑色の床を真上から見下ろしている。2人とも<Picture 1>の見た目・デザインのまま、崩れたり変化したりすることなく最後まで保たれる。**それぞれのキャラクターの体は、中心をまっすぐ貫く一本の硬い、目に見えない軸に取り付けられているかのように振る舞う——この軸は床と平行に寝かされ、進行方向に対して垂直に向いている——どちらのキャラクターも、体が回転できるのはこの軸のまわりだけである。コマやテーブルの上に横たわったコインのように、垂直な軸のまわりで平面的にその場で回転することは、どちらのキャラクターにとっても構造上不可能であり、どの瞬間にも一切起こらない。**ペアの右側にいる卵形のキャラクターは、両手をずっと上に上げた状態のまま、この固定された水平の軸のまわりを、まるで地面を転がる車輪のように端から端まで継続的に回転していく——現在上を向いている体の部分が前方・下方へ回転して床に面する部分になり、床に面していた部分が上方・後方へ回転して新しい上面になる——正面、そして背中、そしてまた正面、というのを進みながら一定のペースで途切れることなく回転し続け、決して速度を落として滑ったり、回転が止まったまま止まったりすることはない。回転している間は常に体が水準を保ったまま回転し、その軸は決して斜めに傾いたり、他の方向へずれたりすることはなく、途中で起き上がったり立ち上がったりすることも一切ない。その左隣では、透明でゼリーのようなラバーキャラクターも、自分自身の固定された水平の軸のまわりを、まったく同じように——車輪のように端から端まで回転し、一回転するごとに上面と下面が着実かつ継続的に入れ替わり、軸は進行方向に対して常に垂直のままで、平面内でその場で回転することは一度もない——中のガムボールと紙吹雪は揺れ動くがこぼれることはない。二人はこのままペースを合わせて、それぞれの固定された水平の軸のまわりを回転しながら画面を右方向へまっすぐ横切り、完全に右端の外へ出ていき、床だけが残る。
+
+**環境音**
+なし。
+
+**BGM(観客のみに聞こえる)**
+なし。
+
+**生成結果**
+- 動画ファイル: `03-generated-videos/D1_v4.mp4`(未生成)
+- 判定: 未検証
+- メモ: 「もう一度作りたい」というリクエストへの対応版。比喩(でんぐり返し/丸太/
+  コインフリップ)をやめ、回転軸を物理的な構造として明記するアプローチに変更
+
+### v1 (2026-09-09) — 旧版(以下v1〜v3、すべて過去の試行錯誤の記録)
 
 **H3プロンプト(ComfyUI用)**
 ```
